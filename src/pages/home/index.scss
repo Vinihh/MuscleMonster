@@ -1,57 +1,49 @@
 .App{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center; 
+  height: auto;
 
-  .container {
-    display: flex;
-    align-items: center;
-    height: 5vh;
+  
+  nav{
+    margin-top:1% ;
+    height: 15vh;
     width: 100%;
-
-  }
-  
-  .container > div {
-    margin-top: 25px;
-    flex: 1;
-    text-align: center;
-    padding: 1px;    
-    border-bottom:1px solid black ;
-
-  
-    &:not(:last-child) {
-      position: relative;
-
-  
-      &::after {
-        content: "";
-        position: absolute;
-        top: 50%; 
-        right: 0;
-        transform: translateY(-50%);
-        height: 60%; 
-        border-right: 1px solid black;
-        z-index: -50;
-
-      }
-    }
-  }
-
-  .txt{
-
-    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
- gap: -50px 0px;
+
 
     h1{
-      word-spacing: 3px;
+      word-spacing:5px;
     }
   }
   
+  aside{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 3%;
+
+    div{
+    display: flex;
+    flex-direction: column;
+    border-radius:20px;
+    background: #FFB800;
+    height: 34vh;
+
+
+      img{
+        height: 28vh;
+      }
+
+      h1{
+      
+      text-align: center;
+      }
+    }
+  }
   
 }
   
