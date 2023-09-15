@@ -10,11 +10,11 @@ export default function HomeAdm() {
         <nav>
           <div className='user'>
             <img src='/assets/images/teste1.png' alt='' />
-            <h4>XEXEL</h4>
+            <h4>XEXEL </h4>
           </div>
 
           <div>
-            
+
           </div>
 
         </nav>
