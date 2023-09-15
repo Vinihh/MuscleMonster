@@ -16,7 +16,7 @@ function Home() {
       <aside>
         <div>
           <img src='/assets/images/img1.png' alt='' />
-          <h1> Suplementos</h1>
+          <h1>  Suplementos</h1>
         </div>
 
         <div>
