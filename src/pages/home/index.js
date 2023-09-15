@@ -7,7 +7,7 @@ function Home() {
   return (
     <div className="App">
       <Header />
-      
+
       <nav>
         <h1>NO PAIN , NO GAIN</h1>
         <h3>O QUE A MENTE QUER, O CORPO ALCANÇA</h3>
@@ -32,26 +32,35 @@ function Home() {
 
       <section>
         <img src='/assets/images/img4.png' alt='' />
-          <div>
-            <h1>Gostaria de aprender a treinar da maneira correta?</h1>
-                        
-            <h4>Na Muscle Monster você poderá encontrar diversos personal trainers para ajudá-los a treinar da maneira certa!!</h4>
+        <div>
+          <h1>Gostaria de aprender a treinar da maneira correta?</h1>
 
-            <button> Fale Conosco </button>
-          </div>
+          <h4>Na Muscle Monster você poderá encontrar diversos personal trainers para ajudá-los a treinar da maneira certa!!</h4>
+
+          <button> Fale Conosco </button>
+        </div>
       </section>
 
       <section className='home-produtos'>
-          <h1>OS MAIS VENDIDOS</h1>
+        <h1>OS MAIS VENDIDOS</h1>
+
+        <div className='fora'>
+          <div>
+            <Produto />
+          </div>
+          
+          <div>
+            <Produto />
+          </div>
 
           <div>
-
-            <Produto/>
-
+            <Produto />
           </div>
+
+        </div>
       </section>
 
-    <Footer/>
+      <Footer />
 
     </div>
 
