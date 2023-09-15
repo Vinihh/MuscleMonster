@@ -3,7 +3,6 @@
   flex-direction: column;
   height: auto;
 
-
   nav {
     margin-top: 1%;
     height: 15vh;
@@ -13,9 +12,8 @@
     align-items: center;
     justify-content: center;
 
-
     h1 {
-      font-size: 25px ;
+      font-size: 25px;
       word-spacing: 5px;
       margin-bottom: 20px;
     }
@@ -35,7 +33,6 @@
       border-radius: 20px;
       background: #FFB800;
       height: 32.5vh;
-
 
       img {
         height: 28vh;
@@ -92,14 +89,13 @@
         letter-spacing: 1.24px;
       }
 
-      button{
+      button {
         margin-top: 5%;
         width: 25%;
         height: 4vh;
         border-radius: 15px;
         border: none;
         background-color: #FFB800;
-
         color: #000;
         font-weight: 700;
       }
@@ -114,14 +110,19 @@
     background-color: #FFF;
     align-items: center;
     justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 2%;
 
-    h1 {
-      
-    }
+    .fora {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
 
-    div {
-      
+      div {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
     }
   }
-
 }
