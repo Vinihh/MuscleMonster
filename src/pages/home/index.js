@@ -9,7 +9,7 @@ function Home() {
       <Header />
 
       <nav>
-        <h1>NO PAIN , NO GAIN</h1>
+        <h1>NO PAIN, NO GAIN</h1>
         <h3>O QUE A MENTE QUER, O CORPO ALCANÇA</h3>
       </nav>
 

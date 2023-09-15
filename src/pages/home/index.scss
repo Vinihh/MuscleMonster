@@ -34,6 +34,8 @@
       background: #FFB800;
       height: 32.5vh;
 
+
+
       img {
         height: 28vh;
         margin-bottom: 5px;
@@ -59,6 +61,8 @@
     img {
       width: 30%;
     }
+
+
 
     div {
       display: flex;
@@ -98,6 +102,13 @@
         background-color: #FFB800;
         color: #000;
         font-weight: 700;
+      }
+
+      button:hover {
+        margin-top: 5%;
+        width: 25%;
+        background-color: #ffffff;
+        transition: 0.2s;
       }
     }
   }
