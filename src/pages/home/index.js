@@ -1,4 +1,6 @@
 import Header from '../../components/header';
+import Footer from '../../components/footer';
+import Produto from '../../components/item-produto';
 import './index.scss';
 
 function Home() {
@@ -28,7 +30,32 @@ function Home() {
         </div>
       </aside>
 
+      <section>
+        <img src='/assets/images/img4.png' alt='' />
+          <div>
+            <h1>Gostaria de aprender a treinar da maneira correta?</h1>
+                        
+            <h4>Na Muscle Monster você poderá encontrar diversos personal trainers para ajudá-los a treinar da maneira certa!!</h4>
+
+            <button> Fale Conosco </button>
+          </div>
+      </section>
+
+      <section className='home-produtos'>
+          <h1>OS MAIS VENDIDOS</h1>
+
+          <div>
+
+            <Produto/>
+
+          </div>
+      </section>
+
+    <Footer/>
+
     </div>
+
+
   );
 }
 

@@ -1,0 +1,36 @@
+.footer {
+    width: 100%;
+    background-color: black;
+    height: 25vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    div{    
+        display: flex;
+        flex-direction: column;
+        color: aliceblue;
+        gap: 8px;
+
+        h1{
+            font-size: 16px;
+            text-align: center;
+        }
+
+        a{
+            font-weight: 500;
+        }
+
+        p {
+            
+            .insta {
+                width: 65px;
+            }
+        }
+    }
+    
+}
+
+
+
