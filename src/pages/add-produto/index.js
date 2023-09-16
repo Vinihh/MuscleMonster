@@ -1,5 +1,5 @@
 import './index.scss';
-import HeaderAdm from '../components/header-adm';
+import HeaderAdm from '../../components/header-adm';
 import { Link } from 'react-router-dom';
 
 export default function HomeAdm() {

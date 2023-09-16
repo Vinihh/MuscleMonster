@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './pages/home';
 import HomeAdm from './pages/adm/home-adm';
-import Addproduto from './add-produto'
+import Addproduto from './pages/add-produto'
 
 
 
