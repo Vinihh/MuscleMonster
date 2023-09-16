@@ -30,7 +30,7 @@ function Home() {
         </div>
       </aside>
 
-      <section>
+      <section className='acesse-home'>
         <img src='/assets/images/img4.png' alt='' />
         <div>
           <h1>Gostaria de aprender a treinar da maneira correta?</h1>
