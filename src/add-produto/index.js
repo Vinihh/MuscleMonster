@@ -8,6 +8,7 @@ export default function HomeAdm() {
       <HeaderAdm />
 
       <nav>
+          
         <div className='canto'>
             <img src='/assets/images/usuario-adm.png' />
 
