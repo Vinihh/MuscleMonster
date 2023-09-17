@@ -1,17 +1,19 @@
 import './index.scss';
 import HeaderAdm from '../../components/header-adm';
+import InfoAdm from '../../components/info-adm';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
 
 export default function HomeAdm() {
 
-  const [ nomeproduto, setNomeproduto ] = useState('')
-  const [ categoria, setCategoria ] = useState('')
-  const [ valor, setValor ] = useState('')
-  const [ estoque, setEstoque ] = useState('')
+  const [nomeproduto, setNomeproduto] = useState('')
+  const [categoria, setCategoria] = useState('')
+  const [valor, setValor] = useState('')
+  const [estoque, setEstoque] = useState('')
 
-  const [ salvo, setSalvo ] = useState('')
+  const [salvo, setSalvo] = useState('')
 
 
   async function Inscrever() {
@@ -39,42 +41,31 @@ export default function HomeAdm() {
       <HeaderAdm />
 
       <nav>
-          
-        <div className='canto'>
-            <img src='/assets/images/usuario-adm.png' />
 
-            <p>Muscle Monster</p>
-            <p>Pedido em andamento</p>
-            <p>Personal trainers</p>
-            <p>Adicionar Novos Produtos</p>
-            <p>Estoque</p>
-            <p>Vendas</p>
-            <p>Adicionar Produto</p>
-        </div>
+        <InfoAdm />
 
         <div className='meio'>
 
           <h1>Adicionar Novos Produtos</h1>
           <img src='/assets/images/camera.png' />
 
+          <div className='inputs'>
+            <h1>Nome</h1>
+            <input type='text' onChange={e => setNomeproduto(e.target.value)} />
 
-        <div className='inputs'>
-          <h1>Nome</h1>
-          <input type='text' onChange={e => setNomeproduto(e.target.value)} />
+            <h1>Categoria</h1>
+            <input type='text' onChange={e => setCategoria(e.target.value)} />
 
-          <h1>Categoria</h1>
-          <input type='text' onChange={e => setCategoria(e.target.value)} />
+            <h1>Preço</h1>
+            <input type='text' onChange={e => setValor(e.target.value)} />
 
-          <h1>Preço</h1>
-          <input type='text' onChange={e => setValor(e.target.value)} />
-
-          <h1>Estoque</h1>
-          <input type='text' onChange={e => setEstoque(e.target.value)} />
+            <h1>Estoque</h1>
+            <input type='text' onChange={e => setEstoque(e.target.value)} />
           </div>
 
           <button onClick={Inscrever}>Adicionar Produto</button>
 
-          <h1> {salvo} </h1>
+          <p> {salvo} </p>
 
         </div>
 

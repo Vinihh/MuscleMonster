@@ -14,7 +14,7 @@ export default function VendasAdm() {
         <section className='faixa1-vendas '>
           <h1> Vendas</h1>
 
-          <img src='/assets/images/img1-vendas.png' alt='' />
+          <img src='/assets/images/grafico.png' alt='' />
 
           <button>Ir para a planilha</button>
         </section>

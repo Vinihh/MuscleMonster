@@ -7,7 +7,7 @@ export default function InfoAdm() {
         
           <div className='user'>
             <img src='/assets/images/teste1.png' alt='' />
-            <h1>XEXEL </h1>
+            <h1>XEXEL</h1>
           </div>
 
           <div className='links'>
@@ -34,7 +34,7 @@ export default function InfoAdm() {
             <div>
               <Link id='estoque'> Estoque</Link>
               <Link to='/adm/vendas' > Vendas </Link>
-              <Link> Adicionar novo produto </Link>
+              <Link to={'/add-produto'}> Adicionar novo produto </Link>
 
             </div>
           </div>
