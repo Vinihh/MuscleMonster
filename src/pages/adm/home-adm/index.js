@@ -1,5 +1,7 @@
+import { Link } from 'react-router-dom';
 import HeaderAdm from '../../../components/header-adm';
 import './index.scss';
+import InfoAdm from '../../../components/info-adm';
 
 export default function HomeAdm() {
   return (
@@ -7,20 +9,10 @@ export default function HomeAdm() {
       <HeaderAdm />
 
       <aside>
-        <nav>
-          <div className='user'>
-            <img src='/assets/images/teste1.png' alt='' />
-            <h4>XEXEL </h4>
-          </div>
-
-          <div>
-
-          </div>
-
-        </nav>
+        <InfoAdm />
 
         <section>
-
+          <h1>Seja bem vindo Adiministrador</h1>
         </section>
       </aside>
 
