@@ -1,0 +1,42 @@
+.vendas-adm{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  aside{
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    
+    .faixa1-vendas{
+      width: 75%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-evenly;
+
+
+
+      img{
+        width: 55%;
+        height: 60vh;
+      }
+
+      button{
+        background-color: #FFB800;
+        border: none;
+        width: 18%;
+        height: 5vh;
+        border-radius: 20px;
+
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  
+}
+  
+  
