@@ -9,6 +9,8 @@ import Addproduto from './pages/add-produto';
 import ProdutoAdm from './pages/adm/produto-adm';
 import ClientesAdm from './pages/adm/clientes-adm';
 import VendasAdm from './pages/adm/vendas-adm';
+import Cadastro from './pages/cadastro'
+import Login from './pages/login'
 
 
 
@@ -23,6 +25,8 @@ root.render(
         <Route path='/adm/produto' element={<ProdutoAdm />} />
         <Route path='/adm/busca-cliente' element={<ClientesAdm />} />
         <Route path='/adm/vendas' element={<VendasAdm />} />
+        <Route path='/cadastro' element={<Cadastro />} />
+        <Route path='/Login' element={<Login />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

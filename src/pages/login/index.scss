@@ -1,0 +1,98 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../../public/assets/images/bgcad.png);
+    opacity: 90%;
+    background-size: cover;
+
+
+
+
+    height: 100vh;
+
+    .linha {
+        top: 0;
+        position: absolute;
+        width: 100%;
+        background-color: #FFB800;
+        height: 4px;
+    }
+
+    .cadbox {
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.90);
+        width: 25%;
+        height: 60%;
+
+        h1 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 60px;
+            color: white;
+            letter-spacing: 3px;
+            text-decoration:underline;
+            text-decoration-color: #FFB800;
+            
+        }
+
+        input {
+            margin: 10px;
+            outline: none;
+            border: none;
+            height: 30px;
+            width: 80%;
+            padding: 5px 8px;
+            border-radius: 15px;
+            background-color: white;
+        }
+
+        a{
+            text-align: center;
+            width: 40%;
+        button{
+            margin-top: 30px;
+            font-weight: 600;
+            font-size: 18px;
+            background-color: #ffb800;
+            border: 2px solid #0000;
+            color: black;
+            border-radius: 15px;
+            padding: 0px 30px;
+            height: 30px;
+        }
+
+        }
+
+        button:hover{
+            cursor: pointer;
+            background-color: #ffb700a9;
+            color: rgb(218, 215, 215);
+            transition: 0.5s;
+        }
+
+    
+
+        a{
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+            width: 35%;
+            text-decoration-color: transparent;
+        
+        }
+
+        a:hover{
+            text-decoration: underline;
+            text-decoration-color: white;
+            transition: 0.5s;
+        }
+    }
+
+
+}
