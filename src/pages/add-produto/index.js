@@ -19,7 +19,6 @@ export default function HomeAdm() {
   async function Inscrever() {
     try {
       const addproduto = {
-
         nome: nomeproduto,
         categoria: categoria,
         valor: valor,
