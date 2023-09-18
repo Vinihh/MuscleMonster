@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className="footer">
         <div>
-            <img src='/assets/images/logo2.png' alt=''/>
+            <img className='logo'src='/assets/images/logo2.png' alt=''/>
         </div>
 
         <div>
@@ -24,14 +24,12 @@ export default function Footer() {
             <a>Roupas</a>
         </div>
 
-        <div>
-
-        </div>
+       
 
         <div>
             <h1>SIGA-NOS</h1>
 
-            <p>  <img src='/assets/images/ticktok.png' alt='' />  <img src='/assets/images/x.png' alt='' /> <img className='insta' src='/assets/images/insta.png' alt='' /></p>
+            <p>  <img className='tiktok' src='/assets/images/ticktok.png' alt='' />  <img className='x'src='/assets/images/x.png' alt='' /> <img className='insta' src='/assets/images/insta.png' alt='' /></p>
         </div>
 
     </div>

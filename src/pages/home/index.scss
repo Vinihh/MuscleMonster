@@ -4,8 +4,8 @@
   height: auto;
 
   nav {
-    margin-top: 8%;
-    height: 20vh;
+    margin-top: 1%;
+    height: 15vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
 
   aside {
     width: 100%;
-    height: 50vh;
+    height: 40vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -32,15 +32,14 @@
       flex-direction: column;
       border-radius: 20px;
       background: #FFB800;
-      height: 43vh;
-      width: 40vh;
+      height: 32.5vh;
 
 
 
       img {
-        height: 34vh;
-        width: 40vh;
+        height: 28vh;
         margin-bottom: 5px;
+        border-radius: 20px 20px 0px 0px ;
       }
 
       h1 {
@@ -51,17 +50,17 @@
     }
   }
 
-  > .acesse-home {
+  > section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    height: 60vh;
+    height: 40vh;
     width: 100%;
     background-color: #181818;
 
     img {
-      width: 25%;
+      width: 20%;
     }
 
 
@@ -72,12 +71,12 @@
       align-items: center;
       justify-content: center;
       width: 50%;
-      gap: 10px;
+      gap: 20px;
 
       h1 {
         color: #FFF;
         text-align: center;
-        font-size: 20px;
+        font-size: 25px;
         font-style: normal;
         font-weight: 600;
         line-height: normal;
@@ -89,7 +88,7 @@
         width: 80%;
         color: #FFF;
         text-align: center;
-        font-size: 20px;
+        font-size: 22px;
         font-weight: 300;
         line-height: normal;
         letter-spacing: 1.24px;
@@ -99,7 +98,7 @@
         margin-top: 5%;
         width: 25%;
         height: 4vh;
-        border-radius: 15px;
+        border-radius: 25px;
         border: none;
         background-color: #FFB800;
         color: #000;
@@ -116,7 +115,7 @@
   }
 
   .home-produtos {
-    height: 150vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -139,3 +138,324 @@
     }
   }
 }
+
+@media (max-width:1600px) {
+
+  .App{
+    section{
+      
+        >img{
+          height: 25vh;
+          width: 30vw;
+        }
+      
+    }
+  }
+  
+}
+
+@media (max-width:1200px) {
+
+  .App{
+    nav{
+      height: 10vh;
+    }
+    aside{
+      div{
+        height: 24vh;
+        img{
+          height: 20vh;
+        }
+      }
+    }
+
+    section{
+      height: 30vh;
+      >img{
+        height: 20vh;
+        width: 30vw;
+      }
+      div{
+        h1{
+          width: 500px;
+          font-size: 20px;
+        }
+        h4{
+          width: 500px;
+          font-size: 17px;
+        }
+
+        button{
+          width: 150px;
+          border-radius: 25px;
+        }
+      }
+    
+  }
+  }
+  
+}
+
+@media (max-width:980px) {
+
+  .App{
+    .home-produtos{
+      height: 50vh;
+      .fora{
+        div{
+          width: 25vw;
+          height: 30vh;
+        }
+      }
+    }
+  }
+  
+}
+
+@media (max-width:800px) {
+
+  .App{
+
+    nav{
+      height: 5vh !important;
+      margin-bottom: 30px;
+      h1{
+        font-size: 20px;
+      }
+      h3{
+        font-size: 20px;
+      }
+    }
+
+    section{
+      height: 30vh;
+      >img{
+        height: 20vh;
+        width: 30vw;
+      }
+      div{
+        h1{
+          width: 400px;
+          font-size: 20px;
+        }
+        h4{
+          width: 400px;
+          font-size: 17px;
+        }
+
+        button{
+          width: 150px;
+          border-radius: 25px;
+        }
+      }
+    
+  }
+
+    aside{
+
+      height: 25vh;
+      div{
+        height: 20vh;
+        img{
+          height: 16vh;
+        }
+      }
+    }
+
+    .home-produtos{
+      height: 50vh;
+    }
+  }
+  
+}
+
+@media (max-width:750px) {
+
+  .App{
+    .home-produtos{
+      height: 40vh;
+      .fora{
+        div{
+          width: 25vw;
+          height: 25vh;
+        }
+      }
+    }
+  }
+  
+}
+
+@media (max-width:680px) {
+  .App{
+
+    nav{
+      height: 10vh;
+    }
+    aside{
+      height: 22vh;
+      div{
+        height: 17vh;
+        img{
+          height: 14vh;
+          
+        }
+        h1{
+          font-size: 16px;
+        }
+      }
+    }
+
+    section{
+      height: 25vh;
+      >img{
+        height: 20vh;
+        width: 40vw;
+      }
+      div{
+        h1{
+          width: 300px;
+          font-size: 18px;
+        }
+        h4{
+          width: 300px;
+          font-size: 14px;
+        }
+
+        button{
+          height: 40px;
+          width: 120px;
+          border-radius: 25px;
+        }
+      }
+    
+  }
+  }
+}
+
+@media (max-width:620px) {
+
+  .App{
+    .home-produtos{
+      height: 35vh;
+      .fora{
+        div{
+          width: 25vw;
+          height: 20vh;
+        }
+      }
+    }
+
+    aside{
+
+      height: 20vh;
+      div{
+        height: 15vh;
+        img{
+          height: 12vh;
+        }
+      }
+    }
+
+  }
+  
+}
+
+@media (max-width:570px) {
+
+  .App{
+    .home-produtos{
+      height: 30vh;
+      .fora{
+        div{
+          width: 22vw;
+          height: 17vh;
+        }
+      }
+    }
+
+    aside{
+
+      height: 20vh;
+      div{
+        height: 15vh;
+        img{
+          height: 12vh;
+        }
+      }
+    }
+
+  }
+  
+}
+
+@media (max-width:550px) {
+
+  .App{
+    section{
+      height: 22vh;
+      >img{
+        height: 15vh;
+        width: 35vw;
+      }
+      div{
+        h1{
+          width: 250px;
+          font-size: 16px;
+        }
+        h4{
+          width: 250px;
+          font-size: 13px;
+        }
+
+        button{
+          height: 30px;
+          width: 120px;
+          border-radius: 25px;
+        }
+      }
+    
+  }
+
+  }
+  
+}
+
+@media (max-width:500px) {
+
+  .App{
+    .home-produtos{
+     
+      h1{
+        margin-top: -50px;
+        margin-bottom:40px;
+      }
+      height: 28vh;
+      .fora{
+        
+        div{
+          width: 20vw;
+          height: 10vh;
+        }
+      }
+    }
+
+    aside{
+
+      height: 15vh;
+      div{
+        width: 28vw;
+        height: 12vh;
+        h1{
+          font-size: 14px;
+        }
+        img{
+          
+          height: 9vh;
+        }
+      }
+    }
+
+  }
+  
+}
+
