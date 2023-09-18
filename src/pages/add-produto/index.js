@@ -31,8 +31,6 @@ export default function HomeAdm() {
     } catch (err) {
       setSalvo(err.response.data.erro)
     }
-
-
   }
 
   return (

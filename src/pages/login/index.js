@@ -13,20 +13,21 @@ export default function Login() {
         e.preventDefault();
 
         try {
-            // Envie uma solicitação GET para o servidor para autenticar o usuário
-            const response = await axios.get('http://localhost:5000/login');
 
-            // Verifique se o email e a senha correspondem às informações retornadas pelo servidor
-            if (login === response.data.email && senha === response.data.senha) {
+            const response = await axios.get('http://localhost:5000/login');
+            const credencial = response.data
+
+
+            if (login === credencial.email && senha === credencial.senha) {
         
                 window.location.href = 'http://localhost:3000';
             } else {
                 setMessage('⚠ Login ou senha incorretos');
             }
 
-        } catch (error) {
+        } catch (err) {
             
-            setMessage('⚠ Erro ao tentar fazer login');
+            setMessage(err.response.data.erro);
         }
     }
 
