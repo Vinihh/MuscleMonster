@@ -1,4 +1,5 @@
 
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function Header() {
@@ -9,11 +10,13 @@ export default function Header() {
 
       <div className='inp-busca'> 
         <input placeholder='Procurar...'></input>
+       
         <button><img alt='' src='/assets/images/icon-busca.png'/></button>
       </div>
 
       <div className='icons'>
-        <button><img alt='' src='/assets/images/icon-login.png'/></button>
+        <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
+        <Link to='/cadastro'><img alt='' src='/assets/images/icon-login.png'/></Link>
       </div>
     </div>
 

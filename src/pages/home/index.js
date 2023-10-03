@@ -3,7 +3,7 @@ import Footer from '../../components/footer';
 import Produto from '../../components/item-produto';
 import './index.scss';
 
-function Home() {
+export default function Home() {
   return (
     <div className="App">
       <Header />
@@ -68,4 +68,4 @@ function Home() {
   );
 }
 
-export default Home;
+

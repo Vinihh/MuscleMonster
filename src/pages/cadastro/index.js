@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom'
 import './index.scss'
-import { useState } from 'react' // Importe o useState corretamente
+import { useState } from 'react'
 import axios from 'axios'
 
 export default function PaginaCadastro() {
-  const [cliente, setCliente] = useState('');
+  const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [telefone, setTelefone] = useState('');
   const [senha, setSenha] = useState('');
-  const [confirmSenha, setConfirmSenha] = useState(''); // Estado para a confirmação de senha
+  const [confirmSenha, setConfirmSenha] = useState('');
   const [salvo, setSalvo] = useState('');
 
   async function Cadastro() {
@@ -19,18 +19,18 @@ export default function PaginaCadastro() {
       }
 
       const cadastro = {
-        cliente: cliente,
+        nome: nome,
         email: email,
         telefone: telefone,
         senha: senha,
       };
 
-      const url = 'http://localhost:5000/inserircadastro';
-      const resposta = await axios.post(url, cadastro);
+      let r = await axios.post('http://localhost:5000/cadastro', cadastro);
       
-      // Lógica adicional para tratamento de sucesso
-      setSalvo('Cadastro realizado com sucesso.');
 
+      alert('Cadastro realizado com sucesso.');
+      window.location.href = 'http://localhost:3000/login';
+      
     } catch (err) {
       setSalvo(err.response.data.erro);
     }
@@ -41,16 +41,15 @@ export default function PaginaCadastro() {
       <div className="linha"></div>
       <div className='cadbox'>
         <h1>Cadastro</h1>
-        <input type='text' onChange={e => setCliente(e.target.value)} placeholder='Nome' />
+        <input type='text' onChange={e => setNome(e.target.value)} placeholder='Nome' />
         <input type='text' onChange={e => setTelefone(e.target.value)} placeholder='Telefone' />
         <input type='text' onChange={e => setEmail(e.target.value)} placeholder='E-mail' />
-        <input type='text' onChange={e => setSenha(e.target.value)} placeholder='Senha' />
-        <input type='text' onChange={e => setConfirmSenha(e.target.value)} placeholder='Confirme sua Senha' />
+        <input type='password' onChange={e => setSenha(e.target.value)} placeholder='Senha' />
+        <input type='password' onChange={e => setConfirmSenha(e.target.value)} placeholder='Confirme sua Senha' />
         <button onClick={Cadastro}>Cadastrar</button>
-        <p>{salvo}</p> {/* Exibe a mensagem de erro/sucesso */}
+        <p>{salvo}</p>
         <Link to='/login'>Já tem uma conta? Faça login.</Link>
       </div>
     </div>
   );
 }
-                                                        

@@ -58,41 +58,7 @@ export default function ProdutoAdm() {
           </div>
           <nav>
           <nav>
-          <table>
-              <colgroup>
-                <col style={{ width: 30 + '%' }} />
-                <col style={{ width: 15 + '%' }} />
-                <col style={{ width: 12 + '%' }} />
-                <col style={{ width: 12 + '%' }} />
-                <col style={{ width: 20 + '%' }} />
-              </colgroup>
-              <thead>
-                <tr>
-
-                  <th>Modelo</th>
-                  <th>Marca</th>
-                  <th>Ano</th>
-                  <th>Tipo</th>
-                  <th>placa</th>
-                </tr>
-              </thead>
-              <tbody>
-                {listaProdutos.map(item =>
-                  <tr>
-                    <td>{item.modelo}</td>
-                    <td>{item.marca}</td>
-                    <td>{item.ano}</td>
-                    <td>{item.tipo}</td>
-                    <td>{item.placa}</td>
-                    <td className='btns' style={{ display: 'flex', height: 20 }}>
-                      <i class="fa-regular fa-pen-to-square" ></i>
-                      <i class="fa-solid fa-delete-left" onClick={() => removerProduto(item.id)}></i>
-                    </td>
-                  </tr>  
-                )}
-                
-              </tbody>
-            </table>
+            
           </nav>
           </nav>
         </section>

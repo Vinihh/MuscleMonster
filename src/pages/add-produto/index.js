@@ -49,9 +49,11 @@ export default function HomeAdm() {
           <div className='inputs'>
             <h1>Nome</h1>
             <input type='text' onChange={e => setNomeproduto(e.target.value)} />
-
+            
             <h1>Categoria</h1>
-            <input type='text' onChange={e => setCategoria(e.target.value)} />
+            <select>
+              <option>Selecione...</option>
+            </select>
 
             <h1>Preço</h1>
             <input type='text' onChange={e => setValor(e.target.value)} />

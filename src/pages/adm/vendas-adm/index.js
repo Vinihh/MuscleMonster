@@ -16,7 +16,7 @@ export default function VendasAdm() {
 
           <img src='/assets/images/grafico.png' alt='' />
 
-          <button>Ir para a planilha</button>
+          <a href='https://docs.google.com/spreadsheets/d/147OK3zxIC6LpdzQHMXzJcPQv3sX2SztOFccDG14_xgA/edit#gid=0'>Ir para a planilha</a>
         </section>
 
       </aside>

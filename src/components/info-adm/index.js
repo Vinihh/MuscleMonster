@@ -21,7 +21,7 @@ export default function InfoAdm() {
               <h1> Muscle Monster</h1>
               <Link to='/adm/produto'> Produtos </Link>
               <Link> Pedidos em Andamento</Link>
-              <Link> Personal Trainers</Link>
+              <Link to='/adm/personal'> Personal Trainers</Link>
               <Link to='/adm/busca-cliente'> Clientes </Link>
             </div>
           </div>

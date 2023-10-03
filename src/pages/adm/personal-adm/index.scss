@@ -1,0 +1,65 @@
+.personal-adm{
+  display: flex;
+  flex-direction: column;
+  height: auto;
+
+  aside{
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    
+    .faixa1-personal{
+      width: 75%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 0px;
+      gap: 30px 0px;
+
+      .inp-busca{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 10px 0px 20px;
+  
+        height: 4.5vh;
+        width: 45%;
+        border: 1px solid #000;
+        border-radius: 20px;
+        
+  
+        input{
+          background: transparent;
+          border: none;
+          box-shadow: 0 0 0 0;
+          outline: 0;
+          width: 90%;
+          color: #000;
+          font-size: 15px;
+        }
+  
+        input::placeholder{
+          color:#000 ;
+          font-size: 15px;
+        }
+  
+        img{
+          height:2.5vh ;
+          width: 100%;
+        }
+  
+        button{
+          background: none;
+          border: none;
+        }
+      }
+    }
+  }
+  
+}
+  
+  
