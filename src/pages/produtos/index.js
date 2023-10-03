@@ -19,11 +19,29 @@ export default function PaginaProduto() {
             <h2>R$98,99</h2>
             <h3>ou até 6x de R$16,66</h3>
 
-            <div></div>
+            <div className='imagens'>
+              <img src='/assets/images/produto1.png' />
+              <img src='/assets/images/produto2.png' />
+              <img src='/assets/images/produto3.png' />
+            </div>
+
+            <button> Adicionar ao carrinho </button>
+
+            <div className='form-pay'>
+              <img src='/assets/images/form-pay1.png' alt='' />
+              <img src='/assets/images/form-pay2.png' alt='' />
+              <img src='/assets/images/form-pay3.png' alt='' />
+              <img src='/assets/images/form-pay4.png' alt='' />
+            </div>
           </div>
         </div>
       </nav>
 
+      <hr></hr>
+
+      <section>
+        <h1> Descrição</h1>
+      </section>
 
     </div>
 
