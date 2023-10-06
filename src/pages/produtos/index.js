@@ -1,48 +1,42 @@
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Produto from '../../components/item-produto';
+import PaginaProdut from '../../components/comp-produtos';
+import axios from 'axios';
+
 import './index.scss';
+import { useEffect, useState } from 'react';
 
 export default function PaginaProduto() {
+
+  const [produto,setProduto] = useState([]);
+  const [erro,setErro] = useState('')
+
+  async function buscarProduto(){
+    try {
+      let url = `http://localhost:5000/listar/produto/1`;
+      let resposta = await axios.get(url);
+      setProduto(resposta.data)
+      console.log(resposta)
+    } catch (err) {
+      setErro(err.response.data.erro); 
+    }
+  }
+
+  useEffect(() => {
+    buscarProduto();
+  }, []);
+
   return (
     <div className="pg-produto">
-      <Header />
-
-      <nav>
-        <div className='imagem'>
-          <img src='/assets/images/produto3.png' />
-        </div>
-
-        <div className='info-produto'>
-          <div>
-            <h1>Whey Growth 80% Proteína Concentrada 1 Kg Sabor Leite</h1>
-            <h2>R$98,99</h2>
-            <h3>ou até 6x de R$16,66</h3>
-
-            <div className='imagens'>
-              <img src='/assets/images/produto1.png' />
-              <img src='/assets/images/produto2.png' />
-              <img src='/assets/images/produto3.png' />
-            </div>
-
-            <button> Adicionar ao carrinho </button>
-
-            <div className='form-pay'>
-              <img src='/assets/images/form-pay1.png' alt='' />
-              <img src='/assets/images/form-pay2.png' alt='' />
-              <img src='/assets/images/form-pay3.png' alt='' />
-              <img src='/assets/images/form-pay4.png' alt='' />
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      <hr></hr>
-
-      <section>
-        <h1> Descrição</h1>
-      </section>
-
+     
+                        <PaginaProdut
+                            produto={produto.produto}
+                            imagem={produto.imagem}
+                            preco={produto.preco}
+                            estoque={produto.estoque}
+                        />
+              
     </div>
 
   );

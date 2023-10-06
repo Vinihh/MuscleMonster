@@ -2,6 +2,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Produto from '../../components/item-produto';
 import './index.scss';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
@@ -14,20 +15,26 @@ export default function Home() {
       </nav>
 
       <aside>
+        <Link to='/suplementos'>
         <div>
           <img src='/assets/images/img1.png' alt='' />
           <h1>  Suplementos</h1>
         </div>
+        </Link>
 
+        <Link to='/equipamentos'>
         <div>
           <img src='/assets/images/img2.png' alt='' />
           <h1>Equipamentos</h1>
         </div>
+        </Link>
 
+        <Link to='/roupas'>
         <div>
           <img src='/assets/images/img3.png' alt='' />
           <h1>Roupas/Acessórios</h1>
         </div>
+        </Link>
       </aside>
 
       <section>
@@ -54,7 +61,7 @@ export default function Home() {
           </div>
 
           <div>
-            <Produto />
+            <Link to='/produtos' ><Produto /></Link>
           </div>
 
         </div>

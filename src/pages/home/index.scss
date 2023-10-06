@@ -27,6 +27,11 @@
     justify-content: space-evenly;
     margin-top: 3%;
 
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+
     div {
       display: flex;
       flex-direction: column;
@@ -72,6 +77,10 @@
       justify-content: center;
       width: 50%;
       gap: 20px;
+      
+      a{
+        text-decoration: none;
+      }
 
       h1 {
         color: #FFF;
