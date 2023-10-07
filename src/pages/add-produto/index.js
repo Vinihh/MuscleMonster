@@ -33,8 +33,10 @@ export default function HomeAdm() {
       setNomeproduto('');
       setCategoria('');
       setValor(0);
-      setEstoque('');
       setImg('');
+      setEstoque('')
+
+      setSalvo('Produto salvo com sucesso')
 
     } catch (err) {
       setSalvo(err.response.data.erro)

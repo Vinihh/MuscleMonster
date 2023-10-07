@@ -1,14 +1,21 @@
-.produto-adm{
+.produto-adm {
   display: flex;
   flex-direction: column;
   height: auto;
 
-  aside{
+  .busca {
     display: flex;
-    flex-direction: row;
-    height: 90vh;
-    
-    .faixa1-produto{
+
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    height: 40vh;
+    width: 100%;
+    align-items: center;
+
+    .faixa1-produto {
       width: 75%;
       height: 100%;
 
@@ -19,20 +26,20 @@
       padding: 40px 0px;
       gap: 30px 0px;
 
-      .inp-busca{
+      .inp-busca {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0px 10px 0px 20px;
-  
+
         height: 4.5vh;
         width: 45%;
         border: 1px solid #000;
         border-radius: 20px;
-        
-  
-        input{
+
+
+        input {
           background: transparent;
           border: none;
           box-shadow: 0 0 0 0;
@@ -41,25 +48,73 @@
           color: #000;
           font-size: 15px;
         }
-  
-        input::placeholder{
-          color:#000 ;
+
+        input::placeholder {
+          color: #000;
           font-size: 15px;
         }
-  
-        img{
-          height:2.5vh ;
+
+        img {
+          height: 2.5vh;
           width: 100%;
         }
-  
-        button{
+
+        button {
           background: none;
           border: none;
         }
       }
     }
   }
-  
+
+  table {
+    width: 90%;
+    height: 20vw;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgb(189, 189, 189);
+    border-radius: 8px;
+    overflow-y: auto;
+    /* Adição para habilitar a barra de rolagem vertical */
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #616161;
+    }
+
+    tr {
+      width: 100%;
+    }
+
+    th {
+      background-color: #9f9f9f;
+      color: white;
+    }
+
+    tbody tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      max-width: 80px;
+      max-height: 100px;
+      object-fit: cover;
+    }
+
+    button {
+      background-color: #e74c3c;
+      color: white;
+      padding: 8px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #c0392b;
+      }
+    }
+  }
 }
-  
-  
