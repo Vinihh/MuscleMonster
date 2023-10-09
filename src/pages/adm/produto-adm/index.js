@@ -76,7 +76,7 @@ export default function ProdutoAdm() {
             <tbody>
               {listaProdutos.map((item) => (
                 <tr key={item.id}>
-                  <td><img src={item.img} alt={item.produto} /></td>
+                  <td><img src={item.imagem} alt={item.produto} /></td>
                   <td>{item.produto}</td>
                   <td>{item.categoria}</td>
                   <td>{item.preco}</td>
