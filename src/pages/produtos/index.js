@@ -14,7 +14,7 @@ export default function PaginaProduto() {
 
   async function buscarProduto() {
     try {
-      let url = `http://localhost:5000/listar/produto/2`;
+      let url = `http://localhost:5000/listar/produto/1`;
       let resposta = await axios.get(url);
       setProduto(resposta.data)
       console.log(resposta)
