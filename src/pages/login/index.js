@@ -26,10 +26,9 @@ export default function Login() {
 
     try {
       const response = await axios.post('http://localhost:5000/login', user);
-      const credencial = response.data;
 
-      if ( email != ''  && senha != '' ) {
-        // Redirect to the admin home page on successful login
+      if( email != ''  && senha != '' ) {
+
         navigate('/');
 
       }

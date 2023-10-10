@@ -10,6 +10,7 @@ export default function HomeAdm() {
 
   const [nomeproduto, setNomeproduto] = useState('')
   const [categoria, setCategoria] = useState('')
+  const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState(0)
   const [estoque, setEstoque] = useState('')
   const [img, setImg] = useState('')
@@ -20,7 +21,7 @@ export default function HomeAdm() {
   async function Inscrever() {
     try {
       const addproduto = {
-        url:img,
+        url: img,
         nome: nomeproduto,
         categoria: categoria,
         valor: valor,
@@ -34,7 +35,7 @@ export default function HomeAdm() {
       setCategoria('');
       setValor(0);
       setImg('');
-      setEstoque('')
+      setEstoque(0)
 
       setSalvo('Produto salvo com sucesso')
 
@@ -55,18 +56,20 @@ export default function HomeAdm() {
         <div className='meio'>
 
           <h1>Adicionar Novos Produtos</h1>
-          <img src='/assets/images/camera.png' />
-
+          <div className='upload'>
+            <img src='/assets/images/camera.png' />
+            <input type='file' />
+          </div>
           <div className='inputs'>
-
-            <h1>Url da Img</h1>
-            <input type='text' value={img} onChange={e => setImg(e.target.value)} />
 
             <h1>Nome</h1>
             <input type='text' value={nomeproduto} onChange={e => setNomeproduto(e.target.value)} />
-            
+
+            <h1>Descrição</h1>
+            <input type='text' value={descricao} onChange={e => setDescricao(e.target.value)} />
+
             <h1>Categoria</h1>
-            <input type='text' value={categoria}  onChange={e => setCategoria(e.target.value)} />
+            <input type='text' value={categoria} onChange={e => setCategoria(e.target.value)} />
 
 
             <h1>Preço</h1>
