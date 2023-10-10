@@ -27,17 +27,15 @@ export default function Login() {
     try {
       const response = await axios.post('http://localhost:5000/login', user);
 
-      if( email != ''  && senha != '' ) {
-
+      if( response.status === 204 ) {
         navigate('/');
-
       }
-       else if(email === undefined || senha === undefined){
-        setErro('⚠ Campo obrigatorio');
+    } catch (err) {
+      if(err.response) {
+        setErro(err.response.data.erro)
+      } else {
+        setErro(err.erro.erro)
       }
-    } catch (error) {
-      console.error('⚠ Erro ao verificar as credenciais:', error);
-        setErro('⚠ Login ou senha incorretos');
       
     } finally {
       setCarregando(false);
