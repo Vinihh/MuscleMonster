@@ -2,9 +2,12 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Produto from '../../components/item-produto';
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Home() {
+  const[produtos,setProdutos] = useState([]);
+
   return (
     <div className="App">
       <Header />
@@ -52,17 +55,14 @@ export default function Home() {
         <h1>OS MAIS VENDIDOS</h1>
 
         <div className='fora'>
-          <div>
-            <Produto />
-          </div>
-          
-          <div>
-            <Produto />
-          </div>
-
-          <div>
-            <Link to='/produtos' ><Produto /></Link>
-          </div>
+          {produtos.map((produtos) => (
+            <Produto 
+            nome={produtos.nome}
+            preco={produtos.preco}
+            imagem={produtos.imagem}
+            descricao={produtos.descricao}
+            />
+          ))}
 
         </div>
       </section>

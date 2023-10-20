@@ -17,7 +17,7 @@ import Endereco from './pages/endereco';
 import Suplementos from './pages/suplementos';
 import Equipamentos from './pages/equipamentos';
 import Roupas from './pages/roupas';
-import PaginaProdut from './components/comp-produtos';
+
 
 
 
@@ -36,7 +36,6 @@ root.render(
         <Route path='/Login' element={<Login />} />
         <Route path='/adm/personal' element={<PersonalAdm />} />
         <Route path='/produtos' element={<PaginaProduto />} />
-        <Route path='/produt' element={<PaginaProdut />} />
         <Route path='/endereco' element={<Endereco />} />
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />

@@ -27,7 +27,7 @@ export default function Login() {
     try {
       const response = await axios.post('http://localhost:5000/login', user);
 
-      if( response.status === 204 ) {
+      if( response.status === 200 ) {
         navigate('/');
       }
     } catch (err) {
