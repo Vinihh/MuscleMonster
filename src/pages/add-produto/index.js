@@ -62,7 +62,7 @@ export default function HomeAdm() {
           <h1>Adicionar Novos Produtos</h1>
 
           <div className='upload' onClick={escolherImagem}>
-            <img src='/assets/images/camera.png' />
+            <img src='/assets/images/camicon.png' />
             <input type='file' id='imagem'/>
 
           </div>
