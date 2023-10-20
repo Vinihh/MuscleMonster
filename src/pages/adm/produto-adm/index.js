@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './index.scss';
+import { useEffect } from 'react';
 import InfoAdm from '../../../components/info-adm';
 import HeaderAdm from '../../../components/header-adm';
 import { useState } from 'react';
@@ -33,6 +34,15 @@ export default function ProdutoAdm() {
     }
   }
 
+  function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        buscarProdutoPorNome();
+  }
+}
+
+useEffect(() => {
+  buscarProdutoPorNome();
+}, []);
 
   return (
 
@@ -50,7 +60,7 @@ export default function ProdutoAdm() {
             <h1> Produtos</h1>
 
             <div className='inp-busca'>
-              <input value={busca} onChange={e => setBusca(e.target.value)} placeholder='Procurar produtos...'></input>
+              <input value={busca} onKeyUp={teclaEnter} onChange={e => setBusca(e.target.value)} placeholder='Procurar produtos...'></input>
               <button onClick={buscarProdutoPorNome}><img alt='' src='/assets/images/icon-busca2.png' /></button>
             </div>
 
@@ -70,19 +80,19 @@ export default function ProdutoAdm() {
                 <th>Categoria</th>
                 <th>Preço</th>
                 <th>Estoque</th>
-                <th>apagar</th>
+                <th>Apagar</th>
               </tr>
             </thead>
             <tbody>
               {listaProdutos.map((item) => (
                 <tr key={item.id}>
                   <td><img src={item.imagem} alt={item.produto} /></td>
-                  <td>{item.produto}</td>
+                  <td id='T1'>{item.produto}</td>
                   <td>{item.categoria}</td>
-                  <td>{item.preco}</td>
+                  <td>R${item.preco}</td>
                   <td>{item.estoque}</td>
                   <td>
-                    <img src='/assets/images/lixo.png.svg' onClick={() => removerProduto(item.id)} />
+                    <img  id='trash' src='/assets/images/lixo.png.svg' onClick={() => removerProduto(item.id)} />
                   </td>
                 </tr>
               ))}

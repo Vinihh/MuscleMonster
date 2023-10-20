@@ -12,7 +12,7 @@ export default function HomeAdm() {
   const [categoria, setCategoria] = useState('')
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState(0)
-  const [estoque, setEstoque] = useState('')
+  const [estoque, setEstoque] = useState(0)
   const [img, setImg] = useState('')
 
   const [salvo, setSalvo] = useState('')
@@ -45,6 +45,10 @@ export default function HomeAdm() {
 
   }
 
+  function escolherImagem(){
+    document.getElementById('imagem').click();
+  }
+
   return (
     <div className="add-produto">
       <HeaderAdm />
@@ -56,27 +60,35 @@ export default function HomeAdm() {
         <div className='meio'>
 
           <h1>Adicionar Novos Produtos</h1>
-          <div className='upload'>
+
+          <div className='upload' onClick={escolherImagem}>
             <img src='/assets/images/camera.png' />
-            <input type='file' />
+            <input type='file' id='imagem'/>
+
           </div>
           <div className='inputs'>
 
+            <div>
             <h1>Nome</h1>
             <input type='text' value={nomeproduto} onChange={e => setNomeproduto(e.target.value)} />
 
             <h1>Descrição</h1>
-            <input type='text' value={descricao} onChange={e => setDescricao(e.target.value)} />
+            <textarea value={descricao} onChange={e => setDescricao(e.target.value)}/>
+
 
             <h1>Categoria</h1>
             <input type='text' value={categoria} onChange={e => setCategoria(e.target.value)} />
 
+            </div>
+
+            <div>
 
             <h1>Preço</h1>
-            <input type='number' value={valor} onChange={e => setValor(e.target.value)} />
+            <input type='number' step='10' value={valor} onChange={e => setValor(e.target.value)} />
 
             <h1>Estoque</h1>
-            <input type='text' onChange={e => setEstoque(e.target.value)} />
+            <input type='number' step='5' value={estoque} onChange={e => setEstoque(e.target.value)} />
+            </div>
           </div>
 
           <button onClick={Inscrever}>Adicionar Produto</button>
