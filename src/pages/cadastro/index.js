@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom'
-import './index.scss'
-import { useState } from 'react'
-import axios from 'axios'
+import { Link } from 'react-router-dom';
+import './index.scss';
+import { useState } from 'react';
+import axios from 'axios';
 
 export default function PaginaCadastro() {
   const [nome, setNome] = useState('');

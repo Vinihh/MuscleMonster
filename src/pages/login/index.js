@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import storage from 'local-storage'
 
 
 
@@ -27,8 +28,9 @@ export default function Login() {
     try {
       const response = await axios.post('http://localhost:5000/login', user);
 
-      if( response.status === 204 ) {
+      if( response.status === 200 ) {
         navigate('/');
+        storage('usuario-logado', response.data)
       }
     } catch (err) {
       if(err.response) {
