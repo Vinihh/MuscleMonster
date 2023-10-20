@@ -1,6 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import './index.scss';
+import Storage from 'local-storage';
 
 export default function Header() {
   return (
@@ -16,7 +17,8 @@ export default function Header() {
 
       <div className='icons'>
         <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
-        <Link to='/cadastro'><img alt='' src='/assets/images/icon-login.png'/></Link>
+        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/adm/home' } > {Storage('usuario-logado') ? 'Minha Conta' : 'Login'} <img alt='' src='/assets/images/icon-login.png'/> </Link>
+      
       </div>
     </div>
 

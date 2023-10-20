@@ -2,6 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 import { useRef, useState } from 'react';
 import axios from 'axios';
+import storage from 'local-storage'
 
 
 
@@ -29,6 +30,7 @@ export default function Login() {
 
       if( response.status === 200 ) {
         navigate('/');
+        storage('usuario-logado', response.data)
       }
     } catch (err) {
       if(err.response) {
