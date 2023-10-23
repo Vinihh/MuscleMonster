@@ -13,7 +13,7 @@ export default function HomeAdm() {
   const [descricao, setDescricao] = useState('')
   const [valor, setValor] = useState(0)
   const [estoque, setEstoque] = useState(0)
-  const [img, setImg] = useState('')
+  const [imagem, setImagem] = useState('')
 
   const [salvo, setSalvo] = useState('')
 
@@ -21,7 +21,6 @@ export default function HomeAdm() {
   async function Inscrever() {
     try {
       const addproduto = {
-        url: img,
         nome: nomeproduto,
         categoria: categoria,
         valor: valor,
@@ -29,13 +28,16 @@ export default function HomeAdm() {
         estoque: estoque
       };
 
+      
+
       const url = 'http://localhost:5000/inserir'
       const resposta = await axios.post(url, addproduto)
 
       setNomeproduto('');
       setCategoria('');
+      setDescricao('');
       setValor(0);
-      setImg('');
+      setImagem('');
       setEstoque(0)
 
       setSalvo('Produto salvo com sucesso')
@@ -48,6 +50,10 @@ export default function HomeAdm() {
 
   function escolherImagem(){
     document.getElementById('imagem').click();
+  }
+
+  function mostrarImagem(){
+    return URL.createObjectURL(imagem);
   }
 
   return (
@@ -63,8 +69,17 @@ export default function HomeAdm() {
           <h1>Adicionar Novos Produtos</h1>
 
           <div className='upload' onClick={escolherImagem}>
-            <img src='/assets/images/camicon.png' />
-            <input type='file' id='imagem'/>
+
+          {!imagem &&
+            <img src='/assets/images/camicon.png' alt='' />
+          }
+
+          {imagem &&
+            <img className='imagem-produto' src={mostrarImagem()} alt='' />
+          }
+            
+            
+            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])}/>
 
           </div>
           <div className='inputs'>
@@ -74,7 +89,7 @@ export default function HomeAdm() {
             <input type='text' value={nomeproduto} onChange={e => setNomeproduto(e.target.value)} />
 
             <h1>Descrição</h1>
-            <textarea value={descricao} onChange={e => setDescricao(e.target.value)}/>
+            <textarea value={descricao} type='text' onChange={e => setDescricao(e.target.value)}/>
 
 
             <h1>Categoria</h1>
