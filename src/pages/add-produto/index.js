@@ -25,6 +25,7 @@ export default function HomeAdm() {
         nome: nomeproduto,
         categoria: categoria,
         valor: valor,
+        descricao:descricao,
         estoque: estoque
       };
 
