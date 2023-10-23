@@ -5,9 +5,10 @@ import { useState } from 'react';
 export default function MinhaConta() {
     
     const [mostrarinfo, setMostrarInfo] = useState(false)
+    
 
     return (
-        <div className="minha-conta">
+        <div className={mostrarinfo ? "minha-conta mostrar" : "minha-conta"}>
 
             <div className='user'>
                 <img src='/assets/images/teste1.png' alt='' />

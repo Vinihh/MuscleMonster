@@ -8,20 +8,15 @@ import MinhaConta from '../../components/minhaconta';
 
 export default function Home() {
   const[produtos,setProdutos] = useState([]);
+  const [mostrarInfo, setMostrarInfo] = useState(false);
 
-  function AparecerMinhaCnta() {
-    var elemento = document.getElementById(<MinhaConta/>);
-    elemento.style.display = 'none';
-  }
+
   
 
 
   return (
     <div className="App">
       <Header />
-
-      <MinhaConta/>
-
       <nav>
         
         <h1>NO PAIN, NO GAIN</h1>
