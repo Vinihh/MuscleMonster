@@ -4,15 +4,26 @@ import Produto from '../../components/item-produto';
 import './index.scss';
 import { Link,useParams } from 'react-router-dom';
 import { useState } from 'react';
+import MinhaConta from '../../components/minhaconta';
 
 export default function Home() {
   const[produtos,setProdutos] = useState([]);
+
+  function AparecerMinhaCnta() {
+    var elemento = document.getElementById(<MinhaConta/>);
+    elemento.style.display = 'none';
+  }
+  
+
 
   return (
     <div className="App">
       <Header />
 
+      <MinhaConta/>
+
       <nav>
+        
         <h1>NO PAIN, NO GAIN</h1>
         <h3>O QUE A MENTE QUER, O CORPO ALCANÇA</h3>
       </nav>
