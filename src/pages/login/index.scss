@@ -87,12 +87,13 @@
             color: white;
             width: 35%;
             text-decoration-color: transparent;
+            font-weight: 500;
         
         }
 
         a:hover{
             text-decoration: underline;
-            text-decoration-color: white;
+            text-decoration-color: red;
             transition: 0.5s;
         }
     }
