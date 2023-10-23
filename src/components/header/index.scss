@@ -67,10 +67,26 @@
         border: none;
       }
 
+      
       img{
         width: 4vh;
         height: 35%;
       }
+
+      a{
+        font-size: 14px;
+        color: white;
+        font-weight: 500;
+        text-decoration: none;
+        margin-right: 10px;
+      }
+
+      a:hover{
+        color: rgb(230, 230, 230);
+        transition: 0.5s;
+        
+      }
+    
     }
   }
 

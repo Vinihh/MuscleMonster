@@ -17,7 +17,8 @@ export default function Header() {
 
       <div className='icons'>
         <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
-        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/adm/home' } > {Storage('usuario-logado') ? 'Minha Conta' : 'Login'} <img alt='' src='/assets/images/icon-login.png'/> </Link>
+        
+        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/adm/home' } > <img alt='' src='/assets/images/icon-login.png'/> {Storage('usuario-logado') ? 'Minha Conta' : 'Login'}  </Link>
       
       </div>
     </div>
