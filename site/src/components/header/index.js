@@ -23,6 +23,21 @@ export default function Header() {
         <div className='inp-busca'>
           <input placeholder='Procurar...'></input>
 
+<<<<<<< HEAD:site/src/components/header/index.js
+      <div className='icons'>
+        <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
+        
+        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/adm/home' } > {Storage('usuario-logado') ? 'Minha Conta' : 'Login'} <img alt='' src='/assets/images/icon-login.png'/> </Link>
+
+        
+      
+
+      
+
+      
+        
+        
+=======
           <button><img alt='' src='/assets/images/icon-busca.png' /></button>
         </div>
 
@@ -34,6 +49,7 @@ export default function Header() {
           </button>
 
         </div>
+>>>>>>> 62b087a34d5975551f4a0b3b6d0238fd4b349d4a:src/components/header/index.js
       </div>
 
       <section className='container'>

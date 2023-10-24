@@ -22,12 +22,14 @@ import MinhasCompras from './pages/minhascompras';
 import MeuPerfil from './pages/meuperfil';
 
 
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <ToastContainer />
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home />} />
