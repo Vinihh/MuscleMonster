@@ -3,6 +3,11 @@
   flex-direction: column;
   overflow: hidden;
 
+  .Toastify__toast {
+    background-color: #ff5722; /* Cor de fundo do toast */
+    color: #fff; /* Cor do texto do toast */
+  }
+
   nav {
     display: flex;
     flex-direction: row;

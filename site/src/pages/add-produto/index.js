@@ -2,9 +2,17 @@ import './index.scss';
 import HeaderAdm from '../../components/header-adm';
 import InfoAdm from '../../components/info-adm';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { cadastrarProduto,inserirImagem } from '../../api/addPrdtapi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
+import Storage from 'local-storage';
+import './toastStyles.css'; // Importe o arquivo CSS personalizado
+
+
+
+
+import { toast} from 'react-toastify';
+
 
 export default function HomeAdm() {
 
@@ -17,22 +25,23 @@ export default function HomeAdm() {
 
   const [salvo, setSalvo] = useState('')
 
-
-  async function Inscrever() {
+  async function salvarClick(){
     try {
-      const addproduto = {
-        nome: nomeproduto,
-        categoria: categoria,
-        valor: valor,
-        descricao:descricao,
-        estoque: estoque
-      };
 
+    const produtos = await cadastrarProduto(nomeproduto ,categoria ,valor ,descricao ,estoque);
+    const r = await inserirImagem(produtos.id,imagem)
+    limpar();
+
+    toast.dark('produto cadastrado')
+
+    } catch (err) {
+      toast.error(err.response.data.erro)
       
+    }
+  }
 
-      const url = 'http://localhost:5000/inserir'
-      const resposta = await axios.post(url, addproduto)
 
+  function limpar(){
       setNomeproduto('');
       setCategoria('');
       setDescricao('');
@@ -40,20 +49,15 @@ export default function HomeAdm() {
       setImagem('');
       setEstoque(0)
 
-      setSalvo('Produto salvo com sucesso')
-
-    } catch (err) {
-      setSalvo(err.response.data.erro)
-    }
-
+      
   }
 
   function escolherImagem(){
-    document.getElementById('imagem').click();
+    document.getElementById('imagemProduto').click();
   }
 
   function mostrarImagem(){
-    return URL.createObjectURL(imagem);
+    return URL.createObjectURL(imagem)
   }
 
   return (
@@ -79,9 +83,11 @@ export default function HomeAdm() {
           }
             
             
-            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])}/>
+            <input type='file' id='imagemProduto' onChange={e => setImagem(e.target.files[0])}/>
 
           </div>
+
+
           <div className='inputs'>
 
             <div>
@@ -89,7 +95,7 @@ export default function HomeAdm() {
             <input type='text' value={nomeproduto} onChange={e => setNomeproduto(e.target.value)} />
 
             <h1>Descrição</h1>
-            <textarea value={descricao} type='text' onChange={e => setDescricao(e.target.value)}/>
+            <textarea value={descricao}  onChange={e => setDescricao(e.target.value)}/>
 
 
             <h1>Categoria</h1>
@@ -107,7 +113,7 @@ export default function HomeAdm() {
             </div>
           </div>
 
-          <button onClick={Inscrever}>Adicionar Produto</button>
+          <button onClick={salvarClick}>Adicionar Produto</button>
 
           <p> {salvo} </p>
 
