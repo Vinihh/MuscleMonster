@@ -1,6 +1,8 @@
 import Footer from '../../components/footer'
 import HeaderSimple from '../../components/header2'
 import './index.scss'
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -14,8 +16,10 @@ export default function Endereco(){
         
         <div className="endereco">
             <HeaderSimple/>
+             <Link className='icon' to={'/home-minha-conta'}><img src='/assets/images/voltar.png'></img></Link>
         
             <div className='enderecobox'>
+              
                 <h1>Endereço</h1>
                 
                 <input placeholder='CEP'></input>

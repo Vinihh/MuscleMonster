@@ -17,15 +17,13 @@ export default function Header() {
 
   return (
     <div className="comp-header">
-    <div>
-      <img className='logo' src='/assets/images/logo.png' alt='' />
+      <div>
+        <img className='logo' src='/assets/images/logo.png' alt='' />
 
-      <div className='inp-busca'> 
-        <input placeholder='Procurar...'></input>
-       
-        <button><img alt='' src='/assets/images/icon-busca.png'/></button>
-      </div>
+        <div className='inp-busca'>
+          <input placeholder='Procurar...'></input>
 
+<<<<<<< HEAD:site/src/components/header/index.js
       <div className='icons'>
         <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
         
@@ -39,8 +37,20 @@ export default function Header() {
       
         
         
+=======
+          <button><img alt='' src='/assets/images/icon-busca.png' /></button>
+        </div>
+
+        <div className='icons'>
+          <Link><img alt='' src='/assets/images/carrinho.png' /></Link>
+
+          <button>
+            <Link to={!Storage('usuario-logado') ? '/Login' : '/adm/home'} className={Storage('usuario-logado') ? 'minhaconta' : ''} > <img alt='' src='/assets/images/icon-login.png' /> {Storage('usuario-logado') ? 'Minha Conta' : 'Login'}  </Link>
+          </button>
+
+        </div>
+>>>>>>> 62b087a34d5975551f4a0b3b6d0238fd4b349d4a:src/components/header/index.js
       </div>
-    </div>
 
       <section className='container'>
         <div><p>Roupas</p></div>
