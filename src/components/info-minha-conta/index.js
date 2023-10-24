@@ -17,9 +17,9 @@ export default function InfoMinhaConta() {
 
             <div>
               <h1> Muscle Monster</h1>
-              <Link> Meu Perfil</Link>
-              <Link> Minhas Compras</Link>
-              <Link to={'endereco'}> Endereço</Link>
+              <Link to={'/meuperfil'}> Meu Perfil</Link>
+              <Link to={'/minhascompras'}> Minhas Compras</Link>
+              <Link to={'/endereco'}> Endereço</Link>
               <Link> Contate-nos via WhatsApp <img src='/assets/images/whatsapp.png'></img></Link>
               
             </div>

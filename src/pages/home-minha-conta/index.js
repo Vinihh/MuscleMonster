@@ -16,7 +16,7 @@ export default function HomeAdm() {
           <h2>Acesso Rápido</h2>
 
           <div>
-            <Link>
+            <Link to={'/meuperfil'}>
             <div>
                 <img src='/assets/images/perfil.gif'></img>
                 <h1>Meu Perfil</h1>

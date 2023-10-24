@@ -6,8 +6,17 @@
     opacity: 90%;
     background-size: cover;
     height: 100vh;
+    
 
+    .icon{
+        position: absolute;
+        left: 20px;
+        top: 120px;
 
+        img{
+            width: 50px;
+        }
+    }
     .linha {
         top: 0;
         position: absolute;
@@ -59,7 +68,7 @@
             border: 2px solid #00000000;
             color: rgb(0, 0, 0);
             border-radius: 30px;
-            
+            margin-bottom: 50px;
             
             padding: 10px;
         }

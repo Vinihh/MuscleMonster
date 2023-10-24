@@ -19,6 +19,8 @@ import Equipamentos from './pages/equipamentos';
 import Roupas from './pages/roupas';
 import MinhaConta from './pages/home-minha-conta'
 import MinhasCompras from './pages/minhascompras';
+import MeuPerfil from './pages/meuperfil';
+
 
 
 
@@ -44,6 +46,7 @@ root.render(
         <Route path='/roupas' element={<Roupas />} />
         <Route path='/home-minha-conta' element={<MinhaConta />} />
         <Route path='/minhascompras' element={<MinhasCompras />} />
+        <Route path='/meuperfil' element={<MeuPerfil />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
