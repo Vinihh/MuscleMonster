@@ -1,16 +1,13 @@
   import { Link } from 'react-router-dom';
   import './index.scss';
-  import Storage from 'local-storage';
   import React from 'react';
 
   export default function InfoMinhaConta() {
 
 
     function limparStorage() {
-      limparStorage = () => {
-        localStorage.clear();
-        alert('Armazenamento local foi apagado!');
-      };
+      localStorage.clear();
+      alert('Armazenamento local foi apagado!');
     }
 
     return (
@@ -35,9 +32,11 @@
 
             </div>
           </div>
-            <button onClick={limparStorage}>
-              Limpar Armazenamento Local
-            </button>
+          <Link to={'/'}>
+          <button onClick={limparStorage}>
+          Sair 
+        </button>
+        </Link>
         </div>
 
 
