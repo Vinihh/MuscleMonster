@@ -17,6 +17,8 @@ import Endereco from './pages/endereco';
 import Suplementos from './pages/suplementos';
 import Equipamentos from './pages/equipamentos';
 import Roupas from './pages/roupas';
+import MinhaConta from './pages/home-minha-conta'
+import MinhasCompras from './pages/minhascompras';
 
 
 
@@ -40,6 +42,8 @@ root.render(
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />
         <Route path='/roupas' element={<Roupas />} />
+        <Route path='/home-minha-conta' element={<MinhaConta />} />
+        <Route path='/minhascompras' element={<MinhasCompras />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

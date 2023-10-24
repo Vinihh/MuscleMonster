@@ -58,15 +58,16 @@
             background-color: #ffb800;
             border: 2px solid #00000000;
             color: rgb(0, 0, 0);
-            border-radius: 15px;
-            width: 40%;
-            height: 30px;
+            border-radius: 30px;
+            
+            
+            padding: 10px;
         }
         
         button:hover{
             cursor: pointer;
-            background-color: #ffb700a9;
-            color: rgb(218, 215, 215);
+            background-color: #ffb700c9;
+            
             transition: 0.5s;
         }
     }

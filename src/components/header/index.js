@@ -17,24 +17,24 @@ export default function Header() {
 
   return (
     <div className="comp-header">
-    <div>
-      <img className='logo' src='/assets/images/logo.png' alt='' />
+      <div>
+        <img className='logo' src='/assets/images/logo.png' alt='' />
 
-      <div className='inp-busca'> 
-        <input placeholder='Procurar...'></input>
-       
-        <button><img alt='' src='/assets/images/icon-busca.png'/></button>
-      </div>
+        <div className='inp-busca'>
+          <input placeholder='Procurar...'></input>
 
-      <div className='icons'>
-        <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
-        
-      <button onClick={mostrarInforma}>
-        {mostrar == true ? <MinhaConta /> : <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} > <img alt='' src='/assets/images/icon-login.png'/> {Storage('usuario-logado') ? 'Minha Conta' : 'Login'}  </Link> }
-      </button>
-        
+          <button><img alt='' src='/assets/images/icon-busca.png' /></button>
+        </div>
+
+        <div className='icons'>
+          <Link><img alt='' src='/assets/images/carrinho.png' /></Link>
+
+          <button>
+            <Link to={!Storage('usuario-logado') ? '/Login' : '/adm/home'} className={Storage('usuario-logado') ? 'minhaconta' : ''} > <img alt='' src='/assets/images/icon-login.png' /> {Storage('usuario-logado') ? 'Minha Conta' : 'Login'}  </Link>
+          </button>
+
+        </div>
       </div>
-    </div>
 
       <section className='container'>
         <div><p>Roupas</p></div>
