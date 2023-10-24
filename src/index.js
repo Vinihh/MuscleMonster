@@ -9,8 +9,8 @@ import Addproduto from './pages/add-produto';
 import ProdutoAdm from './pages/adm/produto-adm';
 import ClientesAdm from './pages/adm/clientes-adm';
 import VendasAdm from './pages/adm/vendas-adm';
-import Cadastro from './pages/cadastro'
-import Login from './pages/login'
+import Cadastro from './pages/cadastro';
+import Login from './pages/login';
 import PersonalAdm from './pages/adm/personal-adm';
 import PaginaProduto from './pages/produtos';
 import Endereco from './pages/endereco';
