@@ -23,6 +23,7 @@ import Roupas from './pages/roupas';
 import MinhaConta from './components/minhaconta';
 import MeuPerfil from './pages/meuperfil';
 import MinhasCompras from './pages/minhascompras';
+import MinhaContaUser from './pages/home-minha-conta';
 
 
 import { ToastContainer } from 'react-toastify';
@@ -49,7 +50,7 @@ root.render(
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />
         <Route path='/roupas' element={<Roupas />} />
-        <Route path='/home-minha-conta' element={<MinhaConta />} />
+        <Route path='/home-minha-conta' element={<MinhaContaUser />} />
         <Route path='/minhascompras' element={<MinhasCompras />} />
         <Route path='/meuperfil' element={<MeuPerfil />} />
       </Routes>

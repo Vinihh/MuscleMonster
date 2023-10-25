@@ -3,7 +3,7 @@ import HeaderAdm from '../../components/header-adm';
 import './index.scss';
 import InfoMinhaConta from '../../components/info-minha-conta';
 
-export default function HomeAdm() {
+export default function MinhaContaUser() {
   return (
     <div className="home-adm">
       <HeaderAdm />
