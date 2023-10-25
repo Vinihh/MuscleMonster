@@ -1,84 +1,178 @@
-.endereco{
+.endereco {
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    opacity: 90%;
+    align-items: center;
+    letter-spacing: 1px;
     background-size: cover;
-    height: 100vh;
-    
+    background-color: #ffffff;
 
-    .icon{
-        position: absolute;
-        left: 20px;
-        top: 120px;
 
-        img{
+
+
+
+    .voltar {
+        margin-top: -15px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 90%;
+
+        img {
             width: 50px;
         }
     }
-    .linha {
-        top: 0;
-        position: absolute;
-        width: 100%;
-        background-color: #FFB800;
-        height: 4px;
-    }
 
-    .enderecobox {
-        border-radius: 10px;
+    .endereco_form_container {
+        margin-top: 7vh;
+        margin-bottom: 7vh;
+        position: relative;
+        width: 500px;
+        height: 520px;
+        background-color: transparent;
+        border-radius: 50px 5px;
         display: flex;
-        flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 25%;
-        height: 60%;
-        margin: 20px;
+        overflow: hidden;
 
-        h1 {
-            font-size: 24px;
-            font-weight: 900;
-            margin-bottom: 40px;
-            color: black;
-            letter-spacing: 3px;
-            text-decoration:underline;
-            text-decoration-color: #FFB800;
-            
+    }
+
+    .endereco_form_container::before {
+
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        content: '';
+        background-image: conic-gradient(transparent, transparent, transparent, #000000);
+        animation: rotate_border 6s linear infinite;
+
+    }
+
+    .endereco_form_container::after {
+
+        position: absolute;
+        width: 170%;
+        height: 170%;
+        content: '';
+        background-image: conic-gradient(transparent, transparent, transparent, #000000);
+        animation: rotate_border 6s linear infinite;
+        animation-delay: -3s;
+    }
+
+    @keyframes rotate_border {
+        0% {
+            transform: rotate(0deg);
         }
 
-        
-
-        input {
-            margin: 10px;
-            outline: none;
-            border: none;
-            height: 30px;
-            width: 75%;
-            padding: 5px 8px;
-            border-radius: 5px;
-            background-color: white;
-            border: solid 1px black;
+        100% {
+            transform: rotate(360deg);
         }
+    }
 
-        button{
-            margin-top: 30px;
-            font-weight: 600;
-            font-size: 18px;
-            background-color: #ffb800;
-            border: 2px solid #00000000;
-            color: rgb(0, 0, 0);
-            border-radius: 30px;
-            margin-bottom: 50px;
-            
-            padding: 10px;
-        }
-        
-        button:hover{
+    .endereco_form {
+
+        content: '';
+        background-color: white;
+        border-radius: 50px 5px;
+        inset: 5px;
+        width: 493px;
+        height: 509px;
+        padding: 50px 40px;
+        z-index: 10;
+        color: #ffffff;
+
+    }
+
+    h2 {
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+
+        color: black;
+    }
+
+    p {
+        margin-top: 20px;
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    .input_endereco {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: start;
+    }
+
+    .input_text {
+        width: 95%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #000000;
+        font-size: 20px;
+        padding-left: 10px;
+        color: #ffffff;
+
+    }
+
+    ::placeholder {
+        font-size: 17px;
+        color: #000000;
+        letter-spacing: 1px;
+
+    }
+
+    .fa {
+        font-size: 20px;
+
+    }
+
+    #login_button {
+        position: relative;
+        width: 300px;
+        height: 40px;
+        transition: 1s;
+        margin-top: 70px;
+
+
+    }
+
+    #login_button button {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        z-index: 10;
+        cursor: pointer;
+        font-size: 22px;
+        letter-spacing: 2px;
+        border: 1px solid #FFB800;
+        color: #FFB800;
+        border-radius: 50px;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fotter {
+        margin-top: 30px;
+        display: flex;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
             cursor: pointer;
-            background-color: #ffb700c9;
-            
-            transition: 0.5s;
+            font-size: 18px;
+            color: #ffffff;
         }
+
     }
 
 

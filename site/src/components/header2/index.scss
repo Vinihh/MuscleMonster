@@ -1,5 +1,5 @@
 
-  .comp-header{
+  .comp-headerr{
     height: 18vh;
     width: 100%;
 
@@ -102,6 +102,10 @@
       }
     }
   }
+  a{
+    align-self: flex-start;
+    justify-content: flex-start;
+  }
 
 }
 
@@ -142,4 +146,6 @@
       }
     }
   }
+
+  
 }

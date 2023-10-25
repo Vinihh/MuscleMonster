@@ -49,45 +49,45 @@ export default function PaginaCadastro() {
 
 
       </div>
-      <div class="input_group">
-        
-        <input
-          type="text"
-          placeholder="Telefone"
-          class="input_text"
-          value={telefone}
-          onChange={e => setTelefone(e.target.value)} 
-        />
+        <div class="input_group">
+          
+          <input
+            type="text"
+            placeholder="Telefone"
+            class="input_text"
+            value={telefone}
+            onChange={e => setTelefone(e.target.value)} 
+          />
 
-      </div>
-      <div class="input_group">
-        <input
-          type="text"
-          placeholder="Email"
-          class="input_text"
-          value={email}
-          onChange={e => setEmail(e.target.value)} 
-        />
+        </div>
+        <div class="input_group">
+          <input
+            type="text"
+            placeholder="Email"
+            class="input_text"
+            value={email}
+            onChange={e => setEmail(e.target.value)} 
+          />
 
-      </div>
-      <div class="input_group">
-        <input
-          type="password"
-          placeholder="Senha"
-          class="input_text"
-          onChange={e => setSenha(e.target.value)} 
-        />
+        </div>
+        <div class="input_group">
+          <input
+            type="password"
+            placeholder="Senha"
+            class="input_text"
+            onChange={e => setSenha(e.target.value)} 
+          />
 
-      </div>
-      <div class="input_group">
-        <input
-          type="password"
-          placeholder="Confirme sua senha"
-          class="input_text"
-          onChange={e => setConfirmSenha(e.target.value)}
-        />
+        </div>
+        <div class="input_group">
+          <input
+            type="password"
+            placeholder="Confirme sua senha"
+            class="input_text"
+            onChange={e => setConfirmSenha(e.target.value)}
+          />
 
-      </div>
+        </div>
       <div class="button_group" id= "cadastro_button">
       <button onClick={Cadastro}> Cadastrar </button>
       </div>
