@@ -37,19 +37,66 @@ export default function PaginaCadastro() {
   }
 
   return (
-    <div className="cadastro">
-      <div className="linha"></div>
-      <div className='cadbox'>
-        <h1>Cadastro</h1>
-        <input type='text' onChange={e => setNome(e.target.value)} placeholder='Nome' />
-        <input type='text' onChange={e => setTelefone(e.target.value)} placeholder='Telefone' />
-        <input type='text' onChange={e => setEmail(e.target.value)} placeholder='E-mail' />
-        <input type='password' onChange={e => setSenha(e.target.value)} placeholder='Senha' />
-        <input type='password' onChange={e => setConfirmSenha(e.target.value)} placeholder='Confirme sua Senha' />
-        <button onClick={Cadastro}>Cadastrar</button>
+    <div className='body'>
+    <div class="cadastro_form_container">
+    <div class="cadastro_form">
+      <h2>Cadastro</h2>
+      <div class="input_group">
+        
+        <input
+          type="text" placeholder="Nome" class="input_text" value={nome} onChange={e => setNome(e.target.value)}
+        />
+
+
+      </div>
+      <div class="input_group">
+        
+        <input
+          type="text"
+          placeholder="Telefone"
+          class="input_text"
+          value={telefone}
+          onChange={e => setTelefone(e.target.value)} 
+        />
+
+      </div>
+      <div class="input_group">
+        <input
+          type="text"
+          placeholder="Email"
+          class="input_text"
+          value={email}
+          onChange={e => setEmail(e.target.value)} 
+        />
+
+      </div>
+      <div class="input_group">
+        <input
+          type="password"
+          placeholder="Senha"
+          class="input_text"
+          onChange={e => setSenha(e.target.value)} 
+        />
+
+      </div>
+      <div class="input_group">
+        <input
+          type="password"
+          placeholder="Confirme sua senha"
+          class="input_text"
+          onChange={e => setConfirmSenha(e.target.value)}
+        />
+
+      </div>
+      <div class="button_group" id="cadastro_button">
+      <button onClick={Cadastro}> Cadastrar </button>
+      </div>
+      <div class="fotter-cadastro">
+        <Link to='/cadastro'><p>Já tem uma conta? Faça cadastro</p></Link>
         <p>{salvo}</p>
-        <Link to='/login'>Já tem uma conta? Faça login.</Link>
       </div>
     </div>
+  </div>
+  </div>
   );
 }

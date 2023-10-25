@@ -45,16 +45,42 @@ export default function Login() {
   }
 
   return (
-    <div className="login">
-      <div className="linha"></div>
-      <div className='cadbox'>
-        <h1>Login</h1>
-        <input type='text' value={email} onChange={e => setEmail(e.target.value)} placeholder='E-mail'></input>
-        <input type='password' value={senha} onChange={e => setSenha(e.target.value)} placeholder='Senha'></input>
-        <button onClick={entrar}>Entrar</button>
-        <Link to='/cadastro'><p>Não está registrado? Junte-se a nós</p></Link>
-        <p> {erro} </p>
+    <div className='body'>
+    <div class="login_form_container">
+    <div class="login_form">
+      <h2>Login</h2>
+      <div class="input_group">
+        <i class="fa fa-user"></i>
+        <input
+          type="text"
+          placeholder="Email"
+          class="input_text"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+
+
+      </div>
+      <div class="input_group">
+        <i class="fa fa-unlock-alt"></i>
+        <input
+          type="password"
+          placeholder="Senha"
+          class="input_text"
+          value={senha}
+          onChange={e => setSenha(e.target.value)} 
+        />
+
+      </div>
+      <div class="button_group" id="login_button">
+      <button onClick={entrar}>Entrar</button>
+      </div>
+      <div class="fotter">
+        <a>Esqueceu a senha ?</a>
+        <Link to='/cadastro'><p>Cadastrar-se</p></Link>
       </div>
     </div>
+  </div>
+  </div>
   );
 }
