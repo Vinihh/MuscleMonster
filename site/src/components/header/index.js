@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <div className="comp-header">
       <div>
-        <img className='logo' src='/assets/images/logo.png' alt='' />
+        <Link className='l1' to='/'><img className='logo' src='/assets/images/logo.png' alt='' /></Link>
 
         <div className='inp-busca'>
           <input placeholder='Procurar...'></input>

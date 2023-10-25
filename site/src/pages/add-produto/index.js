@@ -6,7 +6,8 @@ import { cadastrarProduto,inserirImagem } from '../../api/addPrdtapi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
 import Storage from 'local-storage';
-import './toastStyles.css'; // Importe o arquivo CSS personalizado
+import './toastStyles.css';
+
 
 
 
@@ -15,6 +16,7 @@ import { toast} from 'react-toastify';
 
 
 export default function HomeAdm() {
+
 
   const [nomeproduto, setNomeproduto] = useState('')
   const [categoria, setCategoria] = useState('')
@@ -25,14 +27,27 @@ export default function HomeAdm() {
 
   const [salvo, setSalvo] = useState('')
 
+  
   async function salvarClick(){
     try {
+    
+    if(imagem == ''){
+      toast.error('Insira uma Imagem',{
+        autoClose:2000,
+      })
+    }
 
-    const produtos = await cadastrarProduto(nomeproduto ,categoria ,valor ,descricao ,estoque);
-    const r = await inserirImagem(produtos.id,imagem)
-    limpar();
+    else{
+      const produtos = await cadastrarProduto(nomeproduto ,categoria ,valor ,descricao ,estoque);
+      const r = await inserirImagem(produtos.id,imagem);
+      limpar();
 
-    toast.dark('produto cadastrado')
+      toast.dark('produto cadastrado',{
+        autoClose:2,
+      });
+    }
+
+    
 
     } catch (err) {
       toast.error(err.response.data.erro)
