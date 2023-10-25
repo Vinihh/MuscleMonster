@@ -88,7 +88,7 @@ export default function PaginaCadastro() {
         />
 
       </div>
-      <div class="button_group" id="cadastro_button">
+      <div class="button_group" id= "cadastro_button">
       <button onClick={Cadastro}> Cadastrar </button>
       </div>
       <div class="fotter-cadastro">
