@@ -17,9 +17,12 @@ import Endereco from './pages/endereco';
 import Suplementos from './pages/suplementos';
 import Equipamentos from './pages/equipamentos';
 import Roupas from './pages/roupas';
-import MinhaConta from './pages/home-minha-conta'
-import MinhasCompras from './pages/minhascompras';
+
+
+
+import MinhaConta from './components/minhaconta';
 import MeuPerfil from './pages/meuperfil';
+import MinhasCompras from './pages/minhascompras';
 
 
 import { ToastContainer } from 'react-toastify';
