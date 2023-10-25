@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <div className="comp-header">
       <div>
-        <img className='logo' src='/assets/images/logo.png' alt='' />
+        <Link className='l1' to='/'><img className='logo' src='/assets/images/logo.png' alt='' /></Link>
 
         <div className='inp-busca'>
           <input placeholder='Procurar...'></input>
@@ -29,7 +29,7 @@ export default function Header() {
 
         <div className='icons'>
         <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
-        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/home-minha-conta' } > {Storage('usuario-logado') ? 'Minha Conta' : 'Login'} <img alt='' src='/assets/images/icon-login.png'/> </Link>
+        <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/home-minha-conta' } > {Storage('usuario-logado') ? '' : ''} <img alt='' src='/assets/images/icon-login.png'/> </Link>
       
       </div>
 

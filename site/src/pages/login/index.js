@@ -3,6 +3,7 @@ import './index.scss';
 import { useRef, useState } from 'react';
 import axios from 'axios';
 import storage from 'local-storage'
+import {toast} from 'react-toastify'
 
 
 
@@ -34,15 +35,21 @@ export default function Login() {
       }
     } catch (err) {
       if(err.response) {
-        setErro(err.response.data.erro)
+        toast.error(err.response.data.erro)
       } else {
-        setErro(err.erro.erro)
+        toast.error(err.erro.erro)
       }
       
     } finally {
       setCarregando(false);
     }
   }
+
+  function teclaEnter(e) {
+    if (e.key === 'Enter') {
+        entrar();
+  }
+}
 
   return (
     <div className='body'>
@@ -69,6 +76,7 @@ export default function Login() {
           class="input_text"
           value={senha}
           onChange={e => setSenha(e.target.value)} 
+          onKeyUp={teclaEnter}
         />
 
       </div>

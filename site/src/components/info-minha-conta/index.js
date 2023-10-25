@@ -2,12 +2,13 @@
   import './index.scss';
   import React from 'react';
 
+  import {toast} from 'react-toastify'
   export default function InfoMinhaConta() {
 
 
     function limparStorage() {
       localStorage.clear();
-      alert('Armazenamento local foi apagado!');
+      toast.success('Você saiu da sua conta');
     }
 
     return (
