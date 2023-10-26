@@ -20,8 +20,8 @@ export async function InserirNovoProduto(produto) {
 export async function alterarImagem(imagem, id) {
     const comando =
         `UPDATE tb_produto 
-            SET url_img     = ?
-        WHERE id_produto        = ? `;
+        SET url_img         = ?
+        WHERE id_produto    = ? `;
     
     const [resposta] = await conexao.query(comando, [imagem, id]);
     return resposta.affectedRows;
