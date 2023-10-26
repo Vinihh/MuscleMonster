@@ -7,8 +7,9 @@ export async function verificarLogin(email,senha,id) {
       ds_email  as email, 
       ds_senha  as senha
       FROM      tb_cliente
-      where       ds_senha    = ?
-      and       ds_email    = ?
+      where     id_cliente = ?
+      and       ds_senha    = ?
+      and       ds_email  = ?
     `;
     
    const [dados] = await conexao.query(comando, [email,senha,id]);
