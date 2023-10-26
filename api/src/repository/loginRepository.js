@@ -4,6 +4,7 @@ export async function verificarLogin(email,senha) {
 
     const comando = `
       SELECT 
+      id_cliente as id,
       ds_email as email, 
       ds_senha as senha
       FROM tb_cliente
