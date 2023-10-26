@@ -9,21 +9,29 @@ endpoint.post('/cadastro', async (req, resp) => {
         let cliente = req.body;
 
         if (!cliente.nome)
-        throw new Error('⚠ Nome obrigatório');
+        throw new Error(' Nome obrigatório');
 
         if (!cliente.telefone)
-        throw new Error('⚠ Telefone obrigatório');
+        throw new Error(' Telefone obrigatório');
 
-        if (!cliente.email)
-        throw new Error('⚠ Email obrigatório');
+        if (!cliente.email.includes('@')) 
+            throw new Error('Email Inválido');
+          
+
+        if (!cliente.email) {
+            throw new Error('Email obrigatório');
+          } else if (!/mail\.com$/i.test(cliente.email)) {
+            throw new Error('Email Inválido');
+          }
+          
 
         if (!cliente.senha)
-        throw new Error('⚠ Senha obrigatório');
+        throw new Error(' Senha obrigatório');
   
    
         let r1 = await consultar(cliente.email);
         if (r1.length > 0)
-        throw new Error('⚠ Email já cadastrado!');
+        throw new Error(' Email já cadastrado!');
   
         let dados = await NovoCadastro(cliente)
         resp.send(dados)

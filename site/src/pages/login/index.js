@@ -4,6 +4,7 @@ import { useRef, useState } from 'react';
 import axios from 'axios';
 import storage from 'local-storage'
 import {toast} from 'react-toastify'
+import LoadingBar from 'react-top-loading-bar'; 
 
 
 
@@ -15,9 +16,10 @@ export default function Login() {
   const [carregando, setCarregando] = useState(false);
 
   const navigate = useNavigate();
-  const loadingBarRef = useRef(null);
+  const ref = useRef();
 
   async function entrar() {
+    ref.current.continuousStart();
     setCarregando(true);
     setErro('');
 
@@ -27,13 +29,16 @@ export default function Login() {
   }
 
     try {
+
       const response = await axios.post('http://localhost:5000/login', user);
 
-      if( response.status === 200 ) {
-        navigate('/');
+      setTimeout(() => {
         storage('usuario-logado', response.data)
-      }
+        navigate('/');
+      },1000)
+   
     } catch (err) {
+      ref.current.complete();
       if(err.response) {
         toast.error(err.response.data.erro)
       } else {
@@ -53,6 +58,7 @@ export default function Login() {
 
   return (
     <div className='body'>
+      <LoadingBar color='#FFB800' ref={ref} />
     <div class="login_form_container">
     <div class="login_form">
       <h2>Login</h2>

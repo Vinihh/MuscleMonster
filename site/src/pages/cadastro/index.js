@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { useState } from 'react';
 import axios from 'axios';
+import {toast} from 'react-toastify'
 
 export default function PaginaCadastro() {
   const [nome, setNome] = useState('');
@@ -14,7 +15,7 @@ export default function PaginaCadastro() {
   async function Cadastro() {
     try {
       if (senha !== confirmSenha) {
-        setSalvo('As senhas não coincidem.');
+        toast.error('As senhas não coincidem.');
         return;
       }
 
@@ -28,11 +29,11 @@ export default function PaginaCadastro() {
       let r = await axios.post('http://localhost:5000/cadastro', cadastro);
       
 
-      alert('Cadastro realizado com sucesso.');
+      toast.success('Cadastro realizado com sucesso.');
       window.location.href = 'http://localhost:3000/login';
       
     } catch (err) {
-      setSalvo(err.response.data.erro);
+      toast.error(err.response.data.erro);
     }
   }
 
@@ -93,7 +94,7 @@ export default function PaginaCadastro() {
       </div>
       <div class="fotter-cadastro">
         <Link to='/login'><p>Já tem uma conta? Faça Login</p></Link>
-        <p>{salvo}</p>
+       
       </div>
     </div>
   </div>
