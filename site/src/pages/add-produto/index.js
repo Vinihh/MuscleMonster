@@ -2,7 +2,7 @@ import './index.scss';
 import HeaderAdm from '../../components/header-adm';
 import InfoAdm from '../../components/info-adm';
 import { useState } from 'react';
-import { inserirImagem,cadastrarProduto } from '../../../../api/src/repository/addPrdtapi';
+import { inserirImagem,cadastrarProduto } from '../../api/addPrdtapi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
 import Storage from 'local-storage';
