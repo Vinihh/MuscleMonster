@@ -12,6 +12,8 @@ export default function Header() {
   const [mostrarInfo, setMostrarInfo] = useState(false)
   const [nome, setNome] = useState('')
 
+  const navigate = useNavigate();
+
   function mostrarInforma() {
     setMostrar(!mostrar)
     setMostrarInfo(!mostrarInfo)
@@ -19,10 +21,11 @@ export default function Header() {
 
   useEffect(() => {
     if(!Storage('usuario-logado')) {
-        useNavigate('/Login')
+        navigate('/')
     }
     else {
-      
+      const usuariologado = Storage('usuario-logado')
+      setNome(usuariologado.email)
     }
 
   }, [])
@@ -34,6 +37,7 @@ export default function Header() {
 
         <div className='inp-busca'>
           <input placeholder='Procurar...'></input>
+          
 
 
           <button><img alt='' src='/assets/images/icon-busca.png' /></button>
@@ -42,7 +46,7 @@ export default function Header() {
         <div className='icons'>
         <Link><img alt='' src='/assets/images/carrinho.png'/></Link>
         <Link className={Storage('usuario-logado') ? 'minhaconta' : ''} to={!Storage('usuario-logado') ? '/Login' : '/home-minha-conta' } > {Storage('usuario-logado') ? '' : ''} <img alt='' src='/assets/images/icon-login.png'/> </Link>
-        {nome[0]}
+          
       </div>
 
       </div>
@@ -54,6 +58,8 @@ export default function Header() {
         <div><p>Suplementos</p></div>
         <div><p>Exercícios</p></div>
       </section>
+
+      {nome}
 
     </div>
   );
