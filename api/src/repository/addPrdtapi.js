@@ -3,7 +3,7 @@ const api = axios.create({
     baseURL: API_URL
 })
 
-import { API_URL } from "../constants";
+import { API_URL } from "../../../site/src/constants";
 
 export async function cadastrarProduto(nomeproduto,categoria,valor,descricao,estoque){
     const resposta = await api.post('/inserir' ,{
