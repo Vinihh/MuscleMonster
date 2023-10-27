@@ -6,6 +6,7 @@ import HeaderAdm from '../../../components/header-adm';
 import { useState } from 'react';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
+import { API_URL } from '../../../constants';
 
 export default function ProdutoAdm() {
   const [busca, setBusca] = useState('');
@@ -14,7 +15,7 @@ export default function ProdutoAdm() {
 
   async function buscarProdutoPorNome() {
     try {
-      let resposta = await axios.get(`http://localhost:5000/consulta/nome?nome=${busca}`);
+      let resposta = await axios.get(API_URL + `/consulta/nome?nome=${busca}`);
       setListaProdutos(resposta.data);
     } catch (error) {
       console.error('Erro ao buscar produtos:', error);
@@ -23,7 +24,7 @@ export default function ProdutoAdm() {
 
   async function removerProduto(id) {
     try {
-      await axios.delete(`http://localhost:5000/deletar/${id}`);
+      await axios.delete(API_URL + `/deletar/${id}`);
 
       await buscarProdutoPorNome();
       setErro('Produto removido com sucesso')

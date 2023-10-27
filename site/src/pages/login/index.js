@@ -5,6 +5,7 @@ import axios from 'axios';
 import storage from 'local-storage'
 import {toast} from 'react-toastify'
 import LoadingBar from 'react-top-loading-bar'; 
+import { API_URL } from '../../constants';
 
 
 
@@ -30,7 +31,7 @@ export default function Login() {
 
     try {
 
-      const response = await axios.post('http://localhost:5000/login', user);
+      const response = await axios.post(API_URL + '/login', user);
 
       setTimeout(() => {
         storage('usuario-logado', response.data)

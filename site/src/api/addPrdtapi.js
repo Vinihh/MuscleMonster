@@ -1,7 +1,9 @@
 import axios from "axios";
 const api = axios.create({
-    baseURL: 'http://localhost:5000'
+    baseURL: API_URL
 })
+
+import { API_URL } from "../constants";
 
 export async function cadastrarProduto(nomeproduto,categoria,valor,descricao,estoque){
     const resposta = await api.post('/inserir' ,{

@@ -3,6 +3,7 @@ import './index.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify'
+import { API_URL } from '../../constants';
 
 export default function PaginaCadastro() {
   const [nome, setNome] = useState('');
@@ -26,11 +27,11 @@ export default function PaginaCadastro() {
         senha: senha,
       };
 
-      let r = await axios.post('http://localhost:5000/cadastro', cadastro);
+      let r = await axios.post(API_URL + '/cadastro', cadastro);
       
 
       toast.success('Cadastro realizado com sucesso.');
-      window.location.href = 'http://localhost:3000/login';
+      window.location.href = API_URL + '/login';
       
     } catch (err) {
       toast.error(err.response.data.erro);

@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './index.scss';
 import { useEffect, useState } from 'react';
+import { API_URL } from '../../constants';
 
 export default function PaginaProduto() {
 
@@ -13,7 +14,7 @@ export default function PaginaProduto() {
 
   async function buscarProduto(id) {
     try {
-      let url = `http://localhost:5000/listar/produto/${id}`;
+      let url = API_URL + `/listar/produto/${id}`;
       let resposta = await axios.get(url);
       setProduto(resposta.data)
       console.log(resposta)
