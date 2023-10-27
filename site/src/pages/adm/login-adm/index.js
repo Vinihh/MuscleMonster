@@ -8,7 +8,7 @@ import LoadingBar from 'react-top-loading-bar';
 
 
 
-export default function Login() {
+export default function LoginAdm() {
  
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -57,11 +57,11 @@ export default function Login() {
 }
 
   return (
-    <div className='body'>
+    <div className='login'>
       <LoadingBar color='#FFB800' ref={ref} />
     <div class="login_form_container">
     <div class="login_form">
-      <h2>Login</h2>
+      <h2>Login ADM</h2>
       <div class="input_group">
         <i class="fa fa-user"></i>
         <input
