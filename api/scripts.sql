@@ -28,7 +28,7 @@ select
 
 drop table tb_produto;
 
-create table tb_cadastro_cliente (
+create table tb_cliente (
 	id_cliente          int primary key auto_increment,
 	nm_cliente          varchar(200),
 	ds_email            varchar(200),

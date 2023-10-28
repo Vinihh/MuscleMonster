@@ -30,13 +30,33 @@
         margin-bottom: 7vh;
         position: relative;
         width: 500px;
-        height: 520px;
+        height: 890px;
         background-color: transparent;
         border-radius: 50px 5px;
         display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
+
+
+        .cadastrar-endereco {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 15vh;
+            
+
+            button {
+            
+                padding: 10px 35px;
+                background-color: #FFB800;
+                border-radius: 5px;
+                font: 16px arial;
+
+            }
+        }
 
     }
 
@@ -54,10 +74,10 @@
     .endereco_form_container::after {
 
         position: absolute;
-        width: 170%;
+        width: 400%;
         height: 170%;
         content: '';
-        background-image: conic-gradient(transparent, transparent, transparent, #000000);
+        background-image: conic-gradient( transparent, #000000, transparent, transparent, transparent, transparent);
         animation: rotate_border 6s linear infinite;
         animation-delay: -3s;
     }
@@ -75,14 +95,20 @@
     .endereco_form {
 
         content: '';
-        background-color: white;
+        background-color: rgb(255, 255, 255);
         border-radius: 50px 5px;
         inset: 5px;
-        width: 493px;
-        height: 509px;
+        width: 98%;
+        height: 880px;
         padding: 50px 40px;
         z-index: 10;
         color: #ffffff;
+
+
+        .comp-num {
+            display: flex;
+        }
+
 
     }
 
@@ -117,7 +143,20 @@
         border-bottom: 2px solid #000000;
         font-size: 20px;
         padding-left: 10px;
-        color: #ffffff;
+        color: #000000;
+
+    }
+
+        .input_textn {
+        width:90%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid #000000;
+        font-size: 20px;
+        padding-left: 10px;
+        color: #000000;
 
     }
 
