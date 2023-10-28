@@ -94,7 +94,7 @@ export default function PaginaCadastro() {
       <button onClick={Cadastro}> Cadastrar </button>
       </div>
       <div class="fotter-cadastro">
-        <Link to='/login'><p>Já tem uma conta? Faça Login</p></Link>
+        <Link to='/login'><p>Já tem uma conta? Faça Login Agora</p></Link>
        
       </div>
     </div>
