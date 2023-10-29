@@ -18,7 +18,7 @@ endpoints.delete('/deletar/:id', async (req, resp) => {
 })
 
 
-  endpoints.get('/consultar-produto', async (req, resp) => {
+  endpoints.get('/consulta/nome', async (req, resp) => {
 
     let resposta = await consultarProdutos()
     resp.send(resposta);

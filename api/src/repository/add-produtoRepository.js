@@ -2,12 +2,13 @@ import conexao from "./connection.js";
 import axios from "axios";
 
 export async function InserirNovoProduto(produto) {
-    let comando = 'insert into tb_produto ( nm_produto,ds_categoria,ds_descricao, vl_valor, qtd_estoque) values (?, ?, ?, ?,?);';
+    let comando = 'insert into tb_produto (nm_produto, ds_categoria,ds_descricao, vl_valor, qtd_estoque) values (?, ?, ?, ?, ?);';
 
     let [resposta] = await conexao.query(comando, [
+
         produto.nome, 
         produto.categoria,
-        produto.descricao, 
+        produto.descricao,
         produto.valor, 
         produto.estoque, 
         produto.id]);

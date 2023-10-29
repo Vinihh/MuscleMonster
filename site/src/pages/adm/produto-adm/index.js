@@ -86,12 +86,12 @@ useEffect(() => {
             </thead>
             <tbody>
               {listaProdutos.map((item) => (
-                <tr key={item.id}>
-                  <td><img src={item.imagem} alt={item.produto} /></td>
-                  <td id='T1'>{item.produto}</td>
-                  <td>{item.categoria}</td>
-                  <td>R${item.preco}</td>
-                  <td>{item.estoque}</td>
+                <tr key={item.id_produto}>
+                  <td><img src={item.url_img} /></td>
+                  <td id='T1'>{item.nm_produto}</td>
+                  <td>{item.ds_categoria}</td>
+                  <td>R${item.vl_valor}</td>
+                  <td>{item.qtd_estoque}</td>
                   <td>
                     <img  id='trash' src='/assets/images/lixo.png.svg' onClick={() => removerProduto(item.id)} />
                   </td>

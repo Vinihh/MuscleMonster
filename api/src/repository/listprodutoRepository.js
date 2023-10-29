@@ -1,6 +1,6 @@
 import conexao from "./connection.js";
 
-export async function consultarProdutos(produto) {
+export async function consultarProdutos() {
 
   const comando = `select * from tb_produto`;
 
