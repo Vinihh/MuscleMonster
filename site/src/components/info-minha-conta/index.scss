@@ -1,6 +1,7 @@
 .info-minha-conta {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: auto;
   padding: 35px 25px;
   height: 90vh;
@@ -19,7 +20,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 80px;
 
     img {
       border-radius: 100%;

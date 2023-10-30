@@ -2,7 +2,14 @@ import conexao from "./connection.js";
 
 export async function consultarProdutos() {
 
-  const comando = `select * from tb_produto`;
+  const comando = `SELECT id_produto      as id,
+  url_img         as img,
+  nm_produto      as produto,
+  ds_categoria    as categoria,
+  vl_valor        as preco,
+  qtd_estoque     as estoque
+FROM  tb_produto
+`;
 
   const [resposta] = await conexao.query(comando);
   return resposta;
@@ -55,7 +62,7 @@ export async function BuscarPorNome(nome) {
                           url_img         as imagem,
                           nm_produto      as produto,
                           ds_categoria    as categoria,
-                          vl_preco        as preco,
+                          vl_valor        as preco,
                           qtd_estoque     as estoque
                     FROM  tb_produto
                     WHERE nm_produto like ?`;

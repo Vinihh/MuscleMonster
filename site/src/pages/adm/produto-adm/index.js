@@ -7,18 +7,28 @@ import { useState } from 'react';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import { API_URL } from '../../../constants';
+import { toast } from 'react-toastify'
 
 export default function ProdutoAdm() {
   const [busca, setBusca] = useState('');
   const [listaProdutos, setListaProdutos] = useState([]);
+
   const [erro, setErro] = useState('')
 
+  
   async function buscarProdutoPorNome() {
+
     try {
-      let resposta = await axios.get(API_URL + `/consulta/nome?nome=${busca}`);
+      if(busca == ''){
+        let resposta = await axios.get(API_URL + `/consulta/produto`);
       setListaProdutos(resposta.data);
-    } catch (error) {
-      console.error('Erro ao buscar produtos:', error);
+      }
+      else{
+        let resposta = await axios.get(API_URL + `/consulta/nome?nome=${busca}`);
+      setListaProdutos(resposta.data);
+      }
+    } catch (err) {
+      toast.error('Erro ao buscar produtos:', err.response.data.erro);
     }
   }
 
@@ -87,11 +97,11 @@ useEffect(() => {
             <tbody>
               {listaProdutos.map((item) => (
                 <tr key={item.id_produto}>
-                  <td><img src={item.url_img} /></td>
-                  <td id='T1'>{item.nm_produto}</td>
-                  <td>{item.ds_categoria}</td>
-                  <td>R${item.vl_valor}</td>
-                  <td>{item.qtd_estoque}</td>
+                  <td><img src={item.img} /></td>
+                  <td id='T1'>{item.produto}</td>
+                  <td>{item.categoria}</td>
+                  <td>R${item.valor}</td>
+                  <td>{item.estoque}</td>
                   <td>
                     <img  id='trash' src='/assets/images/lixo.png.svg' onClick={() => removerProduto(item.id)} />
                   </td>

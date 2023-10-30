@@ -2,8 +2,29 @@ import { Link } from 'react-router-dom';
 import HeaderAdm from '../../components/header-adm';
 import './index.scss';
 import InfoMinhaConta from '../../components/info-minha-conta';
+import Storage from 'local-storage'
+import { API_URL } from '../../constants';
+import axios from 'axios';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
 export default function MinhaContaUser() {
+
+  const id = Storage('usuario-logado').id;
+  const [user,setUser] = useState([]);
+
+  async function buscarCliente (){
+    try {
+      let resposta = await axios.get(API_URL + '/consulta/cliente/' + id)
+      setUser(resposta.data)
+    } catch (err) {
+      
+    }
+  }
+
+  useEffect(() => {
+    buscarCliente();
+  }, []);
+
   return (
     <div className="home-adm">
       <HeaderAdm />

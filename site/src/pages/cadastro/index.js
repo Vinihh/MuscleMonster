@@ -1,9 +1,10 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate} from 'react-router-dom';
 import './index.scss';
 import { useState } from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify'
 import { API_URL } from '../../constants';
+
 
 export default function PaginaCadastro() {
   const [nome, setNome] = useState('');
@@ -13,8 +14,10 @@ export default function PaginaCadastro() {
   const [confirmSenha, setConfirmSenha] = useState('');
   const [salvo, setSalvo] = useState('');
 
+  const navigate = useNavigate();
+
   async function Cadastro() {
-    try {
+    
       if (senha !== confirmSenha) {
         toast.error('As senhas não coincidem.');
         return;
@@ -27,11 +30,13 @@ export default function PaginaCadastro() {
         senha: senha,
       };
 
+try {
+  
       let r = await axios.post(API_URL + '/cadastro', cadastro);
-      
-
       toast.success('Cadastro realizado com sucesso.');
-      window.location.href = API_URL + '/login';
+      navigate('/login')
+
+      
       
     } catch (err) {
       toast.error(err.response.data.erro);

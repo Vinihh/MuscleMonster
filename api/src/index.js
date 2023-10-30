@@ -6,6 +6,7 @@ import Addproduto from './controller/add-produtoController.js';
 import listproduto from './controller/listprodutoController.js';
 import cadastroController from './controller/cadastroController.js';
 import loginController from './controller/loginController.js'
+import clienteController from './controller/clienteController.js'
 
 let server = express();
 
@@ -18,6 +19,7 @@ server.use(Addproduto)
 server.use(listproduto)
 server.use(cadastroController)
 server.use(loginController)
+server.use(clienteController)
 
 server.listen(process.env.PORT, () => console.log('API subiu!!!'))
 
