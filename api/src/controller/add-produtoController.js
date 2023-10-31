@@ -5,8 +5,6 @@ import multer from 'multer'
 const upload = multer({ dest: 'storage/imagens' })
 let endpoint = Router();
 
-
-
 endpoint.post('/inserir', async (req, resp) => {
     try {
         const produto = await req.body;

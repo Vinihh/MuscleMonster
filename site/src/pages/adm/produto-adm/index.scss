@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   height: auto;
+  overflow: hidden;
 
   .busca {
     display: flex;
@@ -11,13 +12,13 @@
   aside {
     display: flex;
     flex-direction: column;
-    height: 40vh;
+    height: 80vh;
     width: 100%;
     align-items: center;
 
     .faixa1-produto {
       width: 75%;
-      height: 100%;
+      height: 30vh;
 
       display: flex;
       flex-direction: column;
@@ -70,22 +71,47 @@
       }
     }
   }
+ 
+  .tabela::-webkit-scrollbar {
+    width: 12px;
+
+  }
+  
+  .tabela::-webkit-scrollbar-track {
+    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .tabela::-webkit-scrollbar-thumb {
+    background-color: lightgray; 
+    border-radius: 4px; 
+  }
+  
+
+.tabela{
+  width: 90%;
+  height: 80vh;
+  overflow-y: scroll;
+
+
+
 
   table {
-    width: 90%;
-    height: 20vw;
+    width: 100%;
+    height: 100vh;
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgb(255, 255, 255);
     border-radius: 8px;
-    overflow-y: auto;
+    overflow-y: scroll;
 
-    th,
-    td {
+
+    th,td {
       padding: 15px;
       text-align: left;
       border-bottom: 1px solid #616161;
       font-weight: 500;
     }
+
+   
 
     #T1{
       width: 300px;
@@ -97,11 +123,17 @@
 
     tr {
       width: 100%;
+
     }
 
     th {
       background-color: #000000f3;
       color: white;
+    }
+
+    tbody{
+      overflow-y: scroll;
+      overflow: hidden;
     }
 
     tbody tr:hover {
@@ -128,4 +160,5 @@
       }
     }
   }
+}
 }

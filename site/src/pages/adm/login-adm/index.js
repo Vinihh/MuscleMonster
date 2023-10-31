@@ -30,11 +30,11 @@ export default function LoginAdm() {
 
     try {
 
-      const response = await axios.post(API_URL + '/login', user);
+      const response = await axios.post(API_URL + '/adm/login', user);
 
       setTimeout(() => {
-        storage('usuario-logado', response.data)
-        navigate('/');
+        storage('adm-logado', response.data)
+        navigate('/adm/home');
       },1000)
    
     } catch (err) {
@@ -66,7 +66,7 @@ export default function LoginAdm() {
         <i class="fa fa-user"></i>
         <input
           type="text"
-          placeholder="Email"
+          placeholder="Nome ADM"
           class="input_text"
           value={email}
           onChange={e => setEmail(e.target.value)}

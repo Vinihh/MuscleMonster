@@ -82,10 +82,10 @@ useEffect(() => {
               </nav>
             </nav>
           </section>
-
+        <div className='tabela'>
           <table>
             <thead>
-              <tr>
+              <tr id='t2'>
                 <th>Imagem</th>
                 <th>Nome</th>
                 <th>Categoria</th>
@@ -97,7 +97,7 @@ useEffect(() => {
             <tbody>
               {listaProdutos.map((item) => (
                 <tr key={item.id_produto}>
-                  <td><img src={item.img} /></td>
+                  <td><img src={item.img + '.jpg'} /></td>
                   <td id='T1'>{item.produto}</td>
                   <td>{item.categoria}</td>
                   <td>R${item.valor}</td>
@@ -109,7 +109,7 @@ useEffect(() => {
               ))}
             </tbody>
           </table>
-
+        </div>
         </aside>
       </section>
     </div>

@@ -42,7 +42,7 @@ export default function HomeAdm() {
       const r = await inserirImagem(produtos.id,imagem);
       limpar();
 
-      toast.dark('produto cadastrado',{
+      toast.success('produto cadastrado',{
         autoClose:2,
       });
     }

@@ -14,7 +14,29 @@ export async function verificarLogin(email,senha) {
       and ds_senha = ?
     `;
     
-   const [dados] = await conexao.query(comando, [email,senha]);
+    let respostas = await conexao.query(comando, [email,senha]);
+    
+    let linhas = respostas[0];
+    let linha = linhas[0];
+    console.log(linha)
+  
+    return linha;
+}
 
-    return dados
+export async function loginAdm(email,senha) {
+
+  const comando = `
+    SELECT 
+    id_adm as id,
+    nm_adm as adm
+    FROM tb_adm_login
+  `;
+  
+  let respostas = await conexao.query(comando, [email,senha]);
+  
+  let linhas = respostas[0];
+  let linha = linhas[0];
+  console.log(linha)
+
+  return linha;
 }

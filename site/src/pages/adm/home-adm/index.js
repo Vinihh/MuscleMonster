@@ -1,9 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import HeaderAdm from '../../../components/header-adm';
 import './index.scss';
 import InfoAdm from '../../../components/info-adm';
+import { useEffect } from 'react';
+import storage from 'local-storage'
+import { Navigate } from 'react-router-dom';
 
 export default function HomeAdm() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!storage('adm-logado')){
+      navigate('/erro')
+    };
+  }, []);
+
   return (
     <div className="home-adm">
       <HeaderAdm />

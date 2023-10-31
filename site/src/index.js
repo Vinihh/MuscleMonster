@@ -25,6 +25,8 @@ import MinhaContaUser from './pages/home-minha-conta';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Erro from './pages/erro';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -51,6 +53,9 @@ root.render(
         <Route path='/home-minha-conta' element={<MinhaContaUser />} />
         <Route path='/minhascompras' element={<MinhasCompras />} />
         <Route path='/meuperfil' element={<MeuPerfil />} />
+        <Route path='/adm/login' element={<LoginAdm />} />
+        <Route path='/erro' element={<Erro />} />
+
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

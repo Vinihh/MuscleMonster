@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 import React, { useEffect } from 'react';
 import { API_URL } from '../../constants';
@@ -6,21 +6,42 @@ import { useState } from 'react';
 import storage from 'local-storage';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { confirmAlert } from 'react-confirm-alert';
+import { Navigate } from 'react-router-dom';
 
 export default function InfoMinhaConta() {
 
   const[nome, setNome] = useState('');
   const[email, setEmail] = useState('');
-  
+
+  const navigate = useNavigate();
 
   const [id,setId] = useState('')
   const [usuario, setUsuario] = useState([]); 
 
+  function sairClick() {
+    confirmAlert({
+        title: 'Usuário',
+        message: 'Tem certeza que deseja sair da conta?',
+        buttons: [
+          {
+            label: 'Sim',
+            onClick: async () => {
+                
+              storage.clear('usuario-logado');
+              window.location.reload('/')
+              toast.success('Você saiu da sua conta!')
+            }
+          },
+          {
+            label: 'Não'
+          }
+        ]
+      });
+}
 
-  function limparStorage() {
-    localStorage.clear();
-    toast.success('Você saiu da sua conta');
-  }
+
+
 
   useEffect(() => {
     const usuariologado = storage('usuario-logado');
@@ -49,7 +70,7 @@ export default function InfoMinhaConta() {
           </div>
         </div>
         <Link to='/'>
-          <button onClick={limparStorage}>
+          <button onClick={sairClick}>
             Sair
           </button>
         </Link>
