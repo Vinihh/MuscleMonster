@@ -1,11 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 import InfoAdm from '../../../components/info-adm';
 import HeaderAdm from '../../../components/header-adm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import storage from 'local-storage'
 
 export default function ClientesAdm() {
   const [busca,setBusca] = useState('')
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if(!storage('adm-logado')){
+      navigate('/erro')
+      window.location.reload('/erro')
+    };
+  }, []);
 
   
   return (

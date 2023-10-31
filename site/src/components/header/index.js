@@ -50,15 +50,6 @@ export default function Header() {
       </div>
 
       </div>
-
-      <section className='container'>
-        <div><p>Roupas</p></div>
-        <div><p>Acessórios</p></div>
-        <div><p>Equipamentos</p></div>
-        <div><p>Suplementos</p></div>
-        <div><p>Exercícios</p></div>
-      </section>
-
       
 
     </div>

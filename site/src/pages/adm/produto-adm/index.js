@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
 import { useEffect } from 'react';
 import InfoAdm from '../../../components/info-adm';
@@ -8,6 +8,8 @@ import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import { API_URL } from '../../../constants';
 import { toast } from 'react-toastify'
+import { Navigate } from 'react-router-dom';
+import storage from 'local-storage'
 
 export default function ProdutoAdm() {
   const [busca, setBusca] = useState('');
@@ -32,6 +34,7 @@ export default function ProdutoAdm() {
     }
   }
 
+
   async function removerProduto(id) {
     try {
       await axios.delete(API_URL + `/deletar/${id}`);
@@ -54,6 +57,16 @@ export default function ProdutoAdm() {
 useEffect(() => {
   buscarProdutoPorNome();
 }, []);
+
+const navigate = useNavigate();
+
+useEffect(() => {
+  if(!storage('adm-logado')){
+    navigate('/erro')
+    window.location.reload('/erro')
+  };
+}, []);
+
 
   return (
 
