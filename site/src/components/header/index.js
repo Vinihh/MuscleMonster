@@ -59,7 +59,7 @@ export default function Header() {
         <div><p>Exercícios</p></div>
       </section>
 
-      {nome}
+      
 
     </div>
   );
