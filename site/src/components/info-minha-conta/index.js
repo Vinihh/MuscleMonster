@@ -44,10 +44,14 @@ export default function InfoMinhaConta() {
 
 
   useEffect(() => {
+    if (storage('usuario-logado')) {
     const usuariologado = storage('usuario-logado');
     setNome(usuariologado.nome)
     setEmail(usuariologado.email)
+
+  }
 }, [])
+
 
 
 

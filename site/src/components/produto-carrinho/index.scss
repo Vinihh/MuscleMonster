@@ -1,0 +1,29 @@
+.produto-carrinho {
+    margin-top: 5vh;
+    width: 100%;
+    background-color: rgb(190, 190, 190);
+    display: flex;
+    flex-direction: row;
+    gap: 6vh;
+    align-items: center;
+
+
+    img {
+        width: 15vh;
+    }
+
+    .valores {
+        padding: 30px;
+        width: 0%;
+        text-align: start;
+        align-items: center; 
+
+
+        h3 {
+            font-size: 20px;
+            width: 43vh;
+            margin-bottom: 30px;
+   
+        }
+    }
+}

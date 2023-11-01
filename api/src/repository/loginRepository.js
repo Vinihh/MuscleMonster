@@ -29,6 +29,8 @@ export async function loginAdm(email,senha) {
     id_adm as id,
     nm_adm as adm
     FROM tb_adm_login
+    where nm_adm = ?
+    and ds_senha = ?
   `;
   
   let respostas = await conexao.query(comando, [email,senha]);

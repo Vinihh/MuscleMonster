@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function Headerr() {
@@ -10,7 +10,7 @@ export default function Headerr() {
      
 
       <div className='icons'>
-        <button><img alt='' src='/assets/images/icon-login.png'/></button>
+        <Link to='/meuperfil' ><img alt='' src='/assets/images/icon-login.png'/></Link>
       </div>
     </div>
 

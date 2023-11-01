@@ -1,0 +1,35 @@
+.pagina-carrinho {
+
+    .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5px;
+        margin-bottom: 9vh;
+    }
+
+    .forma-pagamento {
+        margin-top: 33vh;
+    }
+
+    .total {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 2vh;
+        align-items: center !important;
+        justify-content: end;
+        padding: 20px;
+
+        p {
+            font-size: 3vh;
+        }
+
+        button {
+            background-color: yellow;
+            padding: 1.5vh 2.5vh;
+            border-radius: 10px
+
+        }
+    }
+}
