@@ -7,6 +7,7 @@ import listproduto from './controller/listprodutoController.js';
 import cadastroController from './controller/cadastroController.js';
 import loginController from './controller/loginController.js'
 import clienteController from './controller/clienteController.js'
+import endereco from './controller/enderecoController.js'
 
 let server = express();
 
@@ -15,11 +16,13 @@ server.use(express.json())
 
 server.use('/storage/imagens',express.static('storage/imagens'));
 
+
 server.use(Addproduto)
 server.use(listproduto)
 server.use(cadastroController)
 server.use(loginController)
 server.use(clienteController)
+server.use(endereco)
 
 server.listen(process.env.PORT, () => console.log('API subiu!!!'))
 

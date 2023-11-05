@@ -27,7 +27,7 @@ export default function LoginAdm() {
       email: email,
       senha: senha
   }
-
+ 
     try {
 
       const response = await axios.post(API_URL + '/adm/login', user);

@@ -3,6 +3,8 @@ import HeaderSimple from '../../components/header2'
 import './index.scss'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { toast, Toast } from 'react-toastify';
+import axios from 'axios';
 
 
 
@@ -19,6 +21,45 @@ export default function Endereco() {
   const [referencia, setReferencia] = useState('')
 
 
+
+  async function CadastroEndereco() {
+
+    const endereco = {
+
+      nomecompleto: nomeCompleto,
+      telefone: telefone,
+      rua: rua,
+      bairro: bairro,
+      cidade: cidade,
+      cep: cep,
+      numero: numero,
+      complemento: complemento,
+      referencia: referencia
+    };
+
+    limpar()
+
+    try {
+
+      let resposta = await axios.post( API_URL + '/endereco', endereco)
+      toast.success('Endereço cadastrado com Sucesso')
+
+    } catch (err) {
+      toast.error(err.response.data.erro);
+    };
+  }
+
+  function limpar() {
+    setNomeCompleto('')
+    setTelefone('')
+    setRua('')
+    setBairro('')
+    setCidade('')
+    setCep('')
+    setNumero('')
+    setComplemento('')
+    setReferencia('')
+  }
 
 
   return (
@@ -88,8 +129,8 @@ export default function Endereco() {
             <input
               type="text"
               class="input_text"
-              value={cep}
-              onChange={e => setCep(e.target.value)}
+              value={bairro}
+              onChange={e => setBairro(e.target.value)}
             />
 
           </div>
@@ -153,7 +194,7 @@ export default function Endereco() {
 
           <div className='cadastrar-endereco'>
 
-            <button>Concluir</button>
+            <button onClick={CadastroEndereco}>Concluir</button>
 
           </div>
 

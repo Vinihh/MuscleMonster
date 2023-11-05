@@ -10,7 +10,7 @@ let endpoints = Router();
 
       const resposta = await Usuario(id)
       
-      if (resposta.length == 0) {
+      if (resposta.length == 0) { 
           resp.status(404).send([])
       }
 

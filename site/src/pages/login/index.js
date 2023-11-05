@@ -31,12 +31,12 @@ export default function Login() {
 
     try {
 
-      const response = await axios.post(API_URL + '/login', user);
+      const response = await axios.post( 'http://localhost:5000/login', user);
 
       setTimeout(() => {
         storage('usuario-logado', response.data)
         navigate('/');
-      },1500)
+      },1700)
    
     } catch (err) {
       ref.current.complete();
