@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { toast, Toast } from 'react-toastify';
 import axios from 'axios';
+import { API_URL } from '../../constants';
 
 
 
@@ -60,6 +61,7 @@ export default function Endereco() {
     setComplemento('')
     setReferencia('')
   }
+  
 
 
   return (
