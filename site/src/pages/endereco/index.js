@@ -1,5 +1,3 @@
-import Footer from '../../components/footer'
-import HeaderSimple from '../../components/header2'
 import './index.scss'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -74,7 +72,6 @@ export default function Endereco() {
 
     <div className='endereco'>
 
-      <HeaderSimple />
       <div className='voltar'>
         <Link className='icon' to={'/home-minha-conta'}><img src='/assets/images/voltar.png'></img></Link>
       </div>

@@ -14,7 +14,7 @@
 
 
     .voltar {
-        margin-top: 20px;
+        margin-top: 8px;
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
@@ -26,11 +26,11 @@
     }
 
     .endereco_form_container {
-        margin-top: 7vh;
-        margin-bottom: 7vh;
+        margin-top: 2vh;
+        margin-bottom: 1vh;
         position: relative;
         width: 500px;
-        height: 890px;
+        height: 810px;
         background-color: transparent;
         border-radius: 50px 5px;
         display: flex;
@@ -54,6 +54,7 @@
                 background-color: #FFB800;
                 border-radius: 5px;
                 font: 16px arial;
+                font-weight: 700;
 
             }
         }
@@ -99,8 +100,8 @@
         border-radius: 50px 5px;
         inset: 5px;
         width: 98%;
-        height: 880px;
-        padding: 50px 40px;
+        height: 800px;
+        padding: 40px 40px;
         z-index: 10;
         color: #ffffff;
 
@@ -108,12 +109,13 @@
         .comp-num {
             display: flex;
         }
+        
 
 
     }
 
     h2 {
-        font-size: 35px;
+        font-size: 28px;
         font-weight: 600;
         text-align: center;
 
@@ -136,12 +138,12 @@
 
     .input_text {
         width: 95%;
-        height: 30px;
+        height: 20px;
         background: transparent;
         border: none;
         outline: none;
         border-bottom: 2px solid #000000;
-        font-size: 20px;
+        font-size: 18px;
         padding-left: 10px;
         color: #000000;
 

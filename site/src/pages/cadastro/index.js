@@ -63,7 +63,7 @@ try {
             placeholder="Telefone"
             class="input_text"
             value={telefone}
-            onChange={e => setTelefone(e.target.value)} 
+            onChange={e => setTelefone(e.target.value)}
           />
 
         </div>
