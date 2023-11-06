@@ -16,4 +16,15 @@ code {
 *{
   margin: 0px;
   box-sizing: border-box;
+  
+}
+@font-face {
+  font-family: 'f1';
+  src: url(../../site/public/assets/fonts/f1.otf);
+}
+
+
+@font-face {
+  font-family: 'italic';
+  src: url(../../site/public/assets/fonts/italic.otf);
 }
