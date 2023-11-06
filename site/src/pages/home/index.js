@@ -10,10 +10,6 @@ export default function Home() {
   const[produtos,setProdutos] = useState([]);
   const [mostrarInfo, setMostrarInfo] = useState(false);
 
-
-  
-
-
   return (
     <div className="App">
       <Header />
