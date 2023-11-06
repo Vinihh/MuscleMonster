@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { toast, Toast } from 'react-toastify';
 import axios from 'axios';
-import { API_URL } from '../../constants';
 
 
 
@@ -61,12 +60,6 @@ export default function Endereco() {
     setComplemento('')
     setReferencia('')
   }
-
-  function teclaEnter(e) {
-    if (e.key === 'Enter') {
-        CadastroEndereco();
-  }
-}
 
 
   return (
@@ -195,7 +188,6 @@ export default function Endereco() {
               class="input_textn"
               value={referencia}
               onChange={e => setReferencia(e.target.value)}
-              onKeyUp={teclaEnter}
             />
 
           </div>
