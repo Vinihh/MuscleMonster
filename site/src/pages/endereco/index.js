@@ -1,5 +1,3 @@
-import Footer from '../../components/footer'
-import HeaderSimple from '../../components/header2'
 import './index.scss'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -62,14 +60,18 @@ export default function Endereco() {
     setReferencia('')
   }
   
+  function TeclaEnter(e) {
+    if (e.key === 'Enter') {
+      CadastroEndereco()
+    }
 
+  }
 
   return (
 
 
     <div className='endereco'>
 
-      <HeaderSimple />
       <div className='voltar'>
         <Link className='icon' to={'/home-minha-conta'}><img src='/assets/images/voltar.png'></img></Link>
       </div>
@@ -190,6 +192,7 @@ export default function Endereco() {
               class="input_textn"
               value={referencia}
               onChange={e => setReferencia(e.target.value)}
+              onKeyUp={TeclaEnter}
             />
 
           </div>
