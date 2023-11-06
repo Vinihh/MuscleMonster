@@ -12,7 +12,6 @@ export default function HomeAdm() {
   useEffect(() => {
     if(!storage('adm-logado')){
       navigate('/erro')
-      window.location.reload('/erro')
     };
   }, []);
 

@@ -16,3 +16,6 @@ export async function Usuario(id) {
     return resposta;
   }
   
+export async function Carrinho(id){
+    
+}
