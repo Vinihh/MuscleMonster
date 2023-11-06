@@ -9,7 +9,7 @@ import { API_URL } from '../../constants';
 
 export default function Endereco() {
 
-  const [nomeCompleto, setNomeCompleto] = useState('')
+  const [contato, setContato] = useState('')
   const [telefone, setTelefone] = useState('')
   const [cep, setCep] = useState('')
   const [rua, setRua] = useState('')
@@ -25,7 +25,7 @@ export default function Endereco() {
 
     const endereco = {
 
-      nomecompleto: nomeCompleto,
+      contato: contato,
       telefone: telefone,
       rua: rua,
       bairro: bairro,
@@ -49,7 +49,7 @@ export default function Endereco() {
   }
 
   function limpar() {
-    setNomeCompleto('')
+    setContato('')
     setTelefone('')
     setRua('')
     setBairro('')
@@ -84,14 +84,14 @@ export default function Endereco() {
           </div>
 
 
-          <p>Nome Completo do destinatário:</p>
+          <p>Nome Contato:</p>
           <div class="input_endereco">
 
             <input
               type="text"
               class="input_text"
-              value={nomeCompleto}
-              onChange={e => setNomeCompleto(e.target.value)}
+              value={contato}
+              onChange={e => setContato(e.target.value)}
             />
 
           </div>
