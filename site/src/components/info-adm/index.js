@@ -42,8 +42,10 @@ export default function InfoAdm() {
 
 
   useEffect(() => {
-    const usuariologado = storage('adm-logado');
-    setNome(usuariologado.adm)
+    if(storage('adm-logado')){
+      const usuariologado = storage('adm-logado');
+      setNome(usuariologado.adm)
+    }
 }, [])
 
 

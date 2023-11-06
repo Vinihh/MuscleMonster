@@ -17,27 +17,30 @@ export default function Carrinho() {
                 <h1>Carrinho</h1>
             </div>
 
-            <div className='produtos-carrinho'>
+            <div className='info-carrinho'>
 
-                <ProdutoCarrinho/>
+
+
+                <div className='produtos-carrinho'>
+
+                    <ProdutoCarrinho />
+
+                </div>
+
 
             </div>
-
-            <div className='forma-pagamento'> 
-
-                
-
-            </div>
-
-                <hr/>
-
+            
+  
             <div className='total'>
 
-                <p>Total ( 0 itens ): R$0,00</p>
-                <button>Fazer Compra</button>
+                
+                <div> 
+                    <p>Total ( 0 itens ): R$0,00</p>
+                    <button>Fazer Compra</button>
+                </div>
+                <hr />
 
             </div>
-
         </section>
     )
 }
