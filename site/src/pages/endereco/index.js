@@ -62,7 +62,12 @@ export default function Endereco() {
     setReferencia('')
   }
   
+  function TeclaEnter(e) {
+    if (e.key === 'Enter') {
+      CadastroEndereco()
+    }
 
+  }
 
   return (
 
@@ -190,6 +195,7 @@ export default function Endereco() {
               class="input_textn"
               value={referencia}
               onChange={e => setReferencia(e.target.value)}
+              onKeyUp={TeclaEnter}
             />
 
           </div>
