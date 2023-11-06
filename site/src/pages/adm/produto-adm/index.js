@@ -44,7 +44,7 @@ export default function ProdutoAdm() {
 
     } catch (error) {
       console.error('Erro ao remover produto:', error);
-      alert('Erro ao remover produto. Verifique o console para mais detalhes.');
+      toast.erro('Erro ao remover produto. Verifique o console para mais detalhes.');
     }
   }
 
@@ -63,7 +63,6 @@ const navigate = useNavigate();
 useEffect(() => {
   if(!storage('adm-logado')){
     navigate('/erro')
-    window.location.reload('/erro')
   };
 }, []);
 

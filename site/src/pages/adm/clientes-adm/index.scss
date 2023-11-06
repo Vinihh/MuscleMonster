@@ -1,17 +1,25 @@
-.cliente-adm{
+.cliente-adm {
   display: flex;
   flex-direction: column;
   height: auto;
+  overflow: hidden;
   font-family: 'f1';
 
-  aside{
+  .busca {
     display: flex;
-    flex-direction: row;
-    height: 90vh;
-    
-    .faixa1-clientes{
+
+  }
+
+  aside {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    width: 100%;
+    align-items: center;
+
+    .faixa1-cliente {
       width: 75%;
-      height: 100%;
+      height: 30vh;
 
       display: flex;
       flex-direction: column;
@@ -20,20 +28,24 @@
       padding: 40px 0px;
       gap: 30px 0px;
 
-      .inp-busca{
+      h1{
+        font-size: 26px;
+      }
+
+      .inp-busca {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
         padding: 0px 10px 0px 20px;
-  
+
         height: 4.5vh;
         width: 45%;
         border: 1px solid #000;
         border-radius: 20px;
-        
-  
-        input{
+
+
+        input {
           background: transparent;
           border: none;
           box-shadow: 0 0 0 0;
@@ -42,25 +54,90 @@
           color: #000;
           font-size: 15px;
         }
-  
-        input::placeholder{
-          color:#000 ;
+
+        input::placeholder {
+          color: #000;
           font-size: 15px;
         }
-  
-        img{
-          height:2.5vh ;
+
+        img {
+          height: 2.5vh;
           width: 100%;
         }
-  
-        button{
+
+        button {
           background: none;
           border: none;
         }
       }
     }
   }
+ 
+  .tabela::-webkit-scrollbar {
+    width: 12px;
+
+  }
   
+  .tabela::-webkit-scrollbar-track {
+    background-color: #ffffff; /* Cor de fundo da barra de rolagem */
+  }
+  
+  .tabela::-webkit-scrollbar-thumb {
+    background-color: lightgray; 
+    border-radius: 4px; 
+  }
+  
+
+.tabela{
+  width: 90%;
+  height: 80vh;
+  overflow-y: scroll;
+
+
+
+
+  table {
+    width: 100%;
+    height: 50vh;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgb(255, 255, 255);
+    border-radius: 8px;
+    overflow-y: scroll;
+
+
+    th,td {
+      padding: 15px;
+      text-align: left;
+      border-bottom: 1px solid #616161;
+      font-weight: 500;
+    }
+
+
+    tr {
+      width: 100%;
+
+    }
+
+    th {
+      background-color: #000000f3;
+      color: white;
+    }
+
+    tbody{
+      overflow-y: scroll;
+      overflow: hidden;
+    }
+
+    tbody tr:hover {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      max-width: 80px;
+      max-height: 100px;
+      object-fit: cover;
+    }
+
+  }
 }
-  
-  
+}

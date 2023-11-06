@@ -17,5 +17,36 @@ export async function Usuario(id) {
   }
   
 export async function Carrinho(id){
-    
+
 }
+
+export async function BuscarCliente(nome) {
+    const comando = `SELECT
+                        id_cliente      as id,
+                        url_img         as img,
+                        nm_cliente      as cliente,
+                        ds_email        as email,
+                        ds_telefone     as telefone
+                        FROM  tb_cliente
+                        WHERE nm_cliente like ?`;
+  
+    const [resposta] = await conexao.query(comando, [ `%${nome}%` ])
+    return resposta
+  }
+
+  export async function ConsultarCliente() {
+
+    const comando = `SELECT
+    id_cliente      as id,
+    url_img         as img,
+    nm_cliente      as cliente,
+    ds_email        as email,
+    ds_telefone     as telefone
+    FROM  tb_cliente
+  `;
+  
+    const [resposta] = await conexao.query(comando);
+    return resposta;
+  }
+  
+  
