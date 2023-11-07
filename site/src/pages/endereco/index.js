@@ -29,7 +29,7 @@ export default function Endereco() {
       telefone: telefone,
       rua: rua,
       bairro: bairro,
-      cidade: cidade,
+      cidade: cidade, 
       cep: cep,
       numero: numero,
       complemento: complemento,

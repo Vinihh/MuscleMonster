@@ -17,6 +17,9 @@ endpoint.post('/cadastro', async (req, resp) => {
         if (isNaN(cliente.telefone))
             throw new Error(' Telefone deve ser um número');
 
+        if (cliente.telefone.length < 11)
+            throw new Error(' Telefone Inválido');
+
 
         if (!cliente.email)
             throw new Error('Email obrigatório');

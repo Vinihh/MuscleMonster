@@ -43,6 +43,13 @@ try {
     }
   }
 
+  function TeclaEnter(e) {
+    if (e.key === 'Enter') {
+      Cadastro()
+    }
+
+  }
+
   return (
     <div className='body'>
     <div class="cadastro_form_container">
@@ -51,7 +58,12 @@ try {
       <div class="input_group">
         
         <input
-          type="text" placeholder="Nome" class="input_text" value={nome} onChange={e => setNome(e.target.value)}
+          type="text" 
+          placeholder="Nome" 
+          class="input_text" 
+          value={nome} 
+          onChange={e => setNome(e.target.value)}
+          onKeyUp={TeclaEnter}
         />
 
 
@@ -60,9 +72,10 @@ try {
           
           <input
             type="text"
-            placeholder="Telefone"
+            placeholder="Telefone com DDD"
             class="input_text"
             value={telefone}
+            onKeyUp={TeclaEnter}
             onChange={e => setTelefone(e.target.value)}
           />
 
@@ -73,6 +86,7 @@ try {
             placeholder="Email"
             class="input_text"
             value={email}
+            onKeyUp={TeclaEnter}
             onChange={e => setEmail(e.target.value)} 
           />
 
@@ -82,6 +96,7 @@ try {
             type="password"
             placeholder="Senha"
             class="input_text"
+            onKeyUp={TeclaEnter}
             onChange={e => setSenha(e.target.value)} 
           />
 
@@ -92,6 +107,7 @@ try {
             placeholder="Confirme sua senha"
             class="input_text"
             onChange={e => setConfirmSenha(e.target.value)}
+            onKeyUp={TeclaEnter}
           />
 
         </div>

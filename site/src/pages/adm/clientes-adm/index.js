@@ -13,8 +13,10 @@ import {toast} from 'react-toastify'
 export default function ClientesAdm() {
   const [busca,setBusca] = useState('')
   const [clientes,setClientes] = useState([]);
-
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
+
+
 
   async function buscarClientePorNome() {
 
@@ -95,7 +97,7 @@ export default function ClientesAdm() {
                   <td>{item.cliente}</td>
                   <td>{item.email}</td>
                   <td>{item.telefone}</td>  
-                  <td>{}</td>              
+                             
                 </tr>
               ))}
             </tbody>
