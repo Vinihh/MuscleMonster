@@ -95,6 +95,65 @@ h2 {
     }
 }
 
+.senha2{
+    margin-top: 40px;
+    width: 95%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+
+    input{
+        width: 100%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;    
+        font-size: 16px;
+        padding-left: 10px;
+        color: #ffffff;
+    }
+
+  }
+
+.senha{
+    margin-top: 40px;
+    width: 95%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+
+    input{
+        width: 90%;
+        height: 30px;
+        background: transparent;
+        border: none;
+        outline: none;    
+        font-size: 16px;
+        padding-left: 10px;
+        color: #ffffff;
+    }
+
+      button{
+        width: 40px;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        
+
+           img{
+            width: 20px;
+            height: 20px;
+            background-color: transparent;
+           }
+      }
+  }
+
 ::placeholder {
     font-size: 17px;
     color: #ffffff52;

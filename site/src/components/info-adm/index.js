@@ -14,6 +14,7 @@ export default function InfoAdm() {
   const navigate = useNavigate();
 
   const[nome, setNome] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   
 
@@ -86,8 +87,11 @@ export default function InfoAdm() {
 
             </div>
           </div>
-          <button onClick={sairClick}>
-            Sair
+          <button 
+          onMouseOver={() => setShowPassword(true)}
+          onMouseOut={() => setShowPassword(false)}
+          onClick={sairClick}>
+            {showPassword ? <img src='/assets/videos/logout.gif' alt=''/> : <img src='/assets/images/logout.png' alt=''/>}
           </button>
           </div>
 
