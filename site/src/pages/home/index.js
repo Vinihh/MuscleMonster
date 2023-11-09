@@ -2,13 +2,29 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Produto from '../../components/item-produto';
 import './index.scss';
-import { Link,useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import MinhaConta from '../../components/minhaconta';
+import { API_URL } from '../../constants';
 
 export default function Home() {
   const[produtos,setProdutos] = useState([]);
   const [mostrarInfo, setMostrarInfo] = useState(false);
+  const [produto, setProduto] = useState([])
+
+  const id = useParams().id
+
+  const navigate = useNavigate()
+
+  async function ListarProdutos() {
+    let resposta = await axios.get(API_URL + '/consulta/produto')
+    setProduto(resposta.data)
+  }
+
+  useEffect(() => {
+    ListarProdutos()
+  }, [])
 
   return (
     <div className="App">
@@ -57,13 +73,17 @@ export default function Home() {
         <h1>OS MAIS VENDIDOS</h1>
 
         <div className='fora'>
-          {produtos.map((produtos) => (
+          {produto.map((produto) => (
+            <section onClick={() => navigate('/consulta/produto)' + produto.id)}>
+
             <Produto 
-            nome={produtos.nome}
-            preco={produtos.preco}
-            imagem={produtos.imagem}
-            descricao={produtos.descricao}
+            nome={produto.nome}
+            preco={produto.preco}
+            imagem={produto.imagem}
+            descricao={produto.descricao}
             />
+
+        </section>
           ))}
 
         </div>
