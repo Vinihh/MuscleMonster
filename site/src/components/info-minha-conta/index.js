@@ -13,6 +13,7 @@ export default function InfoMinhaConta() {
 
   const[nome, setNome] = useState('');
   const[email, setEmail] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const navigate = useNavigate();
 
@@ -29,7 +30,7 @@ export default function InfoMinhaConta() {
             onClick: async () => {
                 
               storage.clear('usuario-logado');
-              window.location.reload('/')
+              navigate('/')
               toast.success('Você saiu da sua conta!')
             }
           },
@@ -64,8 +65,8 @@ export default function InfoMinhaConta() {
         
       </div>
 
-      <div className='links'>
-        <div className='links-pt1'>
+      <div className='linkss'>
+        <div className='linkss-pt1'>
           <div>
             <Link to={'/meuperfil'}> Meu Perfil</Link>
             <Link to={'/minhascompras'}> Minhas Compras</Link>
@@ -73,12 +74,16 @@ export default function InfoMinhaConta() {
             <Link> Contate-nos via WhatsApp <img src='/assets/images/whatsapp.png'></img></Link>
           </div>
         </div>
-        <Link to='/'>
-          <button onClick={sairClick}>
-            Sair
-          </button>
-        </Link>
+        
+        
       </div>
+
+      <button 
+          onMouseOver={() => setShowPassword(true)}
+          onMouseOut={() => setShowPassword(false)}
+          onClick={sairClick}>
+            {showPassword ? <img src='/assets/videos/logout.gif' alt=''/> : <img src='/assets/images/logout.png' alt=''/>}
+          </button>
     </div>
   );
 }

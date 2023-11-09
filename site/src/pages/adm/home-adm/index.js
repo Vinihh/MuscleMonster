@@ -19,14 +19,14 @@ export default function HomeAdm() {
     <div className="home-adm">
       <HeaderAdm />
 
-      <aside>
+      <aside className='home-adm-pt2'>
         <InfoAdm />
 
-        <section>
+        <section className='home-adm-pt3' >
  
           <h2>Acesso Rápido</h2>
 
-          <div>
+          <div className='home-adm-pt4'>
             <Link to={'/add-produto'}>
             <div>
                 <img src='/assets/images/novo-produto.png'></img>
@@ -36,7 +36,7 @@ export default function HomeAdm() {
             </Link>
 
             <Link to={'/adm/busca-cliente'}>
-            <div>
+            <div className='home-adm-pt5'>
                 <img src='/assets/images/cliente.png'></img>
                 <h1>Clientes</h1>
                 <p>Pesquise e consulte os clientes.</p>

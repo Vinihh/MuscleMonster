@@ -17,7 +17,7 @@ export default function Erro() {
 
   return (
     <div className="pg-erro">
-      <HeaderAdm/>
+   
 
       <nav>
           <div>
