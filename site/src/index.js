@@ -47,7 +47,7 @@ root.render(
         <Route path='/Login' element={<Login />} />
         <Route path='/adm/login-adm' element={<LoginAdm />} />
         <Route path='/adm/personal' element={<PersonalAdm />} />
-        <Route path='/produtos/:id' element={<PaginaProduto />} />
+        <Route path='/produtos' element={<PaginaProduto />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/endereco' element={<Endereco />} />
         <Route path='/suplementos' element={<Suplementos />} />

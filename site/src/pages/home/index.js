@@ -9,14 +9,28 @@ import MinhaConta from '../../components/minhaconta';
 import { API_URL } from '../../constants';
 
 export default function Home() {
-  const[produtos,setProdutos] = useState([]);
+  const [produtos,setProdutos] = useState([]);
   const [mostrarInfo, setMostrarInfo] = useState(false);
   const [produto, setProduto] = useState([])
+  const [erro, setErro] = useState('')
 
   const id = useParams().id
 
   const navigate = useNavigate()
 
+
+  async function buscarProduto(id) {
+    try {
+      let url = API_URL + `/listar/produto/${id}`;
+      let resposta = await axios.get(url);
+      setProduto(resposta.data)
+      console.log(resposta)
+    } catch (err) {
+      setErro(err.response.data.erro);
+    }
+  }
+
+  
   async function ListarProdutos() {
     let resposta = await axios.get(API_URL + '/consulta/produto')
     setProduto(resposta.data)
@@ -73,14 +87,14 @@ export default function Home() {
         <h1>OS MAIS VENDIDOS</h1>
 
         <div className='fora'>
-          {produto.map((produto) => (
-            <section onClick={() => navigate('/consulta/produto)' + produto.id)}>
+          {produto.map((item) => (
+            <section onClick={() => navigate('/produtos/' + item.id)}>
 
             <Produto 
-            nome={produto.nome}
-            preco={produto.preco}
-            imagem={produto.imagem}
-            descricao={produto.descricao}
+            nome={item.nome}
+            preco={item.preco}
+            imagem={item.imagem}
+            descricao={item.descricao}
             />
 
         </section>
