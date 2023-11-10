@@ -15,6 +15,20 @@ FROM  tb_produto
   return resposta;
 }
 
+export async function BuscarPorNome(nome) {
+  const comando = `SELECT id_produto      as id,
+                          url_img         as img,
+                          nm_produto      as produto,
+                          ds_categoria    as categoria,
+                          vl_valor        as preco,
+                          qtd_estoque     as estoque
+                    FROM  tb_produto
+                    WHERE nm_produto like ?`;
+
+  const [resposta] = await conexao.query(comando, [ `%${nome}%` ])
+  return resposta
+}
+
 
 export async function deletarProduto(id) {
   try {
@@ -57,17 +71,4 @@ export async function alterarProduto(id, produto) {
   return resp.affectedRows;
 }
 
-export async function BuscarPorNome(nome) {
-  const comando = `SELECT id_produto      as id,
-                          url_img         as imagem,
-                          nm_produto      as produto,
-                          ds_categoria    as categoria,
-                          vl_valor        as preco,
-                          qtd_estoque     as estoque
-                    FROM  tb_produto
-                    WHERE nm_produto like ?`;
-
-  const [resposta] = await conexao.query(comando, [ `%${nome}%` ])
-  return resposta
-}
 

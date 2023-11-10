@@ -97,8 +97,7 @@
 
 
   table {
-    width: 100%;
-    height: 100vh;
+    width: 100%;  
     border-collapse: collapse;
     box-shadow: 0 4px 8px rgb(255, 255, 255);
     border-radius: 8px;
@@ -135,6 +134,7 @@
     tbody{
       overflow-y: scroll;
       overflow: hidden;
+      height: auto;
     }
 
     tbody tr:hover {

@@ -44,7 +44,7 @@ export default function ProdutoAdm() {
 
     } catch (error) {
       console.error('Erro ao remover produto:', error);
-      toast.erro('Erro ao remover produto. Verifique o console para mais detalhes.');
+      toast.error('Erro ao remover produto. Verifique o console para mais detalhes.');
     }
   }
 
@@ -109,10 +109,10 @@ useEffect(() => {
             <tbody>
               {listaProdutos.map((item) => (
                 <tr key={item.id_produto}>
-                  <td><img src={item.img + '.jpg'} /></td>
+                  <td><img src={API_URL + "/" + item.img} /></td>
                   <td id='T1'>{item.produto}</td>
                   <td>{item.categoria}</td>
-                  <td>R${item.valor}</td>
+                  <td>R${item.preco}</td>
                   <td>{item.estoque}</td>
                   <td>
                     <img  id='trash' src='/assets/images/lixo.png.svg' onClick={() => removerProduto(item.id)} />

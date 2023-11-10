@@ -8,16 +8,21 @@ import { toast } from 'react-toastify';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import { Navigate } from 'react-router-dom';
+import { inserirImagemCliente } from '../../api/addPrdtapi';
 
 export default function InfoMinhaConta() {
 
   const[nome, setNome] = useState('');
   const[email, setEmail] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [imagem, setImagem] = useState('');
+  const [id,setId] = useState(0);
+  const [img,setImg] = useState('');
+
 
   const navigate = useNavigate();
 
-  const [id,setId] = useState('')
+
   const [usuario, setUsuario] = useState([]); 
 
   function sairClick() {
@@ -41,7 +46,46 @@ export default function InfoMinhaConta() {
       });
 }
 
+async function trocarImg(){
+  try {
+  
+  if(imagem == ''){
+    toast.error('Insira uma Imagem',{
+      autoClose:2000,
+    })
+  }
 
+  else{
+    const r = await inserirImagemCliente(id,imagem);
+    setImg(r.imagem)
+
+
+    //bsucar da storage info do usuario
+    //atualizar campo da imagem c a nova imagem
+    //atualizar a stroage
+
+    setImg(novaImagem);
+
+
+    toast.success('Imagem Salva!',{
+      autoClose:2,
+    });
+    setImagem('')
+  }
+
+  } catch (err) {
+    toast.error(err.response.data.erro)
+    
+  }
+}
+
+function escolherImagem(){
+  document.getElementById('imagemCliente').click();
+}
+
+function mostrarImagem(){
+  return URL.createObjectURL(imagem)
+}
 
 
   useEffect(() => {
@@ -49,6 +93,7 @@ export default function InfoMinhaConta() {
     const usuariologado = storage('usuario-logado');
     setNome(usuariologado.nome)
     setEmail(usuariologado.email)
+    setId(usuariologado.id)
 
   }
 }, [])
@@ -59,10 +104,24 @@ export default function InfoMinhaConta() {
   return (
     <div className="info-minha-conta">
       <div className='user'>
-        <img src='/assets/images/teste2.jpg' alt='' />
-        
+
+      <div className='imagem-usuario' >
+
+          {!imagem &&
+            <img id={ !img ? 'img-user2' : 'img-user' } src={!img ? '/assets/images/meuperfil.png' : API_URL + '/' + img }  alt='' />
+          }
+
+          {imagem &&
+            <img className='imagem-cliente' src={mostrarImagem()} alt='' />
+          }
+            
+            
+            <input type='file' id='imagemCliente' onChange={e => setImagem(e.target.files[0])}/>
+
+          </div>
+          {imagem ? <button onClick={trocarImg}><img src='/assets/images/salvar.png' /></button> : <button onClick={escolherImagem}><img src='/assets/images/editar.png' /></button>}
           <h1>{nome}</h1> 
-        
+               
       </div>
 
       <div className='linkss'>
@@ -78,7 +137,7 @@ export default function InfoMinhaConta() {
         
       </div>
 
-      <button 
+      <button className='sair' 
           onMouseOver={() => setShowPassword(true)}
           onMouseOut={() => setShowPassword(false)}
           onClick={sairClick}>

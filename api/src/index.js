@@ -16,6 +16,8 @@ server.use(express.json())
 
 server.use('/storage/imagens',express.static('storage/imagens'));
 
+server.use('/storage/imagem/cliente',express.static('storage/imagem/cliente'));
+
 
 server.use(Addproduto)
 server.use(listproduto)

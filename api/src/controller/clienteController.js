@@ -1,5 +1,9 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem } from "../repository/clienteRepository.js";
+
+import multer from 'multer'
+const upload = multer({ dest: 'storage/imagem/cliente' })
+let endpoint = Router();
 
 
 let endpoints = Router();
@@ -46,6 +50,27 @@ let endpoints = Router();
 
     } catch (err) {
       resp.status(500).send({ erro: err.message });
+    }
+  })
+
+  endpoints.put('/inserir/:id/imagem/cliente', upload.single('imagem'), async (req, resp) => {
+    try {
+        if(!req.file)
+            throw new Error('Escolha a imagem')
+
+
+      const { id } = req.params;
+      const imagem = req.file.path;
+  
+      const resposta = await TrocarImagem(imagem, id);
+      if(resposta != 1)
+            throw new Error('A imagem não pode ser salva')
+      resp.send({imagem});
+      
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
     }
   })
 

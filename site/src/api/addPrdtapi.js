@@ -30,3 +30,17 @@ export async function inserirImagem(id,imagem){
 
     return resposta.status
 }
+
+export async function inserirImagemCliente(id,imagem){
+
+    const formData = new FormData();
+    formData.append ('imagem',imagem)
+
+    const resposta = await api.put(`/inserir/${id}/imagem/cliente`, formData, {
+        headers:{
+            "Content-Type":"multipart/form-data"
+        },
+    });
+
+    return resposta.data
+}

@@ -1,5 +1,6 @@
 import conexao from "./connection.js";
 
+
 export async function Usuario(id) {
 
     const comando = `SELECT 
@@ -18,6 +19,16 @@ export async function Usuario(id) {
   
 export async function Carrinho(id){
 
+}
+
+export async function TrocarImagem(imagem, id) {
+  const comando =
+      `UPDATE tb_cliente
+      SET url_img         = ?
+      WHERE id_cliente    = ? `;
+  
+  const [resposta] = await conexao.query(comando, [imagem, id]);
+  return resposta.affectedRows;
 }
 
 export async function BuscarCliente(nome) {

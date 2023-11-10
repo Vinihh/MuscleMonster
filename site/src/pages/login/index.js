@@ -36,7 +36,7 @@ export default function Login() {
       setTimeout(() => {
         storage('usuario-logado', response.data)
         navigate('/');
-      },1700)
+      },1200)
    
     } catch (err) {
       ref.current.complete();
