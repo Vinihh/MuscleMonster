@@ -93,7 +93,7 @@ export default function Home() {
             <Produto 
             nome={item.nome}
             preco={item.preco}
-            imagem={item.imagem}
+            imagem={item.img}
             descricao={item.descricao}
             />
 
