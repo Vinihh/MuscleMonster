@@ -18,19 +18,6 @@ export default function Home() {
 
   const navigate = useNavigate()
 
-
-  async function buscarProduto(id) {
-    try {
-      let url = API_URL + `/listar/produto/${id}`;
-      let resposta = await axios.get(url);
-      setProduto(resposta.data)
-      console.log(resposta)
-    } catch (err) {
-      setErro(err.response.data.erro);
-    }
-  }
-
-  
   async function ListarProdutos() {
     let resposta = await axios.get(API_URL + '/consulta/produto')
     setProduto(resposta.data)
@@ -39,6 +26,7 @@ export default function Home() {
   useEffect(() => {
     ListarProdutos()
   }, [])
+
 
   return (
     <div className="App">
@@ -87,18 +75,13 @@ export default function Home() {
         <h1>OS MAIS VENDIDOS</h1>
 
         <div className='fora'>
-          {produto.map((item) => (
+          {produto.map((item => (
             <section onClick={() => navigate('/produtos/' + item.id)}>
 
-            <Produto 
-            nome={item.nome}
-            preco={item.preco}
-            imagem={item.img}
-            descricao={item.descricao}
-            />
+            <Produto prod = {item} />
 
         </section>
-          ))}
+          )))}
 
         </div>
       </section>

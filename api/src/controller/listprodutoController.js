@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BuscarPorNome, consultarProdutos, deletarProduto} from "../repository/listprodutoRepository.js";
+import { BuscarPorNome, consultarProdutos, deletarProduto, BuscarPorEquipamentos} from "../repository/listprodutoRepository.js";
 
 let endpoints = Router();
 
@@ -21,7 +21,7 @@ endpoints.delete('/deletar/:id', async (req, resp) => {
   endpoints.get('/consulta/produto', async (req, resp) => {
 
     let resposta = await consultarProdutos()
-    resp.send(resposta);
+    resp.send(resposta); 
   });
 
   endpoints.put('/alterar-produto/:id', async (req, resp) => {
@@ -58,6 +58,27 @@ endpoints.delete('/deletar/:id', async (req, resp) => {
       resp.status(500).send({ erro: err.message });
     }
   })
+
+
+  endpoints.get('/consulta/equipamentos/:id', async (req, resp) => {
+    try {
+
+      const id = req.params.id
+      const resposta = await BuscarPorEquipamentos(id)
+      
+      if (resposta.length == 0) {
+          resp.status(404).send([])
+      }
+
+      else {
+        resp.send(resposta)
+      }
+
+    } catch (err) {
+      resp.status(500).send({ erro: err.message });
+    }
+  })
+
 
 
 export default endpoints;

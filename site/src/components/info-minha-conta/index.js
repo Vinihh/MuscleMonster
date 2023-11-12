@@ -61,7 +61,7 @@ async function trocarImg(){
 
 
 
-    setImg(novaImagem);
+    setImg(inserirImagemCliente);
 
 
     toast.success('Imagem Salva!',{

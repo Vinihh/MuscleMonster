@@ -72,3 +72,19 @@ export async function alterarProduto(id, produto) {
 }
 
 
+
+
+
+export async function BuscarPorEquipamentos() {
+  const comando = `SELECT id_produto      as id,
+                          url_img         as img,
+                          nm_produto      as produto,
+                          ds_categoria    as categoria,
+                          vl_valor        as preco,
+                          qtd_estoque     as estoque
+                    FROM  tb_produto
+                    WHERE ds_categoria like ?`;
+
+  const [resposta] = await conexao.query(comando, [ `%Equipamentos%` ])
+  return resposta
+}
