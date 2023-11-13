@@ -30,6 +30,15 @@ export default function HomeAdm() {
   
   async function salvarClick(){
     try {
+      if(categoria == 1){
+        setCategoria('Suplementos')
+      }
+      else if(categoria == 2){
+        setCategoria('Equipamentos')
+      }
+      if(categoria == 3){
+        setCategoria('Roupas')
+      }
     
     if(imagem == ''){
       toast.error('Insira uma Imagem',{
@@ -38,6 +47,7 @@ export default function HomeAdm() {
     }
 
     else{
+      
       const produtos = await cadastrarProduto(nomeproduto ,categoria ,valor ,descricao ,estoque);
       const r = await inserirImagem(produtos.id,imagem);
       limpar();
@@ -114,7 +124,13 @@ export default function HomeAdm() {
 
 
             <h1>Categoria</h1>
-            <input type='text' value={categoria} onChange={e => setCategoria(e.target.value)} />
+            <select value={categoria} onChange={e => setCategoria(e.target.value)}>
+              <option value={0}>Selecione...</option>
+              <option value={1}>Suplementos</option>
+              <option value={2}>Equipamentos</option>
+              <option value={3}>Roupas</option>
+            </select>
+           
 
             </div>
 

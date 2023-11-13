@@ -93,7 +93,7 @@ export default function ClientesAdm() {
               
               {clientes.map((item) => (
                 <tr key={item.id}>
-                  <td><img src={item.img + '.jpg'} /></td>
+                  <td><img src={API_URL + "/" + item.img} /></td>
                   <td>{item.cliente}</td>
                   <td>{item.email}</td>
                   <td>{item.telefone}</td>  
