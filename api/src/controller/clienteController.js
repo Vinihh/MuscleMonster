@@ -3,8 +3,6 @@ import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem } from "../repos
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/imagem/cliente' })
-let endpoint = Router();
-
 
 let endpoints = Router();
 
