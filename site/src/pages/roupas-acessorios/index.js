@@ -10,21 +10,21 @@ const api = axios.create({
   baseURL: API_URL
 });
 
-export default function Equipamentos() {
+export default function RoupasAcessorios() {
 
   const id = useParams().id
 
   const navigate = useNavigate()
 
-  const [produtosuplemento, setProdutoEquipamento] = useState([])
+  const [produtosroupasacessorios, setProdutoRoupasAcessorios] = useState([])
 
-  async function BuscaEquipamentos() {
-    const resposta = await api.get(`/consulta/suplementos/${id}`)
-    setProdutoEquipamento(resposta.data)
+  async function BuscaRoupasAcessorios() {
+    const resposta = await api.get(`/consulta/roupas/acessorios/${id}`)
+    setProdutoRoupasAcessorios(resposta.data)
   }
 
   useEffect(() => {
-    BuscaEquipamentos()
+    BuscaRoupasAcessorios()
   }, [])
 
   return (
@@ -32,10 +32,10 @@ export default function Equipamentos() {
       <Header />
 
       <nav>
-        <h1>Equipamentos</h1>
+        <h1>Roupas e Acessórios</h1>
       </nav>
       <div className='produto-suplementos'>
-        {produtosuplemento.map((item) => (
+        {produtosroupasacessorios.map((item) => (
           <section onClick={() => navigate('/produtos/' + item.id)}>
             <PaginaEquipamentos
               imagem={API_URL + "/" + item.img}

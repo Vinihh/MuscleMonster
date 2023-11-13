@@ -52,7 +52,7 @@ export default function Home() {
         </div>
         </Link>
 
-        <Link to='/roupas'>
+        <Link to='/roupas-acessorios'>
         <div>
           <img src='/assets/images/img3.png' alt='' />
           <h1>Roupas/Acessórios</h1>

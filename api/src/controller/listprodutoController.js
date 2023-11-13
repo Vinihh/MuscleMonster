@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BuscarPorNome, consultarProdutos, deletarProduto, BuscarPorEquipamentos} from "../repository/listprodutoRepository.js";
+import { BuscarPorNome, consultarProdutos, deletarProduto, BuscarPorEquipamentos, BuscarPorSuplementos, BuscarPorRoupasAcessorios} from "../repository/listprodutoRepository.js";
 
 let endpoints = Router();
 
@@ -65,6 +65,44 @@ endpoints.delete('/deletar/:id', async (req, resp) => {
 
       const id = req.params.id
       const resposta = await BuscarPorEquipamentos(id)
+      
+      if (resposta.length == 0) {
+          resp.status(404).send([])
+      }
+
+      else {
+        resp.send(resposta)
+      }
+
+    } catch (err) {
+      resp.status(500).send({ erro: err.message });
+    }
+  })
+  
+  endpoints.get('/consulta/suplementos/:id', async (req, resp) => {
+    try {
+
+      const id = req.params.id
+      const resposta = await BuscarPorSuplementos(id)
+      
+      if (resposta.length == 0) {
+          resp.status(404).send([])
+      }
+
+      else {
+        resp.send(resposta)
+      }
+
+    } catch (err) {
+      resp.status(500).send({ erro: err.message });
+    }
+  })
+
+  endpoints.get('/consulta/roupas/acessorios/:id', async (req, resp) => {
+    try {
+
+      const id = req.params.id
+      const resposta = await BuscarPorRoupasAcessorios(id)
       
       if (resposta.length == 0) {
           resp.status(404).send([])

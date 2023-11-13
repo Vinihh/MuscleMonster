@@ -16,7 +16,7 @@ import PaginaProduto from './pages/produtos';
 import Endereco from './pages/endereco';
 import Suplementos from './pages/suplementos';
 import Equipamentos from './pages/equipamentos';
-import Roupas from './pages/roupas';
+import RoupasAcessorios from './pages/roupas-acessorios';
 import LoginAdm from './pages/adm/login-adm';
 import MeuPerfil from './pages/meuperfil';
 import MinhasCompras from './pages/minhascompras';
@@ -52,7 +52,7 @@ root.render(
         <Route path='/endereco' element={<Endereco />} />
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />
-        <Route path='/roupas' element={<Roupas />} />
+        <Route path='/roupas-acessorios' element={<RoupasAcessorios />} />
         <Route path='/home-minha-conta' element={<MinhaContaUser />} />
         <Route path='/minhascompras' element={<MinhasCompras />} />
         <Route path='/meuperfil' element={<MeuPerfil />} />
