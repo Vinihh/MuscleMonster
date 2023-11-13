@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { API_URL } from '../../constants';
+import Footer from '../../components/footer';
 import Produto from '../../components/produto/index.js';
 
 const api = axios.create({
@@ -18,7 +19,7 @@ export default function PaginaProduto() {
       
       const resposta = await api.get(`/listar/produto/${id}`, {
         params: {
-          limit: 5,
+          limit: 1,
         },
       });
       setProduto(resposta.data);
@@ -35,6 +36,7 @@ export default function PaginaProduto() {
     <div className="pg-produto">
       <Header />
       <Produto produtoss={produto} />
+      <Footer/>
     </div>
   );
 }

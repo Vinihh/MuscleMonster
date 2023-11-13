@@ -8,8 +8,7 @@ export async function consultarProdutos() {
   ds_categoria    as categoria,
   vl_valor        as preco,
   qtd_estoque     as estoque
-FROM  tb_produto
-`;
+FROM  tb_produto`;
 
   const [resposta] = await conexao.query(comando);
   return resposta;

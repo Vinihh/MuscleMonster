@@ -47,8 +47,10 @@ export default function PaginaProduto(props) {
 
                 </div>
             </section>
-
+         
         </div>
+
+      
 
 
     );

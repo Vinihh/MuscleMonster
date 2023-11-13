@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       <section className='home-produtos'>
-        <h1>OS MAIS VENDIDOS</h1>
+        <h1>PRODUTOS MAIS PROCURADOS</h1>
 
         <div className='fora'>
           {produto.map((item => (
