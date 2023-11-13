@@ -57,12 +57,15 @@ async function trocarImg(){
 
   else{
     const r = await inserirImagemCliente(id,imagem);
-    setImg(r.imagem)
+    let novaImagem = r.imagem;
+
+    var imgcliente = JSON.parse(localStorage.getItem('usuario-logado'));
+    imgcliente.img = novaImagem;
+    localStorage.setItem('usuario-logado', JSON.stringify(imgcliente));
+    
 
 
-
-    setImg(inserirImagemCliente);
-
+   
 
     toast.success('Imagem Salva!',{
       autoClose:2,
@@ -89,9 +92,9 @@ function mostrarImagem(){
     if (storage('usuario-logado')) {
     const usuariologado = storage('usuario-logado');
     setNome(usuariologado.nome)
-    setEmail(usuariologado.email)
+    setEmail(usuariologado.email) 
     setId(usuariologado.id)
-
+    setImg(usuariologado.img )
   }
 }, [])
 
@@ -105,7 +108,7 @@ function mostrarImagem(){
       <div className='imagem-usuario' >
 
           {!imagem &&
-            <img id={ !img ? 'img-user2' : 'img-user' } src={!img ? '/assets/images/meuperfil.png' : API_URL + '/' + img }  alt='' />
+            <img id={ !img   ? 'img-user2' : 'img-user' } src={!img ? '/assets/images/meuperfil.png' : API_URL + '/' + img }  alt='' />
           }
 
           {imagem &&
