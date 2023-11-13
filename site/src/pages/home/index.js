@@ -9,9 +9,10 @@ import MinhaConta from '../../components/minhaconta';
 import { API_URL } from '../../constants';
 
 export default function Home() {
-  const[produtos,setProdutos] = useState([]);
+  const [produtos,setProdutos] = useState([]);
   const [mostrarInfo, setMostrarInfo] = useState(false);
   const [produto, setProduto] = useState([])
+  const [erro, setErro] = useState('')
 
   const id = useParams().id
 
@@ -25,6 +26,7 @@ export default function Home() {
   useEffect(() => {
     ListarProdutos()
   }, [])
+
 
   return (
     <div className="App">
@@ -73,18 +75,13 @@ export default function Home() {
         <h1>OS MAIS VENDIDOS</h1>
 
         <div className='fora'>
-          {produto.map((produto) => (
-            <section onClick={() => navigate('/consulta/produto)' + produto.id)}>
+          {produto.map((item => (
+            <section onClick={() => navigate('/produtos/' + item.id)}>
 
-            <Produto 
-            nome={produto.nome}
-            preco={produto.preco}
-            imagem={produto.imagem}
-            descricao={produto.descricao}
-            />
+            <Produto prod = {item} />
 
         </section>
-          ))}
+          )))}
 
         </div>
       </section>

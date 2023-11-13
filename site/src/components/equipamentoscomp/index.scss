@@ -1,0 +1,20 @@
+.props-equipamentos {
+    background-color: rgb(225, 225, 225);
+    width: 40vh;
+    height: 43vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    img {
+        width: 30vh;
+        margin-bottom: 2vh
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

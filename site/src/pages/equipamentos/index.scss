@@ -1,7 +1,7 @@
 .pagina-equipamentos {
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 125vh;
   font-family: 'f1';
 
   nav {
@@ -21,6 +21,14 @@
     }
   }
 
+  .produto-equipamento {
+    width: 100%;
+    display: flex;
+    gap: 4vh;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
     
 }
 

@@ -109,6 +109,17 @@
 
 }
 
+@media (max-width:1600px) {
+  .comp-header{
+  div{
+  .logo{
+    width: 80px;
+  }
+}
+}
+}
+
+
 @media (max-width:1200px) {
   .comp-header{
   div{

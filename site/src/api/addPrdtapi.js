@@ -44,3 +44,9 @@ export async function inserirImagemCliente(id,imagem){
 
     return resposta.data
 }
+
+
+export function BuscarImagem(imagem) {
+
+    return `${api.getUri()}/${imagem}`
+}

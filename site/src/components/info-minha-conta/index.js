@@ -60,11 +60,8 @@ async function trocarImg(){
     setImg(r.imagem)
 
 
-    //bsucar da storage info do usuario
-    //atualizar campo da imagem c a nova imagem
-    //atualizar a stroage
 
-    setImg(novaImagem);
+    setImg(inserirImagemCliente);
 
 
     toast.success('Imagem Salva!',{
