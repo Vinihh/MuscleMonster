@@ -12,14 +12,7 @@ export default function MeuPerfil() {
 
   const [imagem, setImagem] = useState('')
 
-  
-  function escolherImagem(){
-    document.getElementById('imagem').click();
-  }
 
-  function mostrarImagem(){
-    return URL.createObjectURL(imagem);
-  }
 
   return (
     <div className="meuperfil">
@@ -33,47 +26,44 @@ export default function MeuPerfil() {
 
           <h1>Meu Perfil</h1>
 
-          <div className='upload' onClick={escolherImagem}>
+          <div className='infos'>
 
-          {!imagem &&
-            <img src='/assets/images/meuperfil.png' alt='' height={100} width={100}/>
-          }
+            <div className='inputs'>
 
-          {imagem &&
-            <img className='imagem-produto' src={mostrarImagem()} alt='' />
-          }
-            
-            
-            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])}/>
+              <div>
+                <h1>Nome Completo</h1>
+                <input type='text' />
+              </div>
 
-          </div>
-          <div className='inputs'>
+              <div>
+                <h1>Genêro</h1>
+                <select>
+                  <option>Masculino</option>
+                  <option>Feminino</option>
+                  <option>Outro</option>
+                </select>
+              </div>
 
-            <div>
-            <h1>Nome Completo</h1>
-            <input type='text' />
+              <div>
+                <h1>Email</h1>
+                <input type='text' />
+              </div>
 
-            <h1>Genêro</h1>
-            <select>
-              <option>Masculino</option>
-              <option>Feminino</option>
-              <option>Outro</option>
-            </select>
+              <div>
+                <h1>Telefone</h1>
+                <input type='text' />
+              </div>
 
-            <h1>Email</h1>
-            <input type='text' />
-
-            <h1>Telefone</h1>
-            <input type='text'/>
-
-            <h1>Data de Nascimento</h1>
-            <input type='date'/>
+              <div>
+                <h1>Data de Nascimento</h1>
+                <input type='date' />
+              </div>
             </div>
           </div>
 
           <button>Salvar</button>
 
-    
+
 
         </div>
 

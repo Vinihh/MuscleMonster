@@ -15,7 +15,7 @@
   justify-content: flex-start;
   align-items: center;
 
-  .sair{
+  .sair {
     background: transparent;
     border: none;
     width: 50px;
@@ -26,11 +26,11 @@
     position: absolute;
     bottom: 5%;
 
-    img{
+    img {
       width: 40px;
       height: auto;
       margin-right: 8px;
-    
+
       transform: rotate(180deg);
     }
   }
@@ -42,44 +42,44 @@
     align-items: center;
     margin-bottom: 80px;
 
-    .imagem-usuario{ 
+    .imagem-usuario {
       display: flex;
       flex-direction: row;
       justify-content: center;
-      align-items: center; 
-      
+      align-items: center;
+
       background-color: #ffffff;
       border: 2.5px solid black;
-      height:160px;
-      width:160px;
+      height: 160px;
+      width: 160px;
       border-radius: 100%;
       overflow: hidden;
 
 
-      input{
-       position: absolute;    
-       visibility: hidden; 
+      input {
+        position: absolute;
+        visibility: hidden;
       }
 
-      .imagem-cliente{
-        height:100%;
+      .imagem-cliente {
+        height: 100%;
         width: 100%;
         border-radius: 20px;
       }
 
-      #img-user{
-        height:100%;
+      #img-user {
+        height: 100%;
         width: 100%;
       }
 
-      #img-user2{
-        height:70%;
+      #img-user2 {
+        height: 70%;
         width: 70%;
       }
 
     }
 
-    button{
+    button {
       margin-bottom: 5px;
       background: transparent;
       border: none;
@@ -102,7 +102,7 @@
     gap: 3px 10px;
     margin-left: 30px;
 
-    
+
     .linkss-pt1 {
       display: flex;
       flex-direction: row;
@@ -113,33 +113,42 @@
       div {
         display: flex;
         flex-direction: column;
-        width: 80%;
-        gap: 15px 0px;
+        width: 100%;
+        gap: 25px 0px;
         margin-top: 3px;
 
         a {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+
           text-decoration: none;
           color: black;
           font-weight: 500;
-          width: 80%;
-          font-size: 19px;
+          width: 100%;
+          font-size: 20px;
+          gap: 20px;
 
-          img{
-            width: 15px;
+          img {
+            width: 25px;
           }
         }
 
         a:hover {
-          text-decoration: underline;
-          text-decoration-color: #ffb800;
-          font-size: 20px;
-          transition: 0.2s;
+          transition: 0.5s;
+          transition-delay: 0.1s;
+          background-color: #ffffff;
+          width: 105%;
+          height: 5vh;
+          padding: 20px;
+          border-radius: 10px 0px 0px 10px;
         }
       }
 
-      }
     }
-
-
-
   }
+
+
+
+}
