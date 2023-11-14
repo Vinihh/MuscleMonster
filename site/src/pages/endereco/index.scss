@@ -1,3 +1,5 @@
+$primary-color: #FFB800; // Primary color, change as needed
+
 .endereco {
     width: 100%;
     height: 100%;
@@ -12,209 +14,144 @@
 
 
 
-    .voltar {
-        margin-top: 8px;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        width: 90%;
-
-        img {
-            width: 50px;
-        }
-    }
-
     .endereco_form_container {
-        margin-top: 2vh;
+        margin-top: 10vh;
         margin-bottom: 1vh;
-        position: relative;
-        width: 500px;
-        height: 810px;
+        width: 800px;
+        height: 650px;
         background-color: transparent;
-        border-radius: 50px 5px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        align-items: flex-start;
         justify-content: center;
-        overflow: hidden;
+        border-radius: 40px;
+        background-color: #000000;
+    
+        padding: 40px 40px;
+        color: #ffffff;
 
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            text-align: center;
+            color: $primary-color;
+        }
+
+        p {
+            margin-top: 20px;
+            color: #555;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        .parse{
+            display: flex;
+        
+        .parserow{
+            display: flex;
+            flex-direction: column;
+        .input_endereco {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            margin-bottom: 5px;
+        }
+        }
+        }   
+
+        .input_text,
+        .input_textn {
+            width: 35vh;
+            height: 10px;
+            background: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 2px solid $primary-color;
+            font-size: 17px;
+            padding: 10px 0px 15px 10px;
+            margin: 10px;
+            color: $primary-color;
+            margin-bottom: 10px;
+            transition: border-bottom-color 0.3s ease;
+
+            &:focus {
+                color: #fff;
+            }
+        }
+
+        ::placeholder {
+            font-size: 17px;
+            color: #555;
+            letter-spacing: 1px;
+        }
+
+        .fa {
+            font-size: 20px;
+            color: $primary-color;
+        }
+
+        .comp-num {
+            display: flex;
+            gap: 25px; 
+            width: 52vw;
+
+            >div {
+                flex: 1;
+
+                p {
+                    margin-top: 20px;
+                    color: #555;
+                    font-weight: 600;
+                    font-size: 16px;
+                }
+
+                .input_endereco {
+                    input {
+                        width: 100%;
+                        height: 10px;
+                        background: transparent;
+                        border: none;
+                        outline: none;
+                        border-bottom: 2px solid $primary-color;
+                        font-size: 20px;
+                        padding: 10px;
+                        color: $primary-color;
+                        margin-bottom: 10px;
+                        transition: border-bottom-color 0.3s ease;
+
+                        &:focus {
+                            color:#ffff;
+                        }
+                    }
+
+                    
+                }
+            }
+        }
 
         .cadastrar-endereco {
-
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
             height: 15vh;
-            
 
             button {
-            
-                padding: 10px 35px;
-                background-color: #FFB800;
+                padding: 15px 35px;
+                background-color: $primary-color;
                 border-radius: 5px;
                 font: 16px arial;
                 font-weight: 700;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+                margin-top: 20px;
 
+                &:hover {
+                    background-color: darken($primary-color, 10%);
+                }
             }
         }
-
     }
-
-    .endereco_form_container::before {
-
-        position: absolute;
-        width: 170%;
-        height: 170%;
-        content: '';
-        background-image: conic-gradient(transparent, transparent, transparent, #000000);
-        animation: rotate_border 6s linear infinite;
-
-    }
-
-    .endereco_form_container::after {
-
-        position: absolute;
-        width: 400%;
-        height: 170%;
-        content: '';
-        background-image: conic-gradient( transparent, #000000, transparent, transparent, transparent, transparent);
-        animation: rotate_border 6s linear infinite;
-        animation-delay: -3s;
-    }
-
-    @keyframes rotate_border {
-        0% {
-            transform: rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg);
-        }
-    }
-
-    .endereco_form {
-
-        content: '';
-        background-color: rgb(255, 255, 255);
-        border-radius: 50px 5px;
-        inset: 5px;
-        width: 98%;
-        height: 800px;
-        padding: 40px 40px;
-        z-index: 10;
-        color: #ffffff;
-
-
-        .comp-num {
-            display: flex;
-        }
-        
-
-
-    }
-
-    h2 {
-        font-size: 28px;
-        font-weight: 600;
-        text-align: center;
-
-        color: black;
-    }
-
-    p {
-        margin-top: 20px;
-        color: black;
-        font-weight: 600;
-        font-size: 16px;
-    }
-
-    .input_endereco {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        margin-bottom: 10px;
-    }
-
-    .input_text {
-        width: 95%;
-        height: 20px;
-        background: transparent;
-        border: none;
-        outline: none;
-        border-bottom: 2px solid #000000;
-        font-size: 18px;
-        padding:10px;
-        color: #000000;
-        margin-bottom: 10px;
-    }
-
-        .input_textn {
-        width:90%;
-        height: 30px;
-        background: transparent;
-        border: none;
-        outline: none;
-        border-bottom: 2px solid #000000;
-        font-size: 20px;
-        padding: 10px;
-        color: #000000;
-        margin-bottom: 10px;
-    }
-
-    ::placeholder {
-        font-size: 17px;
-        color: #000000;
-        letter-spacing: 1px;
-
-    }
-
-    .fa {
-        font-size: 20px;
-
-    }
-
-    #login_button {
-        position: relative;
-        width: 300px;
-        height: 40px;
-        transition: 1s;
-        margin-top: 70px;
-
-
-    }
-
-    #login_button button {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        z-index: 10;
-        cursor: pointer;
-        font-size: 22px;
-        letter-spacing: 2px;
-        border: 1px solid #FFB800;
-        color: #FFB800;
-        border-radius: 50px;
-        background-color: transparent;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .fotter {
-        margin-top: 30px;
-        display: flex;
-        justify-content: space-between;
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 18px;
-            color: #ffffff;
-        }
-
-    }
-
-
 }

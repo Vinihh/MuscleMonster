@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { toast, Toast } from 'react-toastify';
 import axios from 'axios';
 import { API_URL } from '../../constants';
+import HeaderAdm from '../../components/header-adm';
 
 
 
@@ -36,12 +37,13 @@ export default function Endereco() {
       referencia: referencia
     };
 
-    limpar()
+
 
     try {
 
       let resposta = await axios.post( API_URL + '/endereco', endereco)
       toast.success('Endereço cadastrado com Sucesso')
+      limpar()
 
     } catch (err) {
       toast.error(err.response.data.erro);
@@ -72,18 +74,18 @@ export default function Endereco() {
 
     <div className='endereco'>
 
-      <div className='voltar'>
-        <Link className='icon' to={'/home-minha-conta'}><img src='/assets/images/voltar.png'></img></Link>
-      </div>
+      <HeaderAdm/>
+
+      
 
       <div class="endereco_form_container">
-        <div class="endereco_form">
 
           <h2>Endereço</h2>
           <div class="input_group">
           </div>
 
-
+          <div className='parse'>
+          <div className='parserow'>
           <p>Nome Contato:</p>
           <div class="input_endereco">
 
@@ -116,7 +118,9 @@ export default function Endereco() {
             />
 
           </div>
-
+          </div>
+          
+          <div className='parserow'>
           <p>Cidade:</p>
           <div class="input_endereco">
             <input
@@ -149,6 +153,8 @@ export default function Endereco() {
               onChange={e => setRua(e.target.value)}
             />
 
+          </div>
+          </div>
           </div>
 
           <div className='comp-num'>
@@ -203,9 +209,8 @@ export default function Endereco() {
 
           </div>
 
-        </div>
-
       </div>
+      
     </div>
   );
 
