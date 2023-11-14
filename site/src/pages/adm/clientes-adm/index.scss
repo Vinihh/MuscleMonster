@@ -126,6 +126,11 @@
     tbody{
       overflow-y: scroll;
       overflow: hidden;
+
+      #img-clt{
+        border-radius: 100%;
+        height: 70px;
+      }
     }
 
     tbody tr:hover {

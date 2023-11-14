@@ -18,7 +18,7 @@ export default function Erro() {
   return (
     <div className="pg-erro">
    
-
+    <HeaderAdm />
       <nav>
           <div>
             <img src='/assets/images/acheivc.png' />

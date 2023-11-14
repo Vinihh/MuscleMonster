@@ -71,6 +71,7 @@ async function trocarImg(){
       autoClose:2,
     });
     setImagem('')
+    window.location.reload('/home-minha-conta')
   }
 
   } catch (err) {
