@@ -5,6 +5,7 @@ import InfoMinhaConta from '../../components/info-minha-conta';
 import Storage from 'local-storage'
 import { API_URL } from '../../constants';
 import axios from 'axios';
+import './resp.scss';
 import { useEffect, useLayoutEffect, useState } from 'react';
 
 export default function MinhaContaUser() {

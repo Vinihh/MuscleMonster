@@ -1,0 +1,52 @@
+@media (max-width:1360px) {
+ .info-minha-conta{
+    padding: 25px 15px;
+
+    .sair{
+        width: 30px;
+        height: 15px;
+        img{
+            width: 30px;
+        }
+    }
+
+    .user{
+        margin-bottom: 50px;
+
+        .imagem-usuario{
+            height: 120px;
+            width: 120px;
+        }
+
+        button{
+            margin-top: 4px;
+        }
+
+        h1{
+            margin-top: 5px;
+        }
+    }
+
+    .linkss{
+        margin-left: 15px;
+        gap: 2px 8px;
+
+       .linkss-pt1{
+        gap: 0px 8px;
+
+        div{
+            gap: 15px 0px;
+
+            a{
+                font-size: 18px;
+                gap: 15px;
+
+                img{
+                    width: 24px;
+                }
+            }
+        }
+       }
+    }
+ }   
+}
