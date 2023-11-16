@@ -9,7 +9,7 @@ import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
 import { Navigate } from 'react-router-dom';
 import { inserirImagemCliente } from '../../api/addPrdtapi';
-import './resp.scss';
+
 
 export default function InfoMinhaConta() {
 

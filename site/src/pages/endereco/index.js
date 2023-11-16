@@ -5,7 +5,7 @@ import { toast, Toast } from 'react-toastify';
 import axios from 'axios';
 import { API_URL } from '../../constants';
 import HeaderAdm from '../../components/header-adm';
-
+import storage from 'local-storage'
 
 
 export default function Endereco() {
@@ -19,7 +19,7 @@ export default function Endereco() {
   const [numero, setNumero] = useState(0)
   const [complemento, setComplemento] = useState('')
   const [referencia, setReferencia] = useState('')
-
+  const usuariologado = storage('usuario-logado');
 
 
   async function CadastroEndereco() {
@@ -34,7 +34,8 @@ export default function Endereco() {
       cep: cep,
       numero: numero,
       complemento: complemento,
-      referencia: referencia
+      referencia: referencia,
+      idCliente:usuariologado.id
     };
 
 

@@ -33,14 +33,6 @@ export default function Header() {
       <div>
         <Link className='l1' to='/'><img className='logo' src='/assets/images/logo.png' alt='' /></Link>
 
-        <div className='inp-busca'>
-          <input placeholder='Procurar...'></input>
-          
-
-
-          <button><img alt='' src='/assets/images/icon-busca.png' /></button>
-        </div>
-
         <div className='icons'>
         <Link to='/carrinho'><img alt='' src='/assets/images/carrinho.png'/></Link>
         
