@@ -32,13 +32,14 @@ export default function Equipamentos() {
       <Header />
 
       <nav>
-        <h1>Equipamentos</h1>
+        <h1>Suplementos</h1>
       </nav>
       <div className='produto-suplementos'>
         {produtosuplemento.map((item) => (
           <section onClick={() => navigate('/produtos/' + item.id)}>
             <PaginaEquipamentos
               imagem={API_URL + "/" + item.img}
+              categoria={item.categoria}
               nome={item.produto}
               preco={item.preco}
 

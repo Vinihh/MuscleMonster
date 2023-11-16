@@ -30,13 +30,13 @@ export default function HomeAdm() {
   
   async function salvarClick(){
     try {
-      if(categoria == 1){
+      if(categoria == 'Suplementos'){
         setCategoria('Suplementos')
       }
-      else if(categoria == 2){
+      else if(categoria == 'Equipamentos'){
         setCategoria('Equipamentos')
       }
-      if(categoria == 3){
+      if(categoria == 'Roupas'){
         setCategoria('Roupas')
       }
     
@@ -125,10 +125,10 @@ export default function HomeAdm() {
 
             <h1>Categoria</h1>
             <select value={categoria} onChange={e => setCategoria(e.target.value)}>
-              <option value={0}>Selecione...</option>
-              <option value={1}>Suplementos</option>
-              <option value={2}>Equipamentos</option>
-              <option value={3}>Roupas</option>
+              <option>Selecione...</option>
+              <option>Suplementos</option>
+              <option>Equipamentos</option>
+              <option>Roupas</option>
             </select>
            
 

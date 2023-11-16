@@ -4,6 +4,10 @@ import './index.scss';
 
 export default function PaginaProduto(props) {
 
+    function FormatarPreco(preco) {
+        return Number(preco).toFixed(2)
+    }
+
     return (
         <div className="pg-produto">
 
@@ -15,7 +19,7 @@ export default function PaginaProduto(props) {
                 <div className='info-produto'>
                     <div>
                         <h1>{props.produtoss.produto}</h1>
-                        <h2>{'R$ ' + props.produtoss.preco}</h2>
+                        <h2>{'R$ ' + FormatarPreco(props.produtoss.preco)}</h2>
                         <h3>{'Disponivel: ' + props.produtoss.estoque} </h3>
 
                         <div className='imagens'>

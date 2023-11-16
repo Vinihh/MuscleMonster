@@ -40,6 +40,7 @@ export default function Equipamentos() {
           <section onClick={() => navigate('/produtos/' + item.id)}>
             <PaginaEquipamentos
               imagem={API_URL + "/" + item.img}
+              categoria={item.categoria}
               nome={item.produto}
               preco={item.preco}
 

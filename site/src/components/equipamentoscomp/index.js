@@ -9,6 +9,7 @@ export default function PaginaEquipamentos(props) {
             <img src={props.imagem}/>
     
             <div>
+            <h4>{props.categoria}</h4>    
             <h3>{props.nome}</h3>
             
             <h2>{'R$ ' + props.preco}</h2>
