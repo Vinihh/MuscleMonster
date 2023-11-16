@@ -2,12 +2,13 @@
 create database musclemonsterdb;
 use musclemonsterdb;
 
-
 create table tb_adm_login(
 id_adm		int primary key auto_increment,
 nm_adm		varchar(200),
 ds_senha	varchar(200)
 );
+
+select * from tb_adm_login;
 
 insert into tb_adm_login(nm_adm,ds_senha)
 			values('Ruan Gomes','admin@123');
@@ -28,19 +29,7 @@ create table tb_produto (
     url_img		varchar(200)
 );
 
-create table tb_endereco (
-	id_endereco int primary key auto_increment,
-	ds_rua varchar(200),
-	ds_bairro varchar(200),
-    ds_cidade varchar(100),
-	nr_cep int,
-	nr_numero int,
-	ds_complemento varchar(200),
-    nm_contato	varchar(200),
-    tel_contato	varchar(200),
-    ds_referencia	varchar(200)
-);
-
+select * from tb_produto;
 
 create table tb_cliente (
 	id_cliente int primary key auto_increment,
@@ -49,11 +38,28 @@ create table tb_cliente (
 	ds_email varchar(200),
 	ds_telefone varchar(200),
     dt_nascimento	date,
-	ds_senha varchar(200),
-	id_endereco int,
-    foreign key (id_endereco) references tb_endereco (id_endereco)
+	ds_senha varchar(200)  
 );
 
+select * from tb_cliente;
+
+create table tb_endereco (
+	id_endereco 	int primary key auto_increment,
+	ds_rua 			varchar(200),
+	ds_bairro 		varchar(200),
+    ds_cidade 		varchar(100),
+	nr_cep 			int,
+	nr_numero 		int,
+	ds_complemento	varchar(200),
+    nm_contato		varchar(200),
+    tel_contato		varchar(200),
+    ds_referencia	varchar(200),
+    id_cliente		int,
+	foreign key (id_cliente) references tb_cliente (id_cliente)
+    
+);
+
+select * from tb_endereco;
 
 
 create table tb_pedido(
@@ -67,6 +73,8 @@ id_endereço int,
 foreign key (id_cliente) references tb_cliente (id_cliente),
 foreign key (id_endereço) references tb_endereco (id_endereco)
 );
+
+select * from tb_pedido;
 
 create table tb_item_pedido(
 id_item_pedido int primary key auto_increment,
