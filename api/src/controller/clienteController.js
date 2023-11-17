@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem ,  EditarCliente } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem ,  EditarCliente, EditarTelefone, EditarNascimento } from "../repository/clienteRepository.js";
 import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
@@ -77,8 +77,9 @@ let endpoints = Router();
     try {
       const cliente = await req.body;
 
-      const resposta = await EditarCliente(cliente)
-      resp.send(resposta)
+      const resposta = await EditarTelefone(cliente)
+      const resposta2 = await EditarNascimento(cliente)
+      resp.send(resposta,resposta2)
 
     } catch (err) {
       resp.status(400).send({
