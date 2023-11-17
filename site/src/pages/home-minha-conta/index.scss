@@ -1,7 +1,8 @@
-.home-adm{
+.home-conta{
   display: flex;
   flex-direction: column;
   height: auto;
+  overflow: hidden;
   font-family: 'f1';
 
   aside{
@@ -75,4 +76,40 @@
   
 }
   
-  
+@media (max-width:414px) {
+  .home-conta{
+    aside{
+      
+      section{
+        flex-direction: column;
+
+        h2{
+          margin-bottom: 30px;
+        }
+        div{
+          flex-direction: column;
+
+          margin: 8px 0px 0px 0px;
+          a{
+          div{
+            height: 150px;
+            width: 200px;
+
+            img{
+              width: 30px;
+            }
+
+            h1{
+              font-size: 20px;
+            }
+
+            p{
+              width: 180px;
+            }
+          }
+        }
+        }
+      }
+    }
+  }
+}

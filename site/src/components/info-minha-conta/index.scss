@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   height: auto;
   padding: 35px 25px;
   height: 90vh;
@@ -150,59 +151,59 @@
   }
 
 
-  @media (max-width:1360px) {
-    .info-minha-conta{
-       padding: 55px 15px;
-   
-       .sair{
-           width: 30px;
-           height: 15px;
-           img{
-               width: 30px;
-           }
-       }
-   
-       .user{
-           margin-bottom: 50px;
-   
-           .imagem-usuario{
-               height: 120px;
-               width: 120px;
-           }
-   
-           button{
-               margin-top: 4px;
-           }
-   
-           h1{
-               margin-top: 5px;
-           }
-       }
-   
-       .linkss{
-           margin-left: 15px;
-           gap: 2px 8px;
-   
-          .linkss-pt1{
-           gap: 0px 8px;
-   
-           div{
-               gap: 15px 0px;
-   
-               a{
-                   font-size: 18px;
-                   gap: 15px;
-   
-                   img{
-                       width: 24px;
-                   }
-               }
-           }
-          }
-       }
-    }   
-   }
    
    
 }
 
+@media (max-width:1024px) {
+  .info-minha-conta{
+    margin-top: 0px;
+    .user{
+      margin-bottom: 300px;
+    }
+  }
+}
+
+@media (max-width:414px) {
+  .info-minha-conta{
+    width: 30%;
+    .user{
+      margin-bottom: 80px;
+
+      .imagem-usuario{
+        height: 80px;
+        width: 80px;
+      }
+
+      button{
+        margin-top: 8px;
+      }
+
+      h1{
+        font-size: 16px;
+      }
+    }
+
+    .linkss{
+      margin-left: -30px;
+      .linkss-pt1{
+
+        div{
+          a{
+            font-size: 15px;
+            width: 80px;
+            gap: 8px;
+
+            img{
+              width: 15px;
+            }
+          }
+
+          a:hover{
+            
+          }
+        }
+      }
+    }
+  }
+}
