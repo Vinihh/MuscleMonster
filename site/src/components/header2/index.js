@@ -6,7 +6,7 @@ export default function Headerr() {
     <div className="comp-headerr">
     <div>
       
-      <Link to={'/home'}><img className='logo' src='/assets/images/logo.png' alt='' /></Link>
+      <Link to={'/'}><img className='logo' src='/assets/images/logo.png' alt='' /></Link>
 
      
 
