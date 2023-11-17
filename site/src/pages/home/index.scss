@@ -509,3 +509,36 @@
   
 }
 
+
+@media (max-width:370px) {
+
+  nav{
+
+    h1{
+      margin-top: 20px;
+      font-size: 12px;
+    }
+    h3{
+      font-size: 12px;
+      width: 300px;
+      text-align: center;
+    }
+  }
+
+  aside{
+
+    height: 15vh;
+    div{
+      width: 26vw !important;
+      height: 12vh;
+      h1{
+        font-size: 9px !important;
+      }
+      img{
+        
+        height: 9vh;
+      }
+    }
+  }
+}
+
