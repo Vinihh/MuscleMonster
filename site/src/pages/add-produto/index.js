@@ -30,13 +30,16 @@ export default function HomeAdm() {
   
   async function salvarClick(){
     try {
-      if(categoria == 'Suplementos'){
+      if(categoria == 'Selecione...'){
+        toast.error('Selecione uma Categoria')
+      }
+      else if(categoria == 'Suplementos'){
         setCategoria('Suplementos')
       }
       else if(categoria == 'Equipamentos'){
         setCategoria('Equipamentos')
       }
-      if(categoria == 'Roupas'){
+      else if(categoria == 'Roupas'){
         setCategoria('Roupas')
       }
     
