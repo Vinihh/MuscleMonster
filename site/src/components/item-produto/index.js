@@ -12,7 +12,7 @@ export default function Produto(props) {
   return (
     <div className="produto">
 
-      <div className='img-produto'>
+      <div className='produto-img'>
         <img src={BuscarImagem(props.prod.img)}/>
       </div>
 

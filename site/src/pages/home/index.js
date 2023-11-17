@@ -60,7 +60,7 @@ export default function Home() {
         </Link>
       </aside>
 
-      <section>
+      <section className='sec1'>
         <img src='/assets/images/img4.png' alt='' />
         <div>
           <h1>Gostaria de aprender a treinar da maneira correta?</h1>
