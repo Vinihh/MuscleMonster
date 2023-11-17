@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { InserirNovoProduto, listarProduto, alterarImagem } from '../repository/add-produtoRepository.js';
+import { InserirNovoProduto, listarProduto, alterarImagem, listarProdutoCarrinho } from '../repository/add-produtoRepository.js';
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/imagens' })
@@ -40,6 +40,20 @@ endpoint.get('/listar/produto/:id',async (req, resp)=>{
 
         const id = req.params.id
         const resposta = await listarProduto(id)
+        resp.send(resposta)
+
+    } catch (err) {
+        resp.send({
+            erro: err.message
+        })
+    }
+})
+
+endpoint.get('/listar/produto/carrinho/:id',async (req, resp)=>{
+    try {
+
+        const id = req.params.id
+        const resposta = await listarProdutoCarrinho(id)
         resp.send(resposta)
 
     } catch (err) {

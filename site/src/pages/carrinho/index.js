@@ -16,9 +16,11 @@ const api = axios.create({
 export default function Carrinho() {
   const [itens, setItens] = useState([]);
 
+
+
   async function buscarProduto(id) {
     try {
-      const resposta = await api.get(API_URL + `/listar/produto/${id}`);
+      const resposta = await api.get(API_URL + `/listar/produto/carrinho/${id}`);
       setItens(resposta.data);
     } catch (erro) {
       console.error("Erro ao buscar produto por ID:", erro);
@@ -67,7 +69,7 @@ export default function Carrinho() {
       </div>
       <div className='total'>
         <div>
-          <p>{`Total === 1 ? 'item' : 'itens'}): R$`}</p>
+          <p>{`Total === 1 ? 'item' : 'itens'}): R`}</p>
           <button>Fazer Compra</button>
         </div>
         <hr />
