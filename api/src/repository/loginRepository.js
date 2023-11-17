@@ -8,6 +8,7 @@ export async function verificarLogin(email,senha) {
       url_img     as img,
       nm_cliente as nome,
       ds_telefone as telefone,
+      dt_nascimento as data,
       ds_email as email 
       FROM tb_cliente
       where ds_email = ?
