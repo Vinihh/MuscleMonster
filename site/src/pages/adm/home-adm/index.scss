@@ -76,4 +76,40 @@
   
 }
   
+@media (max-width:414px) {
+  .home-adm{
+
+    aside{
+
+      section{
+
+        width: 70% !important;
+
+        h2{
+          
+        }
+
+        div{
+          position: relative;
+          top: 100px;
+          flex-direction: column;
+          
+
+          a{
+
+            div{
+
+              height: 150px !important;
+              width: 220px !important;     
+              
+              img{
+                width: 80px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
   

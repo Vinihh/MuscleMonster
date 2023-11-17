@@ -55,7 +55,7 @@ export default function Carrinho() {
       </div>
       <div className='total'>
         <div>
-          <p>{`Total === 1 ? 'item' : 'itens'}): R`}</p>
+          <p>Total (), itens ()</p>
           <button>Fazer Compra</button>
         </div>
         <hr />

@@ -19,14 +19,14 @@ export default function HomeAdm() {
     <div className="home-adm">
       <HeaderAdm />
 
-      <aside className='home-adm-pt2'>
+      <aside >
         <InfoAdm />
 
-        <section className='home-adm-pt3' >
+        <section >
  
           <h2>Acesso Rápido</h2>
 
-          <div className='home-adm-pt4'>
+          <div>
             <Link to={'/add-produto'}>
             <div>
                 <img src='/assets/images/novo-produto.png'></img>
