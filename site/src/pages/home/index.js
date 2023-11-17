@@ -20,7 +20,7 @@ export default function Home() {
 
   async function ListarProdutos() {
     let resposta = await axios.get(API_URL + '/consulta/produto')
-    let produtosLimitados = resposta.data.slice(0, 3);
+    let produtosLimitados = resposta.data.slice(0, 5);
     setProduto(produtosLimitados);
   }
 

@@ -3,7 +3,7 @@ import Header from '../../components/header2';
 import ProdutoCarrinho from '../../components/produto-carrinho';
 import { useEffect, useState } from 'react';
 import storage from 'local-storage';
-import { BuscarImagem } from '../../api/addPrdtapi';
+import { BuscarImagem, BuscarProdutoPorId } from '../../api/addPrdtapi';
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
@@ -16,35 +16,21 @@ const api = axios.create({
 export default function Carrinho() {
   const [itens, setItens] = useState([]);
 
-
-
-  async function buscarProduto(id) {
-    try {
-      const resposta = await api.get(API_URL + `/listar/produto/carrinho/${id}`);
-      setItens(resposta.data);
-    } catch (erro) {
-      console.error("Erro ao buscar produto por ID:", erro);
-      return null;
-    }
-  }
-
-  async function carregarCarrinho() {
+  async function carregarCarrinho(){
     let carrinho = storage('carrinho');
-    if (carrinho) {
-      let array = [];
+    if(carrinho){
 
-      for (let produto of carrinho) {
-        let p = await buscarProduto(produto.id);
+      let temp = [];
 
-        if (p) {
-          array.push({
-            produto: p,
-            qtd: produto.qtd,
-          });
-        }
+      for (let produto of carrinho){
+        let p = await BuscarProdutoPorId(produto.id)
+        console.log(p)
+
+        temp.push(...itens, {
+          produto:p,
+          qtd:produto.qtd
+        })
       }
-
-      setItens(array);
     }
   }
 
