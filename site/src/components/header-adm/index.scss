@@ -25,7 +25,11 @@
 
 @media (max-width:414px) {
   .comp-header-adm{
-    width: 100vw;
+    >div{
+      >img{
+        width: 80px;
+      }
+    }
   }
 }
 
