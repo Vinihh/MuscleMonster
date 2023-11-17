@@ -101,5 +101,21 @@ let endpoints = Router();
     }
   })
 
+  
+  endpoints.put('/editar/nome', async(req,resp)=>{
+    try {
+      const cliente = await req.body;
+
+      const resposta = await EditarNome(cliente)
+      resp.send(resposta)
+
+    } catch (err) {
+      resp.status(400).send({
+        erro:err.message
+      })
+    }
+  })
+
+
 
 export default endpoints;
