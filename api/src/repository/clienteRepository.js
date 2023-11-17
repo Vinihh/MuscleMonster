@@ -59,13 +59,12 @@ export async function BuscarCliente(nome) {
 
   export async function EditarCliente(cliente){
     const comando = `update tb_cliente
-    set nm_cliente = ?
-    or  ds_telefone = ?
+    set ds_telefone = ?
     or  dt_nascimento = ? 
     where id_cliente = ?
     `
 
-    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.telefone, cliente.data, cliente.id])
+    const [resposta] = await conexao.query(comando,[ cliente.telefone, cliente.data, cliente.id])
 
     return resposta;
   }

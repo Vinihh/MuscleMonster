@@ -20,7 +20,6 @@ export default function MeuPerfil() {
 
   async function editar(){
     let cliente={
-      nome:nome,
       telefone:telefone,
       data:data,
       id:usuario.id
@@ -53,9 +52,11 @@ export default function MeuPerfil() {
 
             <div className='inputs'>
 
-              <div> 
+            <div id='inp-email'>
                 <h1>Nome Completo</h1>
-                <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
+               <div>
+                <h1>{usuario.nome}</h1>
+               </div>
               </div>
 
               <div id='inp-email'>
