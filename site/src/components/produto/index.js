@@ -14,7 +14,10 @@ export default function PaginaProduto(props) {
   }
 
   function AdicionarAoCarrinho() {
-    let carrinho = storage('carrinho') || [];
+    let carrinho = [];
+    if(storage('carrinho')){
+      carrinho= storage('carrinho')
+    }
 
     if (!carrinho.find(item => item.id === id)) {
 

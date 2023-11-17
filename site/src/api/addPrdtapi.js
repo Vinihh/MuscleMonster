@@ -50,3 +50,8 @@ export function BuscarImagem(imagem) {
 
     return `${api.getUri()}/${imagem}`
 }
+
+export async function BuscarProdutoPorId(id){
+    const r = await api.get('/api/produto' + id)
+    return r.data
+}

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { BuscarPorNome, consultarProdutos, deletarProduto, BuscarPorEquipamentos, BuscarPorSuplementos, BuscarPorRoupasAcessorios} from "../repository/listprodutoRepository.js";
+import { BuscarPorNome, consultarProdutos, deletarProduto, BuscarPorEquipamentos, BuscarPorSuplementos, BuscarPorRoupasAcessorios, BuscarPorId} from "../repository/listprodutoRepository.js";
 
 let endpoints = Router();
 
@@ -45,6 +45,25 @@ endpoints.delete('/deletar/:id', async (req, resp) => {
       const { nome } = req.query;
 
       const resposta = await BuscarPorNome(nome)
+      
+      if (resposta.length == 0) {
+          resp.status(404).send([])
+      }
+
+      else {
+        resp.send(resposta)
+      }
+
+    } catch (err) {
+      resp.status(500).send({ erro: err.message });
+    }
+  })
+
+  endpoints.get('/api/produto/:id', async (req, resp) => {
+    try {
+      const { id } = req.query;
+
+      const resposta = await BuscarPorId(id)
       
       if (resposta.length == 0) {
           resp.status(404).send([])
