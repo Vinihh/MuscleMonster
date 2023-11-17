@@ -53,7 +53,7 @@ export default function MeuPerfil() {
 
             <div className='inputs'>
 
-              <div>
+              <div> 
                 <h1>Nome Completo</h1>
                 <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
               </div>
