@@ -10,7 +10,7 @@ export default function Footer() {
 
         <div>
             <h1>CONFIGURAÇÃO DE COOKIES</h1>
-            <a>Requisições de dados Pessoais</a>
+            <Link to={'/meuperfil'}>Requisições de dados Pessoais</Link>
             <a>Política de Privacidade</a>
             <a>Termos e Condições</a>
             <Link to={'/endereco'}>Adicione seu Endereço</Link>
