@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around !important;
+    justify-content: space-around;
     
     div{    
         display: flex;
@@ -21,13 +21,13 @@
         }
 
         h3{
-            font-size: 7px;
+            font-size: 14px;
             text-align: center;
         }
 
         a{  text-decoration: none;
             color: white;
-            font-size: 7px;
+            font-size: 13px;
             font-weight: 500;
         }
 
@@ -58,15 +58,17 @@
             width: 100px;
         }
 
+        div{
         h1{
             
             
-            font-size: 8px;
+            font-size: 14px;
         }
 
         a{
-            font-size: 10px;
+            font-size: 13px;
         }
+    }
     }
     
 }
@@ -109,7 +111,7 @@
         h1{
             
             
-            font-size: 6px;
+            font-size: 9px;
         }
 
         a{
@@ -148,11 +150,11 @@
         h1{
             
             
-            font-size: 7px !important;
+            font-size: 11px !important;
         }
 
         a{
-            font-size: 7px !important;
+            font-size: 10px !important;
         }
 
         p{
@@ -185,7 +187,7 @@
         h1{
             
             
-            font-size: 7px !important;
+            font-size: 12px !important;
         }
 
         a{
@@ -227,7 +229,7 @@
         }
 
         a{
-            font-size: 7px !important;
+            font-size: 12px !important;
         }
 
         p{
@@ -254,11 +256,11 @@
         h1{
             
             
-            font-size: 13px !important;
+            font-size: 11px !important;
         }
 
         a{
-            font-size: 7px !important;
+            font-size: 10px !important;
         }
         }
         p{
@@ -291,7 +293,7 @@
         }
 
         a{
-            font-size: 7px !important;
+            font-size: 9px !important;
         }
         }
         p{
@@ -320,7 +322,7 @@
         h1{
             
             
-            font-size: 7px !important;
+            font-size: 9px !important;
         }
 
         a{
@@ -365,15 +367,15 @@
         }
         p{
             .tiktok{
-                width: 7px !important;
+                width: 12px !important;
             }
             
             .x{
-                width: 7px !important;
+                width: 12px !important;
             }
 
             .insta{
-                width: 7px !important;
+                width: 12px !important;
             }
         }
     }
@@ -387,28 +389,28 @@
         h1{
             
             
-            font-size: 8px !important;
-        }
-
-        a{
             font-size: 7px !important;
         }
 
+        a{
+            font-size: 6px !important;
+        }
+
         h3{
-            font-size: 8px;
+            font-size: 6px;
         }
         }
         p{
             .tiktok{
-                width: 7px !important;
+                width: 8px !important;
             }
             
             .x{
-                width: 7px !important;
+                width: 8px !important;
             }
 
             .insta{
-                width: 7px !important;
+                width: 8px !important;
             }
         }
     }
