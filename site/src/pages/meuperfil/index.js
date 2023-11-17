@@ -6,11 +6,35 @@ import { Link } from 'react-router-dom';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
 import InfoMinhaConta from '../../components/info-minha-conta';
+import storage from 'local-storage';
+import { API_URL } from '../../constants';
+import {toast} from 'react-toastify';
 
 export default function MeuPerfil() {
 
+  const usuario = storage('usuario-logado');
+  const [nome,setNome] = useState(usuario.nome);
+  const [email,setEmail] = useState(usuario.email);
+  const [telefone,setTelefone] = useState('');
+  const [data,setData] = useState(Date);
 
-  const [imagem, setImagem] = useState('')
+  async function editar(){
+    let cliente={
+      nome:nome,
+      email:email,
+      telefone:telefone,
+      data:data,
+      id:usuario.id
+    }
+
+    try {
+      
+      const response = await axios.put(API_URL + '/editar/user',cliente);
+      toast.success('informações Salvas')
+    } catch (err) {
+      toast.error(err.response.data.erro)
+    }
+  }
 
 
 
@@ -32,36 +56,27 @@ export default function MeuPerfil() {
 
               <div>
                 <h1>Nome Completo</h1>
-                <input type='text' />
-              </div>
-
-              <div>
-                <h1>Genêro</h1>
-                <select>
-                  <option>Masculino</option>
-                  <option>Feminino</option>
-                  <option>Outro</option>
-                </select>
+                <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
               </div>
 
               <div>
                 <h1>Email</h1>
-                <input type='text' />
+                <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
               </div>
 
               <div>
                 <h1>Telefone</h1>
-                <input type='text' />
+                <input type='text' value={telefone} onChange={e => setTelefone(e.target.value)}/>
               </div>
 
               <div>
                 <h1>Data de Nascimento</h1>
-                <input type='date' />
+                <input type='date' value={data} onChange={e => setData(e.target.value)} />
               </div>
             </div>
           </div>
 
-          <button>Salvar</button>
+          <button onClick={editar}> Salvar</button>
 
 
 

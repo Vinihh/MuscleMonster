@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem ,  EditarCliente } from "../repository/clienteRepository.js";
+import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/imagem/cliente' })
@@ -69,6 +70,24 @@ let endpoints = Router();
         resp.status(400).send({
             erro: err.message
         })
+    }
+  })
+
+  endpoints.put('/editar/user', async(req,resp)=>{
+    try {
+      const cliente = await req.body;
+
+      let r1 = await consultar(cliente.email);
+        if (r1.length > 0)
+            throw new Error(' Email já cadastrado!');
+
+      const resposta = await EditarCliente(cliente)
+      resp.send(resposta)
+
+    } catch (err) {
+      resp.status(400).send({
+        erro:err.message
+      })
     }
   })
 
