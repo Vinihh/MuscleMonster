@@ -167,6 +167,14 @@
 @media (max-width:414px) {
   .info-minha-conta{
     width: 30%;
+
+    .sair{
+      width: 35px;
+
+      img{
+        width: 30px;
+      }
+    }
     .user{
       margin-bottom: 80px;
 
@@ -199,9 +207,7 @@
             }
           }
 
-          a:hover{
-            
-          }
+
         }
       }
     }
