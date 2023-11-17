@@ -77,10 +77,6 @@ let endpoints = Router();
     try {
       const cliente = await req.body;
 
-      let r1 = await consultar(cliente.email);
-        if (r1.length > 0)
-            throw new Error(' Email já cadastrado!');
-
       const resposta = await EditarCliente(cliente)
       resp.send(resposta)
 

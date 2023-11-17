@@ -63,7 +63,6 @@ export async function BuscarCliente(nome) {
   export async function EditarCliente(cliente){
     const comando = `update tb_cliente
     set nm_cliente = ?
-    and ds_email = ?
     and  ds_telefone = ?
     and  dt_nascimento = ? 
     where id_cliente = ?

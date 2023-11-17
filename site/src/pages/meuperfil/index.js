@@ -21,7 +21,6 @@ export default function MeuPerfil() {
   async function editar(){
     let cliente={
       nome:nome,
-      email:email,
       telefone:telefone,
       data:data,
       id:usuario.id
