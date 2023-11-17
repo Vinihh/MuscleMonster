@@ -93,7 +93,7 @@ $primary-color: #FFB800; // Primary color, change as needed
         .comp-num {
             display: flex;
             gap: 25px; 
-            width: 52vw;
+            width: 88%;
 
             >div {
                 flex: 1;
@@ -154,4 +154,29 @@ $primary-color: #FFB800; // Primary color, change as needed
             }
         }
     }
+}
+
+@media (max-width:855px) {
+    .endereco_form_container{
+        width: 600px !important;
+        height: 550px !important;
+
+        h2{
+            font-size: 20px !important;
+        }
+
+        p{
+            margin-top: 5px !important;
+        }
+
+        .input_text,
+        .input_textn {
+            width: 27vh !important;
+        }
+
+        
+    }
+    
+
+    
 }

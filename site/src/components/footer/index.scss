@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around !important;
+    justify-content: space-around;
     
     div{    
         display: flex;
@@ -21,13 +21,13 @@
         }
 
         h3{
-            font-size: 12px;
+            font-size: 14px;
             text-align: center;
         }
 
         a{  text-decoration: none;
             color: white;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
         }
 
@@ -58,15 +58,17 @@
             width: 100px;
         }
 
+        div{
         h1{
             
             
-            font-size: 8px;
+            font-size: 14px;
         }
 
         a{
-            font-size: 10px;
+            font-size: 13px;
         }
+    }
     }
     
 }
@@ -109,7 +111,7 @@
         h1{
             
             
-            font-size: 6px;
+            font-size: 9px;
         }
 
         a{
@@ -148,11 +150,11 @@
         h1{
             
             
-            font-size: 12px !important;
+            font-size: 11px !important;
         }
 
         a{
-            font-size: 12px !important;
+            font-size: 10px !important;
         }
 
         p{
@@ -223,49 +225,47 @@
         h1{
             
             
+            font-size: 13px !important;
+        }
+
+        a{
+            font-size: 12px !important;
+        }
+
+        p{
+            .tiktok{
+                width: 20px !important;
+            }
+            
+            .x{
+                width: 20px !important;
+            }
+
+            .insta{
+                width: 20px !important;
+            }
+        }
+    }
+    
+}
+
+@media (max-width:630px) {
+    .footer{
+        
+        div{
+        h1{
+            
+            
             font-size: 11px !important;
         }
 
         a{
             font-size: 10px !important;
         }
-
+        }
         p{
             .tiktok{
-                width: 25px !important;
-            }
-            
-            .x{
-                width: 25px !important;
-            }
-
-            .insta{
-                width: 25px !important;
-            }
-        }
-    }
-    
-}
-
-
-
-@media (max-width:550px) {
-    .footer{
-        
-
-        h1{
-            
-            
-            font-size: 10px !important;
-        }
-
-        a{
-            font-size: 10px !important;
-        }
-
-        p{
-            .tiktok{
-                width: 24px !important;
+                width: 18px !important;
             }
             
             .x{
@@ -273,17 +273,52 @@
             }
 
             .insta{
-                width: 24px !important;
+                width: 18px !important;
             }
         }
     }
     
 }
 
-@media (max-width:510px) {
+
+
+@media (max-width:580px) {
     .footer{
         
+        div{
+        h1{
+            
+            
+            font-size: 10px !important;
+        }
 
+        a{
+            font-size: 9px !important;
+        }
+        }
+        p{
+            .tiktok{
+                width: 18px !important;
+            }
+            
+            .x{
+                width: 20px !important;
+            }
+
+            .insta{
+                width: 18px !important;
+            }
+        }
+    }
+    
+}
+
+@media (max-width:494px) {
+    .footer{
+        
+        div{
+        
+           
         h1{
             
             
@@ -291,9 +326,10 @@
         }
 
         a{
-            font-size: 9px !important;
+            margin: 0px;
+            font-size: 8px !important;
         }
-
+        }
         p{
             .tiktok{
                 width: 18px !important;
@@ -304,21 +340,21 @@
             }
 
             .insta{
-                width: 20px !important;
+                width: 18px !important;
             }
         }
     }
     
 }
 
-@media (max-width:450px) {
+@media (max-width:441px) {
     .footer{
         
-
+        div{
         h1{
             
             
-            font-size: 9px !important;
+            font-size: 7px !important;
         }
 
         a{
@@ -326,25 +362,97 @@
         }
 
         h3{
-            font-size: 10px !important;
+            font-size: 10px;
         }
-
+        }
         p{
             .tiktok{
-                width: 14px !important;
+                width: 12px !important;
             }
             
             .x{
-                width: 14px !important;
+                width: 12px !important;
             }
 
             .insta{
-                width: 14px !important;
+                width: 12px !important;
             }
         }
     }
     
 }
+
+@media (max-width:415px) {
+    .footer{
+        
+        div{
+        h1{
+            
+            
+            font-size: 7px !important;
+        }
+
+        a{
+            font-size: 6px !important;
+        }
+
+        h3{
+            font-size: 6px;
+        }
+        }
+        p{
+            .tiktok{
+                width: 8px !important;
+            }
+            
+            .x{
+                width: 8px !important;
+            }
+
+            .insta{
+                width: 8px !important;
+            }
+        }
+    }
+    
+}
+
+@media (max-width:372px) {
+    .footer{
+        
+        div{
+        h1{
+            
+            
+            font-size: 7px !important;
+        }
+
+        a{
+            font-size: 6px !important;
+        }
+
+        h3{
+            font-size: 6px;
+        }
+        }
+        p{
+            .tiktok{
+                width: 7px !important;
+            }
+            
+            .x{
+                width: 7px !important;
+            }
+
+            .insta{
+                width: 7px !important;
+            }
+        }
+    }
+    
+}
+
+
 
 
 
