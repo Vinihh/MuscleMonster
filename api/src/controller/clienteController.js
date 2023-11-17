@@ -73,13 +73,26 @@ let endpoints = Router();
     }
   })
 
-  endpoints.put('/editar/user', async(req,resp)=>{
+  endpoints.put('/editar/tel', async(req,resp)=>{
     try {
       const cliente = await req.body;
 
       const resposta = await EditarTelefone(cliente)
-      const resposta2 = await EditarNascimento(cliente)
-      resp.send(resposta,resposta2)
+      resp.send(resposta)
+
+    } catch (err) {
+      resp.status(400).send({
+        erro:err.message
+      })
+    }
+  })
+
+  endpoints.put('/editar/data', async(req,resp)=>{
+    try {
+      const cliente = await req.body;
+
+      const resposta = await EditarNascimento(cliente)
+      resp.send(resposta)
 
     } catch (err) {
       resp.status(400).send({

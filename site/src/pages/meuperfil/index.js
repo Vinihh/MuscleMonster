@@ -27,7 +27,8 @@ export default function MeuPerfil() {
 
     try {
       
-      const response = await axios.put(API_URL + '/editar/user',cliente);
+      const response = await axios.put(API_URL + '/editar/tel',cliente);
+      const response2 = await axios.put(API_URL + '/editar/data',cliente);
       toast.success('informações Salvas')
     } catch (err) {
       toast.error(err.response.data.erro)
