@@ -20,11 +20,21 @@ code {
 }
 @font-face {
   font-family: 'f1';
-  src: url(../../site/public/assets/fonts/f1.otf);
+  src: url(../public/assets/fonts/f1.otf);
 }
 
 
 @font-face {
   font-family: 'italic';
   src: url(../../site/public/assets/fonts/italic.otf);
+}
+
+@font-face {
+  font-family: 'f2';
+  src: url(../public/assets/fonts/helveticaNeueMedium.woff2);
+}
+
+@font-face {
+  font-family: 'f3';
+  src: url(../public/assets/fonts/helveticaNeueRegular.woff2);
 }
