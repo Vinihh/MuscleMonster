@@ -23,4 +23,14 @@
 
 }
 
+@media (max-width:414px) {
+  .comp-header-adm{
+    >div{
+      >img{
+        width: 80px;
+      }
+    }
+  }
+}
+
 

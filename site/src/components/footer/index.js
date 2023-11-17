@@ -1,4 +1,4 @@
-
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 export default function Footer() {
@@ -13,21 +13,22 @@ export default function Footer() {
             <a>Requisições de dados Pessoais</a>
             <a>Política de Privacidade</a>
             <a>Termos e Condições</a>
-            <a>Selecione o Cidade</a>
+            <Link to={'/endereco'}>Adicione seu Endereço</Link>
         </div>
 
         <div>
             <h1>CADASTRE-SE PARA RECEBER NOVIDADES</h1>
-            <a>Suplementos</a>
-            <a>Equipamentos</a>
-            <a>Comidas</a>
-            <a>Roupas</a>
+            <Link to={'/suplementos'}>Suplementos</Link>
+            <Link to={'/equipamentos'}>Equipamentos</Link>
+            <Link to={'/roupas-acessorios'}>Roupas</Link>
+            <Link to={'/roupas-acessorios'}>Acessórios</Link>
+            
         </div>
 
        
 
         <div>
-            <h1>SIGA-NOS</h1>
+            <h3>SIGA-NOS</h3>
 
             <p>  <img className='tiktok' src='/assets/images/ticktok.png' alt='' />  <img className='x'src='/assets/images/x.png' alt='' /> <img className='insta' src='/assets/images/insta.png' alt='' /></p>
         </div>

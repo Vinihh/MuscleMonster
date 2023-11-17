@@ -22,7 +22,7 @@ export default function PaginaProduto(props) {
       storage('carrinho', carrinho);
     }
 
-    toast.success('Produto adicionado ao carrinho com sucesso')
+     toast.success('Produto adicionado ao carrinho com sucesso')
   }
 
   return (

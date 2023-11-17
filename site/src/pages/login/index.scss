@@ -52,6 +52,7 @@
     }
 }
 .login_form{
+    outline: 0;
     position: absolute;
     content: '';
     background-color: #15161a;
@@ -75,6 +76,7 @@ h2{
     justify-content: start;
 }
 .input_text{
+    outline: 0;
     width: 95%;
     height: 30px;
     background: transparent;
@@ -106,6 +108,7 @@ h2{
 
 }
 #login_button button{
+    outline: 0;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -122,10 +125,11 @@ h2{
     justify-content: center;
     align-items: center;
 }
-.fotter {
+.footer-login {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
+    background-color: transparent;
 
     a{
       text-decoration: none;
@@ -137,3 +141,55 @@ h2{
 }
 
 
+@media (max-width:600px) {
+    .login_form_container{
+        width: 400px !important;
+        height: 500px !important;
+    }
+
+    .input_text{
+        width: 100% !important;
+    }
+
+    .footer{
+        a{
+            font-size: 16px !important;
+        }
+    }
+}
+
+
+@media (max-width:440px) {
+    .login_form_container{
+        width: 300px !important;
+        height: 460px !important;
+
+        .login_form{
+            h2{
+                font-size: 28px !important;
+            }
+        }
+    }
+
+    .input_text{
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+
+    #login_button{
+        height: 30px !important;
+        width: 150px !important;
+    }
+
+    #login_button button{
+        font-size: 18px !important;
+    }
+
+    .footer{
+        margin-top: 10px;
+        a{
+            font-size: 12px !important ;
+            margin: 10px;
+        }
+    }
+}

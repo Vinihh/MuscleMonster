@@ -7,8 +7,7 @@ export async function verificarLogin(email,senha) {
       id_cliente as id,
       url_img     as img,
       nm_cliente as nome,
-      ds_email as email, 
-      ds_senha as senha
+      ds_email as email 
       FROM tb_cliente
       where ds_email = ?
       and ds_senha = ?

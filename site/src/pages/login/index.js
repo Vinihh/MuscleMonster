@@ -31,7 +31,7 @@ export default function Login() {
 
     try {
 
-      const response = await axios.post( 'http://localhost:5000/login', user);
+      const response = await axios.post(API_URL + '/login', user);
 
       setTimeout(() => {
         storage('usuario-logado', response.data)
@@ -90,7 +90,7 @@ export default function Login() {
       <div class="button_group" id="login_button">
       <button onClick={entrar}>Entrar</button>
       </div>
-      <div class="fotter">
+      <div class="footer-login">
         <a>Esqueceu a senha ?</a>
         <Link to='/cadastro'><p>Cadastrar-se</p></Link>
       </div>

@@ -55,8 +55,9 @@ export default function InfoAdm() {
     <div className="comp-info-adm">    
         
           <div className='user'>
-            <img src='/assets/images/teste1.png' alt='' />
-            <h1>{nome}</h1>
+            <img src='/assets/images/admin_icon.png' alt='' />
+            <h1>Olá, {nome}</h1>
+            <p>Admin</p>
           </div>
 
           <div className='links'>
