@@ -36,7 +36,7 @@ export default function HomeAdm() {
       else if(categoria == 'Equipamentos'){
         setCategoria('Equipamentos')
       }
-      if(categoria == 'Roupas'){
+      else if(categoria == 'Roupas'){
         setCategoria('Roupas')
       }
     

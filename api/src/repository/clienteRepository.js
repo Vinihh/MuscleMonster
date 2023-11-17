@@ -79,4 +79,14 @@ export async function BuscarCliente(nome) {
     return resposta;
   }
   
+  export async function EditarNome(cliente){
+    const comando = `update tb_cliente
+    set nm_cliente = ?
+    where id_cliente = ?
+    `
+
+    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.id])
+
+    return resposta;
+  }
   
