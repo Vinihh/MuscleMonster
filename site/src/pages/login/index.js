@@ -90,7 +90,7 @@ export default function Login() {
       <div class="button_group" id="login_button">
       <button onClick={entrar}>Entrar</button>
       </div>
-      <div class="fotter">
+      <div class="footer">
         <a>Esqueceu a senha ?</a>
         <Link to='/cadastro'><p>Cadastrar-se</p></Link>
       </div>

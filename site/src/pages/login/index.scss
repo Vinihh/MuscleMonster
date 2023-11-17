@@ -122,7 +122,7 @@ h2{
     justify-content: center;
     align-items: center;
 }
-.fotter {
+.footer {
     margin-top: 30px;
     display: flex;
     justify-content: space-between;
@@ -137,3 +137,23 @@ h2{
 }
 
 
+@media (max-width:600px) {
+    .login_form_container{
+        width: 400px !important;
+        height: 500px !important;
+    }
+}
+
+
+@media (max-width:440px) {
+    .login_form_container{
+        width: 300px !important;
+        height: 400px !important;
+    }
+
+    .footer{
+        a{
+            font-size: 14px !important;
+        }
+    }
+}
