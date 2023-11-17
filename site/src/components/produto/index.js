@@ -38,12 +38,6 @@ export default function PaginaProduto(props) {
             <h2>{'R$ ' + FormatarPreco(props.produtoss.preco)}</h2>
             <h3>{'Disponível: ' + props.produtoss.estoque}</h3>
 
-            <div className="imagens">
-              <img src="/assets/images/produto1.png" alt="Produto 1" />
-              <img src="/assets/images/produto2.png" alt="Produto 2" />
-              <img src="/assets/images/produto3.png" alt="Produto 3" />
-            </div>
-
             <button onClick={AdicionarAoCarrinho}>Adicionar ao carrinho</button>
 
             <div className="form-pay">

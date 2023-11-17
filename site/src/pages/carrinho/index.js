@@ -2,51 +2,53 @@ import './index.scss';
 import Header from '../../components/header2';
 import ProdutoCarrinho from '../../components/produto-carrinho';
 import { useEffect, useState } from 'react';
-import Storage from 'local-storage';
+import storage from 'local-storage';
 import { BuscarImagem } from '../../api/addPrdtapi';
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+
 
 const api = axios.create({
   baseURL: API_URL,
 });
 
 export default function Carrinho() {
-  const { id } = useParams();
-  const [itensNoCarrinho, setItensNoCarrinho] = useState([]);
-  const [detalhesProduto, setDetalhesProduto] = useState([]);
+  const [itens, setItens] = useState([]);
 
-  async function buscarDetalhesProdutoPorId() {
+  async function buscarProduto(id) {
     try {
-      const resposta = await api.get(`/listar/produto/${id}`);
-      setItensNoCarrinho(resposta.data)
+      const resposta = await api.get(API_URL + `/listar/produto/${id}`);
+      setItens(resposta.data);
     } catch (erro) {
-      console.error("Erro ao buscar detalhes do produto por ID:", erro);
+      console.error("Erro ao buscar produto por ID:", erro);
+      return null;
     }
   }
 
-  async function CarregarCarrinho() {
-    let carrinho = Storage('carrinho') || [];
+  async function carregarCarrinho() {
+    let carrinho = storage('carrinho');
+    if (carrinho) {
+      let array = [];
 
-    if (carrinho.length > 0) {
-      let tempItens = [];
+      for (let produto of carrinho) {
+        let p = await buscarProduto(produto.id);
 
-      for (let produtoNoCarrinho of carrinho) {
-        await buscarDetalhesProdutoPorId(produtoNoCarrinho.id);
-        tempItens.push({
-          produto: detalhesProduto,
-          detalhes: produtoNoCarrinho,
-        });
+        if (p) {
+          array.push({
+            produto: p,
+            qtd: produto.qtd,
+          });
+        }
       }
 
-      setItensNoCarrinho(tempItens);
+      setItens(array);
     }
   }
 
   useEffect(() => {
-    CarregarCarrinho();
-  }, [id]);
+    carregarCarrinho();
+  }, []);
 
   return (
     <section className='pagina-carrinho'>
@@ -56,16 +58,16 @@ export default function Carrinho() {
       </div>
       <div className='info-carrinho'>
         <div className='produtos-carrinho'>
-          {itensNoCarrinho.map((item, index) => (
-            <ProdutoCarrinho key={index} produto={item.produto} imagem={API_URL + "/" + item.img} />
+          {itens.map((item, index) => (
+            <ProdutoCarrinho
+             item={item}
+            />
           ))}
         </div>
       </div>
       <div className='total'>
         <div>
-          <p>{`Total (${itensNoCarrinho.length} ${
-            itensNoCarrinho.length === 1 ? 'item' : 'itens'
-          }): R$0,00`}</p>
+          <p>{`Total === 1 ? 'item' : 'itens'}): R$`}</p>
           <button>Fazer Compra</button>
         </div>
         <hr />
