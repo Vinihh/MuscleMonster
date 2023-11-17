@@ -20,7 +20,7 @@ export default function Carrinho() {
   async function buscarDetalhesProdutoPorId() {
     try {
       const resposta = await api.get(`/listar/produto/${id}`);
-      setItensNoCarrinho(resposta.data);
+      setItensNoCarrinho(resposta.data)
     } catch (erro) {
       console.error("Erro ao buscar detalhes do produto por ID:", erro);
     }
