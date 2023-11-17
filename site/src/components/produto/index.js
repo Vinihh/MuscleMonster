@@ -22,11 +22,6 @@ export default function PaginaProduto(props) {
                         <h2>{'R$ ' + FormatarPreco(props.produtoss.preco)}</h2>
                         <h3>{'Disponivel: ' + props.produtoss.estoque} </h3>
 
-                        <div className='imagens'>
-                            <img src='/assets/images/produto1.png' />
-                            <img src='/assets/images/produto2.png' />
-                            <img src='/assets/images/produto3.png' />
-                        </div>
 
                         <button> Adicionar ao carrinho </button>
 
