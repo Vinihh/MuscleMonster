@@ -12,22 +12,25 @@ endpoint.post('/inserir', async (req, resp) => {
         if(!produto.nome)
             throw new Error(' Nome obrigatório')
 
-            if(!produto.descricao)
+        if(!produto.descricao)
             throw new Error(' Descrição obrigatório')
 
         if(!produto.categoria)
             throw new Error('Categoria obrigatório')
 
+        if(produto.categoria == 'Selecione...')
+            throw new Error('Categoria obrigatório')
+
         if(!produto.valor)
             throw new Error(' Valor obrigatorio')
 
-        if(produto.valor = 0 || produto.valor < 0)
+        if(produto.valor <= 0 )
             throw new Error('Preço deve ser maior que 0')
 
         if(!produto.estoque)
             throw new Error(' Estoque obrigatório')
 
-        if(produto.estoque = 0 || produto.estoque < 0)
+        if(produto.estoque <= 0 )
             throw new Error('Estoque deve ser maior que 0')
 
         const dados = await InserirNovoProduto(produto)
