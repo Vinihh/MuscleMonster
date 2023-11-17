@@ -16,7 +16,7 @@ export default function MeuPerfil() {
   const [nome,setNome] = useState(usuario.nome);
   const [email,setEmail] = useState(usuario.email);
   const [telefone,setTelefone] = useState('');
-  const [data,setData] = useState(Date);
+  const [data,setData] = useState();
 
   async function editar(){
     let cliente={

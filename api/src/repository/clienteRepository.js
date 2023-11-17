@@ -65,7 +65,7 @@ export async function BuscarCliente(nome) {
     where id_cliente = ?
     `
 
-    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.email, cliente.telefone, cliente.data, cliente.id])
+    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.telefone, cliente.data, cliente.id])
 
     return resposta;
   }
