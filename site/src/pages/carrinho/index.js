@@ -16,20 +16,23 @@ const api = axios.create({
 export default function Carrinho() {
   const [itens, setItens] = useState([]);
 
-  async function carregarCarrinho(){
+  async function carregarCarrinho() {
     let carrinho = storage('carrinho');
-    if(carrinho){
+    if (carrinho) {
 
       let temp = [];
 
-      for (let produto of carrinho){
+      for (let produto of carrinho) {
         let p = await BuscarProdutoPorId(produto.id)
         console.log(p)
 
-        temp.push(...itens, {
-          produto:p,
-          qtd:produto.qtd
+        temp.push({
+          produto: p,
+          qtd: produto.qtd
         })
+
+        console.log(temp);
+        setItens(temp)
       }
     }
   }
@@ -46,10 +49,8 @@ export default function Carrinho() {
       </div>
       <div className='info-carrinho'>
         <div className='produtos-carrinho'>
-          {itens.map((item, index) => (
-            <ProdutoCarrinho
-             item={item}
-            />
+        {itens.map((item, index) => (
+            <ProdutoCarrinho key={index} item={item} />
           ))}
         </div>
       </div>

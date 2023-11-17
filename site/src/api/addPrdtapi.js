@@ -52,6 +52,6 @@ export function BuscarImagem(imagem) {
 }
 
 export async function BuscarProdutoPorId(id){
-    const r = await api.get('/api/produto' + id)
+    const r = await api.get('/api/produto/' + id)
     return r.data
 }
