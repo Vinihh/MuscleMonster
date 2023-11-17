@@ -17,6 +17,11 @@
         h1{
             
             font-size: 14px;
+            text-align: left;
+        }
+
+        h3{
+            font-size: 12px;
             text-align: center;
         }
 
@@ -33,9 +38,13 @@
         }
 
         p {
-            
-            .insta {
-                width: 65px;
+           
+            img {
+                width: 40px;
+            }
+
+            .insta{
+                width: 50px;
             }
         }
     }
@@ -85,9 +94,7 @@
             font-size: 8px;
         }
 
-        p{
-            
-        }
+       
     }
     
 }
@@ -114,7 +121,46 @@
 
         p{
             .tiktok{
-                width: 50px !important;
+                width: 32px !important;
+            }
+            
+            .x{
+                width: 30px !important;
+            }
+
+            .insta{
+                width: 40px !important;
+            }
+        }
+    }
+    
+}
+
+
+
+@media (max-width:825px) {
+    .footer{
+        
+
+        height: 15vh;
+
+        .logo{
+            width: 60px;
+        }
+
+        h1{
+            
+            
+            font-size: 12px !important;
+        }
+
+        a{
+            font-size: 12px !important;
+        }
+
+        p{
+            .tiktok{
+                width: 34px !important;
             }
             
             .x{
@@ -151,7 +197,7 @@
 
         p{
             .tiktok{
-                width: 50px !important;
+                width: 33px !important;
             }
             
             .x{
@@ -166,42 +212,6 @@
     
 }
 
-@media (max-width:825px) {
-    .footer{
-        
-
-        height: 15vh;
-
-        .logo{
-            width: 60px;
-        }
-
-        h1{
-            
-            
-            font-size: 12px !important;
-        }
-
-        a{
-            font-size: 12px !important;
-        }
-
-        p{
-            .tiktok{
-                width: 50px !important;
-            }
-            
-            .x{
-                width: 30px !important;
-            }
-
-            .insta{
-                width: 40px !important;
-            }
-        }
-    }
-    
-}
 
 @media (max-width:680px) {
     .footer{
@@ -225,7 +235,7 @@
 
         p{
             .tiktok{
-                width: 50px !important;
+                width: 40px !important;
             }
             
             .x{
@@ -257,7 +267,7 @@
 
         p{
             .tiktok{
-                width: 50px !important;
+                width: 34px !important;
             }
             
             .x{
@@ -288,7 +298,7 @@
 
         p{
             .tiktok{
-                width: 30px !important;
+                width: 24px !important;
             }
             
             .x{
@@ -319,7 +329,7 @@
 
         p{
             .tiktok{
-                width: 28px !important;
+                width: 18px !important;
             }
             
             .x{
@@ -328,6 +338,37 @@
 
             .insta{
                 width: 25px !important;
+            }
+        }
+    }
+    
+}
+
+@media (max-width:450px) {
+    .footer{
+        
+
+        h1{
+            
+            
+            font-size: 9px !important;
+        }
+
+        a{
+            font-size: 9px !important;
+        }
+
+        p{
+            .tiktok{
+                width: 22px !important;
+            }
+            
+            .x{
+                width: 14px !important;
+            }
+
+            .insta{
+                width: 20px !important;
             }
         }
     }

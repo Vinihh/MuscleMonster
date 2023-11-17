@@ -28,7 +28,7 @@ export default function Footer() {
        
 
         <div>
-            <h1>SIGA-NOS</h1>
+            <h3>SIGA-NOS</h3>
 
             <p>  <img className='tiktok' src='/assets/images/ticktok.png' alt='' />  <img className='x'src='/assets/images/x.png' alt='' /> <img className='insta' src='/assets/images/insta.png' alt='' /></p>
         </div>
