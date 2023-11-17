@@ -8,43 +8,29 @@ import axios from 'axios';
 import InfoMinhaConta from '../../components/info-minha-conta';
 import storage from 'local-storage';
 import { API_URL } from '../../constants';
-import { toast } from 'react-toastify';
+import {toast} from 'react-toastify';
 
 export default function MeuPerfil() {
 
   const usuario = storage('usuario-logado');
-  const [nome, setNome] = useState(usuario.nome);
-  const [email, setEmail] = useState(usuario.email);
-  const [telefone, setTelefone] = useState(usuario.telefone);
-  const [data, setData] = useState(Date);
+  const [nome,setNome] = useState(usuario.nome);
+  const [email,setEmail] = useState(usuario.email);
+  const [telefone,setTelefone] = useState(usuario.telefone);
+  const [data,setData] = useState(Date);
 
-  async function editar() {
-    let cliente = {
-      nome: nome,
-      telefone: telefone,
-      data: data,
-      id: usuario.id
+  async function editar(){
+    let cliente={
+      nome:nome,
+      telefone:telefone,
+      data:data,
+      id:usuario.id
     }
 
     try {
-      const response3 = await axios.put(API_URL + '/editar/nome', cliente);
-      let novoNome = response3.data;
-      var nmCliente = JSON.parse(localStorage.getItem('usuario-logado'));
-      nmCliente.nome = novoNome;
-      localStorage.setItem('usuario-logado', JSON.stringify(nmCliente));
-
-      const response = await axios.put(API_URL + '/editar/tel', cliente);
-      let novoTel = response.data;
-      var telCliente = JSON.parse(localStorage.getItem('usuario-logado'));
-      telCliente.telefone = novoTel;
-      localStorage.setItem('usuario-logado', JSON.stringify(telCliente));
-
-      const response2 = await axios.put(API_URL + '/editar/data', cliente);
-      let novaDt = response2.data;
-      var dtCliente = JSON.parse(localStorage.getItem('usuario-logado'));
-      dtCliente.data = novaDt;
-      localStorage.setItem('usuario-logado', JSON.stringify(dtCliente));
-
+      const response3 = await axios.put(API_URL + '/editar/nome',cliente);
+      const response = await axios.put(API_URL + '/editar/tel',cliente);
+      const response2 = await axios.put(API_URL + '/editar/data',cliente);
+ 
       toast.success('informações Salvas')
     } catch (err) {
       toast.error(err.response.data.erro)
@@ -69,22 +55,22 @@ export default function MeuPerfil() {
 
             <div className='inputs'>
 
-              <div>
+            <div>
                 <h1>Nome Completo</h1>
-                <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
+                <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
               </div>
 
 
               <div id='inp-email'>
                 <h1>Email</h1>
-                <div>
-                  <h1>{usuario.email}</h1>
-                </div>
+               <div>
+                <h1>{usuario.email}</h1>
+               </div>
               </div>
 
               <div>
                 <h1>Telefone</h1>
-                <input type='text' value={telefone} onChange={e => setTelefone(e.target.value)} />
+                <input type='text' value={telefone} onChange={e => setTelefone(e.target.value)}/>
               </div>
 
               <div>
