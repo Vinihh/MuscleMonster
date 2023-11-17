@@ -11,12 +11,11 @@ const api = axios.create({
 });
 
 export default function PaginaProduto() {
-  const id = useParams().id;
+  const { id } = useParams();
   const [produto, setProduto] = useState({});
 
   async function buscarProduto() {
     try {
-      
       const resposta = await api.get(`/listar/produto/${id}`, {
         params: {
           limit: 1,
@@ -30,13 +29,13 @@ export default function PaginaProduto() {
 
   useEffect(() => {
     buscarProduto();
-  }, []);
+  }, [id]);
 
   return (
     <div className="pg-produto">
       <Header />
       <Produto produtoss={produto} />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
