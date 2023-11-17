@@ -105,6 +105,7 @@ export default function InfoMinhaConta() {
 
   return (
     <div className="info-minha-conta">
+      
       <div className='user'>
 
         <div className='imagem-usuario' >

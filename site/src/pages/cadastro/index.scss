@@ -18,6 +18,7 @@
     background: #0f1014;
     border-radius: 50px 5px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -199,4 +200,43 @@ h2 {
         color: #ffffff;
     }
 
+}
+
+
+@media (max-width:414px) {
+    
+    .cadastro_form_container{
+        width: 380px !important;
+        height: 630px !important;
+        position: relative;
+        
+
+        .cadastro_form{
+            h2{
+                font-size: 28px !important;
+            }
+        }
+    }
+
+    .input_text{
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+
+    #cadastro_button{
+        height: 30px !important;
+        width: 150px !important;
+    }
+
+    #cadastro_button button{
+        font-size: 18px !important;
+    }
+
+    .footer-cadastro{
+        margin-top: 10px;
+        a{
+            font-size: 14px !important ;
+            margin: 10px;
+        }
+    }
 }

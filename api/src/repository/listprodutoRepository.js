@@ -113,6 +113,6 @@ export async function BuscarPorRoupasAcessorios() {
                     FROM  tb_produto
                     WHERE ds_categoria like ?`;
 
-  const [resposta] = await conexao.query(comando, [ `%Acessórios%` ], [ `%Roupas%` ])
+  const [resposta] = await conexao.query(comando, [ `%Roupas%` ])
   return resposta
 }
