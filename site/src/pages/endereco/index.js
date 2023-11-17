@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { toast, Toast } from 'react-toastify';
 import axios from 'axios';
 import { API_URL } from '../../constants';
-import HeaderAdm from '../../components/header-adm';
+import Header from '../../components/header';
 import storage from 'local-storage'
 
 
@@ -75,7 +75,7 @@ export default function Endereco() {
 
     <div className='endereco'>
 
-      <HeaderAdm/>
+      <Header/>
 
       
 
