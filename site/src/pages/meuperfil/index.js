@@ -58,9 +58,11 @@ export default function MeuPerfil() {
                 <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
               </div>
 
-              <div>
+              <div id='inp-email'>
                 <h1>Email</h1>
-                <input type='text' value={email} onChange={e => setEmail(e.target.value)}/>
+               <div>
+                <h1>{usuario.email}</h1>
+               </div>
               </div>
 
               <div>
