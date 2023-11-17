@@ -228,8 +228,8 @@
   .App{
 
     nav{
-      height: 5vh !important;
-      margin-bottom: 30px;
+      height: 12vh !important;
+      margin-bottom: 20px;
       h1{
         font-size: 20px;
       }
@@ -267,8 +267,14 @@
       height: 25vh;
       div{
         height: 20vh;
+        width: 22vw;
+       
         img{
           height: 16vh;
+        }
+
+        h1{
+          font-size: 16px;
         }
       }
     }
@@ -305,13 +311,13 @@
     aside{
       height: 22vh;
       div{
-        height: 17vh;
+        height: 18vh;
         img{
           height: 14vh;
           
         }
         h1{
-          font-size: 16px;
+          font-size: 14px;
         }
       }
     }
@@ -360,9 +366,13 @@
 
       height: 20vh;
       div{
-        height: 15vh;
+        height: 16vh;
         img{
           height: 12vh;
+        }
+
+        h1{
+          font-size: 14px;
         }
       }
     }
@@ -388,7 +398,8 @@
 
       height: 20vh;
       div{
-        height: 15vh;
+        height: 16vh;
+        width: 25vw;
         img{
           height: 12vh;
         }
@@ -434,13 +445,23 @@
 @media (max-width:500px) {
 
   .App{
-    .home-produtos{
-     
+
+    nav{
+
       h1{
-        margin-top: -50px;
-        margin-bottom:40px;
+        font-size: 18px;
       }
+      h3{
+        font-size: 18px;
+      }
+    }
+    .home-produtos{
       height: 28vh;
+      h1{
+        
+        font-size: 20px;
+      }
+      
       .fora{
         
         div{
@@ -450,14 +471,31 @@
       }
     }
 
+    section{
+      div{
+      h1{
+        margin-top: 10px;
+        font-size: 14px;
+        width: 200px;
+      }
+      h4{
+        font-size: 12px;
+      }
+
+      button{
+        margin-top: -15px;
+      }
+    }
+    }
+
     aside{
 
       height: 15vh;
       div{
-        width: 28vw;
+        width: 24vw;
         height: 12vh;
         h1{
-          font-size: 14px;
+          font-size: 11px;
         }
         img{
           
