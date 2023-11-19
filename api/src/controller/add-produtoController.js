@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { InserirNovoProduto, listarProduto, alterarImagem } from '../repository/add-produtoRepository.js';
+import { InserirNovoProduto, listarProduto, alterarImagem, listarProdutoCarrinho } from '../repository/add-produtoRepository.js';
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/imagens' })
@@ -12,23 +12,36 @@ endpoint.post('/inserir', async (req, resp) => {
         if(!produto.nome)
             throw new Error(' Nome obrigatório')
 
-            if(!produto.descricao)
+        if(!produto.descricao)
             throw new Error(' Descrição obrigatório')
 
         if(!produto.categoria || produto.categoria ==! 'suplementos' || produto.categoria ==! 'Roupas' || produto.categoria ==! 'Acessorios')
             throw new Error('Categoria obrigatório')
 
+        if(produto.categoria == 'Selecione...')
+            throw new Error('Categoria obrigatório')
+
         if(!produto.valor)
             throw new Error(' Valor obrigatorio')
 
+<<<<<<< HEAD
             if(!produto.valor || produto.valor <= 1)
             throw new Error(' Valor menor que 1 real não é válido')
+=======
+        if(produto.valor <= 0 )
+            throw new Error('Preço deve ser maior que 0')
+>>>>>>> 0d3ea18c9358e8c2593119242b1f121f330a7c2c
 
         if(!produto.estoque)
             throw new Error(' Estoque obrigatório')
 
+<<<<<<< HEAD
             if(!produto.valor || produto.estoque < 0)
             throw new Error(' Estoque com numero negativo não é válido')
+=======
+        if(produto.estoque <= 0 )
+            throw new Error('Estoque deve ser maior que 0')
+>>>>>>> 0d3ea18c9358e8c2593119242b1f121f330a7c2c
 
         const dados = await InserirNovoProduto(produto)
         resp.send(dados)
@@ -46,6 +59,20 @@ endpoint.get('/listar/produto/:id',async (req, resp)=>{
 
         const id = req.params.id
         const resposta = await listarProduto(id)
+        resp.send(resposta)
+
+    } catch (err) {
+        resp.send({
+            erro: err.message
+        })
+    }
+})
+
+endpoint.get('/listar/produto/carrinho/:id',async (req, resp)=>{
+    try {
+
+        const id = req.params.id
+        const resposta = await listarProdutoCarrinho(id)
         resp.send(resposta)
 
     } catch (err) {

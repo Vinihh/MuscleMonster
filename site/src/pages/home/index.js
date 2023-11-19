@@ -20,7 +20,8 @@ export default function Home() {
 
   async function ListarProdutos() {
     let resposta = await axios.get(API_URL + '/consulta/produto')
-    setProduto(resposta.data)
+    let produtosLimitados = resposta.data.slice(0, 5);
+    setProduto(produtosLimitados);
   }
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function Home() {
         </Link>
       </aside>
 
-      <section>
+      <section className='sec1'>
         <img src='/assets/images/img4.png' alt='' />
         <div>
           <h1>Gostaria de aprender a treinar da maneira correta?</h1>

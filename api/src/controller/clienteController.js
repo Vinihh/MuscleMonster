@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem ,  EditarCliente } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome } from "../repository/clienteRepository.js";
 import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
@@ -73,11 +73,11 @@ let endpoints = Router();
     }
   })
 
-  endpoints.put('/editar/user', async(req,resp)=>{
+  endpoints.put('/editar/tel', async(req,resp)=>{
     try {
       const cliente = await req.body;
 
-      const resposta = await EditarCliente(cliente)
+      const resposta = await EditarTelefone(cliente)
       resp.send(resposta)
 
     } catch (err) {
@@ -86,6 +86,36 @@ let endpoints = Router();
       })
     }
   })
+
+  endpoints.put('/editar/data', async(req,resp)=>{
+    try {
+      const cliente = await req.body;
+
+      const resposta = await EditarNascimento(cliente)
+      resp.send(resposta)
+
+    } catch (err) {
+      resp.status(400).send({
+        erro:err.message
+      })
+    }
+  })
+
+  
+  endpoints.put('/editar/nome', async(req,resp)=>{
+    try {
+      const cliente = await req.body;
+
+      const resposta = await EditarNome(cliente)
+      resp.send(resposta)
+
+    } catch (err) {
+      resp.status(400).send({
+        erro:err.message
+      })
+    }
+  })
+
 
 
 export default endpoints;

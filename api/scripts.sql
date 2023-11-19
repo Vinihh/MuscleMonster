@@ -92,6 +92,3 @@ create table tb_carrinho (
     foreign key (id_cliente) references tb_cliente (id_cliente),
     foreign key (id_produto) references tb_produto (id_produto)
 );
-
-
-

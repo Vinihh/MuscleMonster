@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
-import HeaderAdm from '../../components/header-adm';
+
 import './index.scss';
 import InfoMinhaConta from '../../components/info-minha-conta';
 import Storage from 'local-storage'
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import { useEffect, useLayoutEffect, useState } from 'react';
+import Header from '../../components/header';
 
 export default function MinhaContaUser() {
 
@@ -27,7 +28,7 @@ export default function MinhaContaUser() {
 
   return (
     <div className="home-conta">
-      <HeaderAdm />
+      <Header />
 
       <aside>
         <InfoMinhaConta />

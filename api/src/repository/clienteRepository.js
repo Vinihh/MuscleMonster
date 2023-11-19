@@ -17,9 +17,6 @@ export async function Usuario(id) {
     return resposta;
   }
   
-export async function Carrinho(id){
-
-}
 
 export async function TrocarImagem(imagem, id) {
   const comando =
@@ -60,17 +57,36 @@ export async function BuscarCliente(nome) {
     return resposta;
   }
 
-  export async function EditarCliente(cliente){
+  export async function EditarNascimento(cliente){
     const comando = `update tb_cliente
-    set nm_cliente = ?
-    and  ds_telefone = ?
-    and  dt_nascimento = ? 
+    set dt_nascimento = ? 
     where id_cliente = ?
     `
 
-    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.email, cliente,telefone, cliente.nascimento, cliente.id])
+    const [resposta] = await conexao.query(comando,[ cliente.data, cliente.id])
+
+    return resposta;
+  }
+
+  export async function EditarTelefone(cliente){
+    const comando = `update tb_cliente
+    set ds_telefone = ?
+    where id_cliente = ?
+    `
+
+    const [resposta] = await conexao.query(comando,[ cliente.telefone, cliente.id])
 
     return resposta;
   }
   
+  export async function EditarNome(cliente){
+    const comando = `update tb_cliente
+    set nm_cliente = ?
+    where id_cliente = ?
+    `
+
+    const [resposta] = await conexao.query(comando,[ cliente.nome, cliente.id])
+
+    return resposta;
+  }
   

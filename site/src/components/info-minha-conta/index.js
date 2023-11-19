@@ -105,6 +105,7 @@ export default function InfoMinhaConta() {
 
   return (
     <div className="info-minha-conta">
+      
       <div className='user'>
 
         <div className='imagem-usuario' >
@@ -122,7 +123,8 @@ export default function InfoMinhaConta() {
 
         </div>
         {imagem ? <button onClick={trocarImg}><img src='/assets/images/salvar.png' /></button> : <button onClick={escolherImagem}><img src='/assets/images/editar.png' /></button>}
-        <h1>{nome}</h1>
+        <h1>Olá, {nome}</h1>
+        <p>Seja Bem-Vindo</p>
 
       </div>
 

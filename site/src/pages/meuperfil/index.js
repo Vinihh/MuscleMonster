@@ -15,7 +15,7 @@ export default function MeuPerfil() {
   const usuario = storage('usuario-logado');
   const [nome,setNome] = useState(usuario.nome);
   const [email,setEmail] = useState(usuario.email);
-  const [telefone,setTelefone] = useState('');
+  const [telefone,setTelefone] = useState(usuario.telefone);
   const [data,setData] = useState(Date);
 
   async function editar(){
@@ -27,8 +27,10 @@ export default function MeuPerfil() {
     }
 
     try {
-      
-      const response = await axios.put(API_URL + '/editar/user',cliente);
+      const response3 = await axios.put(API_URL + '/editar/nome',cliente);
+      const response = await axios.put(API_URL + '/editar/tel',cliente);
+      const response2 = await axios.put(API_URL + '/editar/data',cliente);
+ 
       toast.success('informações Salvas')
     } catch (err) {
       toast.error(err.response.data.erro)
@@ -53,10 +55,11 @@ export default function MeuPerfil() {
 
             <div className='inputs'>
 
-              <div>
+            <div>
                 <h1>Nome Completo</h1>
                 <input type='text' value={nome} onChange={e => setNome(e.target.value)}/>
               </div>
+
 
               <div id='inp-email'>
                 <h1>Email</h1>

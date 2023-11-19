@@ -34,7 +34,7 @@
     }
   }
 
-  .user {
+  .user  {
     display: flex;
     flex-direction: column;
     justify-content:center;
@@ -63,9 +63,6 @@
     flex-direction: column;
     width: 100%;
     gap: 50px 0px;
-
-    
-
 
     .links-pt1 {
       display: flex;
@@ -107,11 +104,7 @@
           width: 100%;
         }
 
-        #estoque {
-          font-size: 19px;
-          font-weight: 500;
-          margin-bottom: 5px;
-        }
+
 
         a {
           text-decoration: none;
@@ -142,9 +135,84 @@
 
   }
 
-  @media (max-width:1600px) {
-    .comp-info-adm{
 
+}  
+@media (max-width:414px) {
+  .comp-info-adm{
+    padding: 50px 20px !important;
+    width: 30% !important;
+    overflow-y: hidden;
+    overflow-x: visible;
+
+    .user{
+      
+      img{
+        height: 80px ;
+      }
+
+      h1{
+        font-size: 12px !important;
+
+      }
+
+      p{
+        font-size: 10px;
+      }
+    }
+
+    .links{
+      gap: 80px 0px;
+      position: relative;
+      bottom: 130px;
+
+      .links-pt1{
+
+        >div{
+          gap: 10px 0px;
+
+          a{
+            font-size: 13px;
+            width: 100px;
+          }
+
+          a:hover{
+            width: 120px !important;
+          }
+          
+        }
+
+        
+
+        .usuario{
+
+          gap: 5px !important;
+          
+          img{
+            width: 25px !important;
+            height: 25px;
+          }
+
+          h1{
+            font-size: 13px !important;
+          }
+        }
+
+        .area-pdt{
+          margin-top: 20px;
+
+          img{
+            width: 20px !important;
+            height: 20px;
+          }
+
+          h1{
+            font-size: 14px !important;
+          }
+        }
+
+        
+        
+      }
     }
   }
 }

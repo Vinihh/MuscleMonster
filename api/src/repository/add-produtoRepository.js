@@ -49,3 +49,28 @@ export async function listarProduto(id){
         throw new Error(err.message);
     }
 }
+
+export async function listarProdutoCarrinho(id){
+
+    try {
+        let comando = `select url_img         as imagem,
+        nm_produto      as produto,
+        ds_categoria    as categoria,
+        vl_valor        as preco,
+        qtd_estoque     as estoque,
+        ds_descricao    as descricao
+        from tb_produto
+        where id_produto = ? `;
+    
+        const respostas = await conexao.query(comando, [id]);
+
+        let linhas = respostas[0];
+        let linha = linhas[0];
+        console.log(linha)
+  
+        return linha;
+
+    } catch (err) {
+        throw new Error(err.message);
+    }
+}

@@ -5,7 +5,7 @@
   overflow: hidden;
   height: auto;
   padding: 35px 25px;
-  height: 90vh;
+  height: 90  vh;
   width: 25%;
   background-color: #c7c7c7;
   z-index: 0;
@@ -94,6 +94,10 @@
       text-align: center;
       font-weight: 600;
     }
+
+    p{
+      margin-top: -10px;
+    }
   }
 
   .linkss {
@@ -155,14 +159,6 @@
    
 }
 
-@media (max-width:1024px) {
-  .info-minha-conta{
-    margin-top: 0px;
-    .user{
-      margin-bottom: 300px;
-    }
-  }
-}
 
 @media (max-width:414px) {
   .info-minha-conta{

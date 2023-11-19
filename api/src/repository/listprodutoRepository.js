@@ -28,6 +28,19 @@ export async function BuscarPorNome(nome) {
   return resposta
 }
 
+export async function BuscarPorId(id) {
+  const comando = `SELECT id_produto      as id,
+                          url_img         as img,
+                          nm_produto      as produto,
+                          ds_categoria    as categoria,
+                          vl_valor        as preco,
+                          qtd_estoque     as estoque
+                    FROM  tb_produto
+                    WHERE id_produto = ?`;
+
+  const [resposta] = await conexao.query(comando, [ `%${id}%` ])
+  return resposta
+}
 
 export async function deletarProduto(id) {
   try {
@@ -113,6 +126,6 @@ export async function BuscarPorRoupasAcessorios() {
                     FROM  tb_produto
                     WHERE ds_categoria like ?`;
 
-  const [resposta] = await conexao.query(comando, [ `%Acessórios%` ], [ `%Roupas%` ])
+  const [resposta] = await conexao.query(comando, [ `%Roupas%` ])
   return resposta
 }
