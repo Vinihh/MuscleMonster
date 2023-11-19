@@ -15,14 +15,20 @@ endpoint.post('/inserir', async (req, resp) => {
             if(!produto.descricao)
             throw new Error(' Descrição obrigatório')
 
-        if(!produto.categoria)
+        if(!produto.categoria || produto.categoria ==! 'suplementos' || produto.categoria ==! 'Roupas' || produto.categoria ==! 'Acessorios')
             throw new Error('Categoria obrigatório')
 
         if(!produto.valor)
             throw new Error(' Valor obrigatorio')
 
+            if(!produto.valor || produto.valor <= 1)
+            throw new Error(' Valor menor que 1 real não é válido')
+
         if(!produto.estoque)
             throw new Error(' Estoque obrigatório')
+
+            if(!produto.valor || produto.estoque < 0)
+            throw new Error(' Estoque com numero negativo não é válido')
 
         const dados = await InserirNovoProduto(produto)
         resp.send(dados)

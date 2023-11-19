@@ -3,9 +3,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100%;
-    gap: 5vh;
+    gap: 2vh;
+
+    .qtd {
+        width: 100%;
+        padding: 1vh 3vh;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+            background-color: #ffb800;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        
+    }
 
     .titulo {
         display: flex;
@@ -14,12 +27,11 @@
         width: 100%;
     } 
 
-   .info-carrinho{
-    height: 100vh;
+   .info-carrinho {
+    height: auto;
     display: flex;
     flex-direction: column;
     width: 100%;
-
    }
 
    .total {
@@ -43,7 +55,7 @@
     }
 
     button {
-        background-color: yellow;
+        background-color: #ffb800;
         padding: 1.5vh 2.5vh;
         border-radius: 10px
 
