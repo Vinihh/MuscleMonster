@@ -1,6 +1,6 @@
 
   .comp-headerr{
-    height: 18vh;
+    height: 15vh;
     width: 100%;
 
   >div{
@@ -8,21 +8,14 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding:5px ;
+    height: 10vh;
+    padding: 5px;
     background-color: black;
     box-shadow: 0px 5px 8px #ffb800;
 
-    a{
-    > img{
-<<<<<<< HEAD
-     width: 9vh;
-=======
-      height: 7.5vh;
-      width: 80px;
->>>>>>> 0d3ea18c9358e8c2593119242b1f121f330a7c2c
-      margin-bottom: 5px;
-    }
-    }
+   img {
+    width: 8vh;
+   }
 
     .inp-busca{
       display: flex;

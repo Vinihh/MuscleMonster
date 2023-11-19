@@ -9,39 +9,36 @@ endpoint.post('/inserir', async (req, resp) => {
     try {
         const produto = await req.body;
 
-        if(!produto.nome)
+        if (!produto.nome)
             throw new Error(' Nome obrigatório')
 
-        if(!produto.descricao)
+        if (!produto.descricao)
             throw new Error(' Descrição obrigatório')
 
-        if(!produto.categoria || produto.categoria ==! 'suplementos' || produto.categoria ==! 'Roupas' || produto.categoria ==! 'Acessorios')
+        if (!produto.categoria || produto.categoria == ! 'suplementos' || produto.categoria == ! 'Roupas' || produto.categoria == ! 'Acessorios')
             throw new Error('Categoria obrigatório')
 
-        if(produto.categoria == 'Selecione...')
+        if (produto.categoria == 'Selecione...')
             throw new Error('Categoria obrigatório')
 
-        if(!produto.valor)
+        if (!produto.valor)
             throw new Error(' Valor obrigatorio')
 
-<<<<<<< HEAD
-            if(!produto.valor || produto.valor <= 1)
+        if (!produto.valor || produto.valor <= 1)
             throw new Error(' Valor menor que 1 real não é válido')
-=======
-        if(produto.valor <= 0 )
-            throw new Error('Preço deve ser maior que 0')
->>>>>>> 0d3ea18c9358e8c2593119242b1f121f330a7c2c
 
-        if(!produto.estoque)
+        if (produto.valor <= 0)
+            throw new Error('Preço deve ser maior que 0')
+
+        if (!produto.estoque)
             throw new Error(' Estoque obrigatório')
 
-<<<<<<< HEAD
-            if(!produto.valor || produto.estoque < 0)
+        if (!produto.valor || produto.estoque < 0)
             throw new Error(' Estoque com numero negativo não é válido')
-=======
-        if(produto.estoque <= 0 )
+
+        if (produto.estoque <= 0)
             throw new Error('Estoque deve ser maior que 0')
->>>>>>> 0d3ea18c9358e8c2593119242b1f121f330a7c2c
+
 
         const dados = await InserirNovoProduto(produto)
         resp.send(dados)
@@ -51,10 +48,10 @@ endpoint.post('/inserir', async (req, resp) => {
             erro: err.message
         })
     }
-   
+
 })
 
-endpoint.get('/listar/produto/:id',async (req, resp)=>{
+endpoint.get('/listar/produto/:id', async (req, resp) => {
     try {
 
         const id = req.params.id
@@ -68,7 +65,7 @@ endpoint.get('/listar/produto/:id',async (req, resp)=>{
     }
 })
 
-endpoint.get('/listar/produto/carrinho/:id',async (req, resp)=>{
+endpoint.get('/listar/produto/carrinho/:id', async (req, resp) => {
     try {
 
         const id = req.params.id
@@ -84,23 +81,23 @@ endpoint.get('/listar/produto/carrinho/:id',async (req, resp)=>{
 
 endpoint.put('/inserir/:id/imagens', upload.single('imagem'), async (req, resp) => {
     try {
-        if(!req.file)
+        if (!req.file)
             throw new Error('Escolha a imagem')
 
 
-      const { id } = req.params;
-      const imagem = req.file.path;
-  
-      const resposta = await alterarImagem(imagem, id);
-      if(resposta != 1)
+        const { id } = req.params;
+        const imagem = req.file.path;
+
+        const resposta = await alterarImagem(imagem, id);
+        if (resposta != 1)
             throw new Error('A imagem não pode ser salva')
-      resp.status(204).send();
-      
+        resp.status(204).send();
+
     } catch (err) {
         resp.status(400).send({
             erro: err.message
         })
     }
-  })
+})
 
 export default endpoint
