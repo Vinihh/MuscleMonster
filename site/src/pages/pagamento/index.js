@@ -145,7 +145,7 @@ export default function Endereco() {
 
                 <div className='cadastrar-endereco'>
 
-                    <Link><button onClick={CadastroEndereco}>Finalizar Compra</button></Link>
+                    <Link><button onClick={CadastroEndereco}>Salvar</button></Link>
 
                 </div>
 
