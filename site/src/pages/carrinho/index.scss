@@ -1,4 +1,5 @@
 .pagina-carrinho {
+    font-size: 'f1';
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,7 +16,15 @@
         button {
             background-color: #ffb800;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 14px;
+            padding: 1vh 1.5vh;
+            font-weight: 600;
+        }
+
+        button:hover{
+            background-color: rgb(240, 240, 240);
+            transition: 0.5s;
+            cursor: pointer;
         }
         
     }
@@ -56,10 +65,17 @@
 
     button {
         background-color: #ffb800;
-        padding: 1.5vh 2.5vh;
-        border-radius: 10px
+        padding: 1vh 2.5vh;
+        border-radius: 15px;
+        font-weight: 600;
 
     }
+    button:hover{
+        background-color: rgb(240, 240, 240);
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    
 
     }
 
