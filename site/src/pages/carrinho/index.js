@@ -69,7 +69,7 @@ export default function Carrinho() {
           label: 'Sim',
           onClick: async () => {
             storage.clear('carrinho');
-            carregarCarrinho();
+            window.location.reload('/carrinho')
           },
         },
         {

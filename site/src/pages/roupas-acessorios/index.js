@@ -28,7 +28,7 @@ export default function RoupasAcessorios() {
   }, [])
 
   return (
-    <div className="pagina-suplementos">
+    <div className="pagina-roupas">
       <Header />
 
       <nav>
@@ -41,7 +41,7 @@ export default function RoupasAcessorios() {
               imagem={API_URL + "/" + item.img}
               nome={item.produto}
               preco={item.preco}
-
+              
             />
           </section>
         ))}

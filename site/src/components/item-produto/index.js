@@ -12,14 +12,15 @@ export default function Produto(props) {
   return (
     <div className="produto">
 
-      <div className='produto-img'>
+       <div className='produto-img'>
         <img src={BuscarImagem(props.prod.img)}/>
-      </div>
-
-        <div className='infos-produto'>
-        <h3>{props.prod.produto}</h3>
+       </div>
         
-        <h2>R$ {FormatarPreco(props.prod.preco)}</h2>
+        <div className='infos-produto'>
+         <h3>{props.prod.produto}</h3>
+        
+         <h2>R$ {FormatarPreco(props.prod.preco)}</h2>
+         <button className='add_pdt'>Comprar Agora</button>
         </div>
     </div>
   );
