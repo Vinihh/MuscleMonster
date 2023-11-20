@@ -51,6 +51,26 @@
             
         }
 
+        button{
+            background-color: black;
+            color: white;
+            width: 150px;
+            align-self: center;
+            margin-top: 7px;
+            border-radius: 15px;
+            padding: 5px 10px;
+        }
+
+        button:hover{
+            background-color: white;
+            color: #000;
+            transition: 0.5s;
+            border: 1px solid black;
+
+        }
+
+       
+
 
         p {
             color: #000;

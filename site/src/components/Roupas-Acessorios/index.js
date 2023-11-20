@@ -12,6 +12,7 @@ export default function PaginaRoupasAcessorios(props) {
             <h3>{props.nome}</h3>
             
             <h2>{'R$ ' + props.preco}</h2>
+            <button>Ver Detalhes</button>
             </div>
         </div>
       );
