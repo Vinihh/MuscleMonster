@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './pages/home';
 import HomeAdm from './pages/adm/home-adm';
-import Addproduto from './pages/add-produto';
+import Addproduto from './pages/adm/add-produto';
 import ProdutoAdm from './pages/adm/produto-adm';
 import ClientesAdm from './pages/adm/clientes-adm';
 import VendasAdm from './pages/adm/vendas-adm';
@@ -22,6 +22,7 @@ import MeuPerfil from './pages/meuperfil';
 import MinhasCompras from './pages/minhascompras';
 import MinhaContaUser from './pages/home-minha-conta';
 import Carrinho from './pages/carrinho';
+import Pagamento from './pages/pagamento'
 
 
 import { ToastContainer } from 'react-toastify';
@@ -50,6 +51,7 @@ root.render(
         <Route path='/produtos/:id' element={<PaginaProduto />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/endereco' element={<Endereco />} />
+        <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />
         <Route path='/roupas-acessorios' element={<RoupasAcessorios />} />

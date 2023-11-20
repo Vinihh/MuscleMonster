@@ -3,9 +3,8 @@ import conexao from "./connection.js";
 
 export async function CadastroEndereco(cadastro) {
 
-    let comando = `insert into tb_endereco(ds_rua,ds_bairro,ds_cidade,nr_cep,nr_numero,ds_complemento,nm_contato,tel_contato,ds_referencia,id_cliente)
-    values (?, ?, ?, ?, ?, ?, ?, ?,?,?);`;
-    
+    let comando = `INSERT INTO tb_endereco(ds_rua, ds_bairro, ds_cidade, nr_cep, nr_numero, ds_complemento, nm_contato, tel_contato, ds_referencia, id_cliente)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
 
     const [resposta] = await conexao.query(comando, [
         cadastro.rua,
@@ -17,12 +16,11 @@ export async function CadastroEndereco(cadastro) {
         cadastro.contato,
         cadastro.telefone,
         cadastro.referencia,
-        cadastro.idCliente,
-        cadastro.id
+        cadastro.id_cliente
     ]);
 
-    cadastro.id = resposta.insertId
+    cadastro.id = resposta.insertId;
+    cadastro.id_cliente = resposta.insertId;
 
     return cadastro;
-
 }

@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom';
 import storage from 'local-storage';
 import { API_URL } from '../../../constants';
 import axios from 'axios';
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 
 export default function ClientesAdm() {
