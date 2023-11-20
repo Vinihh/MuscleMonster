@@ -35,7 +35,7 @@ export default function Endereco() {
       numero: numero,
       complemento: complemento,
       referencia: referencia,
-      idCliente:usuariologado.id
+      id_cliente:usuariologado
     };
 
 
@@ -206,7 +206,7 @@ export default function Endereco() {
 
           <div className='cadastrar-endereco'>
 
-            <button onClick={CadastroEndereco}>Concluir</button>
+            <Link  ><button onClick={CadastroEndereco}>Ir para pagamento</button></Link>
 
           </div>
 

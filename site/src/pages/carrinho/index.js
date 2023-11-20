@@ -6,6 +6,7 @@ import storage from 'local-storage';
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
+import { Link } from 'react-router-dom';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -94,9 +95,6 @@ export default function Carrinho() {
     storage.set('carrinho', novoCarrinho);
     carregarCarrinho();
   };
-  
-
-
 
   return (
     <section className='pagina-carrinho'>
@@ -126,7 +124,7 @@ export default function Carrinho() {
       <div className='total'>
         <div>
           <p>{`Valor total ${ValorTotal(itens)}`}</p>
-          <button>Fazer Compra</button>
+          <Link to='/endereco' ><button>Prosseguir compra</button></Link>
         </div>
         <hr/>
       </div>
