@@ -1,0 +1,95 @@
+.pagina-endereco {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'f1';
+
+  aside {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    height: 100vh;
+
+
+    section {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-self: center;
+
+        
+
+      h2 {
+        font-size: 25px;
+        margin: 50px 0px 150px 0px;
+        text-decoration: underline;
+        text-decoration-color: #ffb800;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: center;
+        gap: 50px 0px;
+
+
+        div {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-self: center;
+          gap: 0px 50px;
+
+          
+
+          div {
+            display: flex;
+            flex-direction: column;
+
+            h1 {
+              margin-bottom: 5px;
+              font-size: 19px;
+            }
+
+            input {
+              background-color: none;
+              width: 350px;
+              height: 35px;
+              border: 1px solid black;
+              border-radius: 5px;
+              margin-bottom: 10px;
+              font-weight: 500;
+              font-size: 15px;
+              padding: 8px;
+
+              &:focus {
+                color: #fff;
+              }
+
+
+            }
+
+            ::placeholder {
+              font-size: 17px;
+              color: #555;
+              letter-spacing: 1px;
+            }
+
+            
+          }
+        }
+
+        
+
+      }
+
+      
+      
+    }
+  }
+
+}

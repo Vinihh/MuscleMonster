@@ -28,6 +28,7 @@ import Pagamento from './pages/pagamento'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Erro from './pages/erro';
+import Enderecoo from './pages/endereco-user';
 
 
 
@@ -60,7 +61,7 @@ root.render(
         <Route path='/meuperfil' element={<MeuPerfil />} />
         <Route path='/adm/login' element={<LoginAdm />} />
         <Route path='/erro' element={<Erro />} />
-
+        <Route path='/enderecoo' element={<Enderecoo />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

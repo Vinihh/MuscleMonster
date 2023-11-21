@@ -141,7 +141,7 @@ export default function InfoMinhaConta() {
               Minhas Compras
             </Link>
 
-            <Link to={'/endereco'}>
+            <Link to={'/enderecoo'}>
               <img src='/assets/images/icon3.png' alt='' />
                Endereço
                </Link>
