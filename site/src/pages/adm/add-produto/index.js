@@ -1,18 +1,15 @@
 import './index.scss';
 import HeaderAdm from '../../../components/header-adm';
 import InfoAdm from '../../../components/info-adm';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { inserirImagem,cadastrarProduto } from '../../../api/addPrdtapi';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 import axios from 'axios';
 import Storage from 'local-storage';
 import './toastStyles.css';
-
-
-
-
-
+import { Navigate, useNavigate } from 'react-router-dom';
 import { toast} from 'react-toastify';
+import storage from 'local-storage';
 
 
 export default function HomeAdm() {
@@ -25,7 +22,8 @@ export default function HomeAdm() {
   const [estoque, setEstoque] = useState(0)
   const [imagem, setImagem] = useState('')
 
-  const [salvo, setSalvo] = useState('')
+  const [salvo, setSalvo] = useState('');
+  const navigate = useNavigate();
 
   
   async function salvarClick(){
@@ -84,6 +82,13 @@ export default function HomeAdm() {
   function mostrarImagem(){
     return URL.createObjectURL(imagem)
   }
+
+  useEffect(() => {
+    if(!storage('adm-logado')){
+      navigate('/erro')
+    };
+  }, []);
+
 
   return (
     <div className="add-produto">

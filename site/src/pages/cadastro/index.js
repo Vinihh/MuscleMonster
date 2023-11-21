@@ -52,6 +52,8 @@ export default function PaginaCadastro() {
 
   }
 
+  
+
   return (
     <div className='body'>
       <div class="cadastro_form_container">
