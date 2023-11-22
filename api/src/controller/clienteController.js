@@ -17,9 +17,9 @@ let endpoints = Router();
       if(!cliente.senha)
         throw new Error('Campo Obrigatório')
 
-      let r1 = await consultar(cliente.email);
-      if (r1.length < 0)
-          throw new Error(' Email não encontrado!');
+        let r1 = await consultar(cliente.email);
+        if (r1.length == 0)
+            throw new Error(' Email não encontrado!');
 
       let dados = await AlterarSenha(cliente)
       resp.send(dados)
