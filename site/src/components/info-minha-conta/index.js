@@ -105,7 +105,7 @@ export default function InfoMinhaConta() {
 
   return (
     <div className="info-minha-conta">
-      
+
       <div className='user'>
 
         <div className='imagem-usuario' >
@@ -143,13 +143,17 @@ export default function InfoMinhaConta() {
 
             <Link to={'/enderecoo'}>
               <img src='/assets/images/icon3.png' alt='' />
-               Endereço
-               </Link>
+              Endereço
+            </Link>
 
-            <Link> 
-           
-            <img src='/assets/images/whatsapp.png' alt='' />
-            Contate-nos via WhatsApp 
+            <Link>
+              <img src='/assets/images/whatsapp.png' alt='' />
+              Contate-nos via WhatsApp
+            </Link>
+
+            <Link>
+              <img src='/assets/images/icon4.png' alt='' />
+              Trocar senha
             </Link>
           </div>
         </div>

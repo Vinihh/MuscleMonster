@@ -9,7 +9,8 @@ export async function verificarLogin(email,senha) {
       nm_cliente as nome,
       ds_telefone as telefone,
       dt_nascimento as data,
-      ds_email as email 
+      ds_email as email,
+      ds_senha  as senha 
       FROM tb_cliente
       where ds_email = ?
       and ds_senha = ?
