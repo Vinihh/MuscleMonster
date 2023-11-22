@@ -29,6 +29,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Erro from './pages/erro';
 import Enderecoo from './pages/endereco-user';
+import EsqueceuSenha from './pages/esqueceu-senha';
 
 
 
@@ -62,6 +63,7 @@ root.render(
         <Route path='/adm/login' element={<LoginAdm />} />
         <Route path='/erro' element={<Erro />} />
         <Route path='/enderecoo' element={<Enderecoo />} />
+        <Route path='/esqueceu-a-senha' element={<EsqueceuSenha />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

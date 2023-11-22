@@ -16,6 +16,19 @@ export async function Usuario(id) {
     const [resposta] = await conexao.query(comando, [id]);
     return resposta;
   }
+
+  export async function AlterarSenha(cliente) {
+
+    const comando = `
+    Update tb_cliente
+    set ds_senha = ?
+    where ds_email = ?;     `;
+
+  
+    const [resposta] = await conexao.query(comando, [cliente.senha,cliente.email]);
+    return resposta;
+  }
+  
   
 
 export async function TrocarImagem(imagem, id) {

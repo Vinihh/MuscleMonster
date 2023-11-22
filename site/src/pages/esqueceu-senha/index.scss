@@ -1,0 +1,207 @@
+
+.body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+    background-image: url(../../../public/assets/images/bgcad.png);
+    background-size: cover;
+    font-family: 'f1';
+    overflow: hidden;
+}
+.esq-senha_form_container{
+    position: relative;
+    width: 500px;
+    height: 520px;
+    background: #0f1014;
+    border-radius: 50px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-top: 70px;
+}
+.esq-senha_form_container::before{
+    
+    position: absolute;
+    width: 170%;
+    height: 170%;
+    content: '';
+    background-image: conic-gradient(transparent, transparent, transparent,  #FFB800);
+    animation: rotate_border 6s linear infinite;
+
+}
+.esq-senha_form_container::after{
+    
+    position: absolute;
+    width: 170%;
+    height: 170%;
+    content: '';
+    background-image: conic-gradient(transparent, transparent, transparent,  #FFB800);
+    animation: rotate_border 6s linear infinite;
+    animation-delay: -3s;
+}
+@keyframes rotate_border{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+.esq-senha_form{
+    outline: 0;
+    position: absolute;
+    content: '';
+    background-color: #15161a;
+    border-radius: 50px 5px;
+    inset: 5px;
+    padding: 50px 40px;
+    z-index: 10;
+    color: #ffffff;
+
+} 
+h2{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+}
+
+h4{
+    margin-top:10px;
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.733);
+    font-family: 'arial';
+}
+.input_group{
+    margin-top: 40px;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+}
+.input_text{
+    width: 95%;
+    height: 30px;
+    background: transparent;
+    border: transparent;
+    outline: none;
+    border-bottom: 1px solid #ffffff;
+    font-size: 20px;
+    padding-left: 10px;
+    color: #ffffff;
+
+}
+::placeholder{
+    font-size: 17px;
+    color: #ffffff52;
+    letter-spacing: 1px;
+
+}
+.fa{
+    font-size: 20px;
+
+}
+#esq-senha_button{
+    position: relative;
+    width: 300px;
+    height: 40px;
+    transition: 1s;
+    margin-top: 70px;
+
+
+}
+#esq-senha_button button{
+    outline: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    z-index: 10;
+    cursor: pointer;
+    font-size: 22px;
+    letter-spacing: 2px;
+    border: 1px solid #FFB800;
+    color: #FFB800;
+    border-radius: 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer-esq-senha {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+
+    a{
+      text-decoration: none;
+      cursor: pointer;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+}
+
+
+@media (max-width:600px) {
+    .esq-senha_form_container{
+        width: 400px !important;
+        height: 500px !important;
+    }
+
+    .input_text{
+        width: 100% !important;
+    }
+
+    .footer{
+        a{
+            font-size: 16px !important;
+        }
+    }
+}
+
+
+@media (max-width:414px) {
+    
+    .esq-senha_form_container{
+        width: 320px !important;
+        height: 460px !important;
+
+        .esq-senha_form{
+            h2{
+                font-size: 28px !important;
+            }
+        }
+    }
+
+    .input_text{
+        width: 100% !important;
+        font-size: 15px !important;
+    }
+
+    #esq-senha_button{
+        height: 30px !important;
+        width: 150px !important;
+    }
+
+    #esq-senha_button button{
+        font-size: 18px !important;
+    }
+
+    .footer-esq-senha{
+        margin-top: 10px;
+        a{
+            font-size: 14px !important ;
+            margin: 10px;
+        }
+    }
+}

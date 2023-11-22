@@ -1,11 +1,35 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome, AlterarSenha } from "../repository/clienteRepository.js";
 import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
 const upload = multer({ dest: 'storage/imagem/cliente' })
 
 let endpoints = Router();
+
+  endpoints.put('/alterar/senha' , async(req, resp) =>{
+    try {
+      const cliente = req.body;
+
+      if(!cliente.email)
+        throw new Error('Campo Obrigatório')
+
+      if(!cliente.senha)
+        throw new Error('Campo Obrigatório')
+
+      let r1 = await consultar(cliente.email);
+      if (r1.length < 0)
+          throw new Error(' Email não encontrado!');
+
+      let dados = await AlterarSenha(cliente)
+      resp.send(dados)
+    
+    } catch (err) {
+      resp.status(400).send({
+        erro: err.message
+      })
+    }
+  })
 
   endpoints.get('/user', async (req, resp) => {
     try {

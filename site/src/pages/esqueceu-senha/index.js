@@ -9,10 +9,11 @@ import { API_URL } from '../../constants';
 
 
 
-export default function Login() {
+export default function EsqueceuSenha() {
  
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [confirmarSenha, setConfirmarSenha] = useState('');
   const [erro, setErro] = useState('');
   const [carregando, setCarregando] = useState(false);
 
@@ -24,6 +25,11 @@ export default function Login() {
     setCarregando(true);
     setErro('');
 
+    if (senha !== confirmarSenha) {
+      toast.error('As senhas não coincidem.');
+      return;
+    }
+
     let user = {
       email: email,
       senha: senha
@@ -31,12 +37,7 @@ export default function Login() {
 
     try {
 
-      const response = await axios.post(API_URL + '/login', user);
-
-      setTimeout(() => {
-        storage('usuario-logado', response.data)
-        navigate('/');
-      },1200)
+      const response = await axios.put(API_URL + '/alterar/senha', user);
    
     } catch (err) {
       ref.current.complete();
@@ -60,9 +61,9 @@ export default function Login() {
   return (
     <div className='body'>
       <LoadingBar color='#FFB800' ref={ref} />
-    <div class="login_form_container">
-    <div class="login_form">
-      <h2>Login</h2>
+    <div class="esq-senha_form_container">
+    <div class="esq-senha_form">
+      <h2>Alterar Senha</h2>
       <div class="input_group">
         <i class="fa fa-user"></i>
         <input
@@ -72,6 +73,7 @@ export default function Login() {
           value={email}
           onChange={e => setEmail(e.target.value)}
         />
+        <h4> Digite seu e-mail cadastrado para alterarmos sua senha</h4>
 
 
       </div>
@@ -79,7 +81,7 @@ export default function Login() {
         <i class="fa fa-unlock-alt"></i>
         <input
           type="password"
-          placeholder="Senha"
+          placeholder="Nova Senha"
           class="input_text"
           value={senha}
           onChange={e => setSenha(e.target.value)} 
@@ -87,11 +89,24 @@ export default function Login() {
         />
 
       </div>
-      <div class="button_group" id="login_button">
+
+      <div class="input_group">
+        <i class="fa fa-unlock-alt"></i>
+        <input
+          type="password"
+          placeholder="Confirmar Nova Senha"
+          class="input_text"
+          value={confirmarSenha}
+          onChange={e => setConfirmarSenha(e.target.value)} 
+          onKeyUp={teclaEnter}
+        />
+
+      </div>
+      <div class="button_group" id="esq-senha_button">
       <button onClick={entrar}>Entrar</button>
       </div>
-      <div class="footer-login">
-      <Link to='/esqueceu-a-senha'><p>Esqueceu a senha?</p></Link>
+      <div class="footer-esq-senha">
+        <a>Esqueceu a senha ?</a>
         <Link to='/cadastro'><p>Cadastrar-se</p></Link>
       </div>
     </div>
