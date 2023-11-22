@@ -96,13 +96,11 @@ export default function Carrinho() {
     <section className='pagina-carrinho'>
       <Header />
       <div className='titulo'>
-        <h1>Carrinho</h1>
+        <h1>Carrinho </h1>
+        <h2>{`( ${qtdItens()} )`}</h2>
       </div>
 
-      <div className='qtd'>
-        <h1>{`Quantidade de itens no carrinho ( ${qtdItens()} )`}</h1>
-        <button onClick={ApagarItemDoCarrinho}>Limpar Carrinho</button>
-      </div>
+  
 
       <div className='info-carrinho'>
         <div className='produtos-carrinho'>
@@ -120,6 +118,7 @@ export default function Carrinho() {
       </div>
       <div className='total'>
         <div>
+        
           <p>{`Valor total ${ValorTotal(itens)}`}</p>
           <Link to='/endereco' ><button>Prosseguir compra</button></Link>
         </div>

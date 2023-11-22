@@ -9,7 +9,8 @@ export default function ProdutoCarrinho(props) {
   }
 
   return (
-    <div className="produto-carrinho">
+    <div className="produto-carrinho"> 
+
       <img src={BuscarImagem(props.produto.imagem)} alt={props.produto.produto} />
 
       <div className='valores'>
@@ -17,7 +18,7 @@ export default function ProdutoCarrinho(props) {
         <h2>{'R$' + decimal(props.produto.preco)}</h2>
       </div>
 
-      <button onClick={props.remover}>Remover</button>
+      <button className='button' onClick={props.remover}>Remover</button>
     </div>
   );
 }
