@@ -20,7 +20,7 @@ export default function Produto(props) {
          <h3>{props.prod.produto}</h3>
         
          <h2>R$ {FormatarPreco(props.prod.preco)}</h2>
-         <button className='add_pdt'>Comprar Agora</button>
+        
         </div>
     </div>
   );

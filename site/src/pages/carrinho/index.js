@@ -60,6 +60,14 @@ export default function Carrinho() {
     return total.toFixed(2);
   }
 
+  function RemoverItem(id) {
+    let carrinho = storage('carrinho')
+    carrinho = carrinho.filter(item => id != id)
+
+    storage('carrinho', carrinho)
+    carregarCarrinho()
+  }
+
   function ApagarItemDoCarrinho() {
     confirmAlert({
       title: 'Usuário',
@@ -83,18 +91,6 @@ export default function Carrinho() {
     carregarCarrinho();
   }, []);
 
- 
-  const handleRemoveItem = (productId) => {
-    
-    let novoCarrinho = storage('carrinho');
-    console.log('Antes de remover:', novoCarrinho);
-  
-    novoCarrinho = novoCarrinho.filter((item) => item.produto.id !== productId);
-    console.log('Depois de remover:', novoCarrinho);
-  
-    storage.set('carrinho', novoCarrinho);
-    carregarCarrinho();
-  };
 
   return (
     <section className='pagina-carrinho'>
@@ -116,8 +112,9 @@ export default function Carrinho() {
               produto={item.produto}
               imagem={item.produto.imagem}
               qtd={item.qtd}
-              onRemoveItem={handleRemoveItem}
+              remover={RemoverItem}
             />
+            
           ))}
         </div>
       </div>

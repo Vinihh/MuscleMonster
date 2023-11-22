@@ -17,7 +17,7 @@ export default function ProdutoCarrinho(props) {
         <h2>{'R$' + decimal(props.produto.preco)}</h2>
       </div>
 
-      <button>Remover</button>
+      <button onClick={props.remover}>Remover</button>
     </div>
   );
 }
