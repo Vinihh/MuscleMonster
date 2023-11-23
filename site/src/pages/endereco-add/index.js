@@ -142,6 +142,7 @@ export default function EnderecoAdd() {
                   class="input_text"
                   value={cep}
                   onKeyUp={TeclaEnter}
+                  onBlur={buscar}
                   onChange={e => setCep(e.target.value)}
                 />
               </div>

@@ -8,7 +8,7 @@ export default function CardEndereco({item: {referencia, rua, cep, bairro, cidad
 
             <div>
                 <div className='end'>{rua}, {numero} - {complemento}</div>
-                <div className='cep'>{cep}- {bairro}, {cidade}</div>
+                <div className='cep'>0{cep} - {bairro}, {cidade}</div>
             </div>
         </div>
     )

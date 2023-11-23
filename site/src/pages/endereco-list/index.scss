@@ -27,10 +27,11 @@
         text-decoration-color: #ffb800;
       }
       
-      div{
+      > div{
         display: flex;
         align-items: flex-start;
         justify-content: center;
+        gap: 20px;
       }
       
       .button{
