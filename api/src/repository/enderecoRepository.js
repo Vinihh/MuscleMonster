@@ -36,7 +36,7 @@ export async function listarEndereco(id){
         tel_contato     as telefone,
         ds_referencia   as referencia
         from tb_endereco
-        where id_cliente = 
+        where id_cliente = ?
         `;
 
     const [resposta] = await conexao.query(comando,[id]);
