@@ -22,7 +22,6 @@ import MeuPerfil from './pages/meuperfil';
 import MinhasCompras from './pages/minhascompras';
 import MinhaContaUser from './pages/home-minha-conta';
 import Carrinho from './pages/carrinho';
-import Pagamento from './pages/pagamento'
 
 
 import { ToastContainer } from 'react-toastify';
@@ -53,7 +52,6 @@ root.render(
         <Route path='/produtos/:id' element={<PaginaProduto />} />
         <Route path='/carrinho' element={<Carrinho />} />
         <Route path='/endereco' element={<Endereco />} />
-        <Route path='/pagamento' element={<Pagamento />} />
         <Route path='/suplementos' element={<Suplementos />} />
         <Route path='/equipamentos' element={<Equipamentos />} />
         <Route path='/roupas-acessorios' element={<RoupasAcessorios />} />

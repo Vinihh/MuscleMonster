@@ -20,7 +20,6 @@ export async function CadastroEndereco(cadastro) {
     ]);
 
     cadastro.id = resposta.insertId;
-    cadastro.id_cliente = resposta.insertId;
 
     return cadastro;
 }

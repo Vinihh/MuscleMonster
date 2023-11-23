@@ -32,7 +32,7 @@ endpoints.post('/endereco', async (req, resp) => {
         
 
         let dados = await CadastroEndereco(endereco)
-        resp.status(200).send(dados)
+        resp.send(dados)
 
     } catch (err) {
         resp.status(404).send({erro: err.message})
