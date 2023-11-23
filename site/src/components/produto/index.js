@@ -13,19 +13,21 @@ const api = axios.create({
 });
 
 export default function PaginaProduto(props) {
-
-  const navigate = useNavigate()
-
   const { id } = useParams();
   const [maisProdutos, setMaisProdutos] = useState([])
+  const [categoria,setCategoria] = useState(props.produtoss.categoria)
+  const navigate = useNavigate()
 
   function FormatarPreco(preco) {
     return Number(preco).toFixed(2);
   }
 
   async function MaisProdutos() {
-    const resposta = await api.get(`/consulta/${props.produtoss.categoria}/${id}`)
-    setMaisProdutos(resposta.data)
+    let resposta = await axios.get(API_URL + '/consulta/produto')
+    let aleatorio = resposta.data.sort(() => Math.random() - 0.5)
+    let produtosLimitados = aleatorio.slice(0, 4);
+    setMaisProdutos(produtosLimitados)
+    
   }
 
   function AdicionarAoCarrinho() {
@@ -44,6 +46,7 @@ export default function PaginaProduto(props) {
   }
 
   useEffect(() => {
+    setCategoria(props.produtoss.categoria)
     MaisProdutos()
   }, [])
 
