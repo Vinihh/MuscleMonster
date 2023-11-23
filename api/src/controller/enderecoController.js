@@ -39,12 +39,12 @@ endpoints.post('/endereco', async (req, resp) => {
     }
 })
 
-endpoints.get('listar/endereco/:id', async(req, resp) => {
+endpoints.get('/listar/endereco/:id', async(req, resp) => {
     try {
-        const {id} = req.params;
+        const {id} = req.query;
         const resposta = await listarEndereco(id)
         resp.send(resposta)
-        
+
     } catch (err) {
         resp.status(400).send({erro:err.message})
     }

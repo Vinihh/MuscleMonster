@@ -26,7 +26,15 @@ export default function Enderecoo() {
   const [user, setUser] = useState([]);
 
   async function buscarEndereco(){
-    
+    let resposta = await axios.get(API_URL + `/listar/endereco/${usuariologado.id}`)
+    setRua(resposta.data.rua)
+    setBairro(resposta.data.bairro)
+    setCidade(resposta.data.cidade)
+    setCep(resposta.data.cep)
+    setComplemento(resposta.data.complemento)
+    setContato(resposta.data.contato)
+    setTelefone(resposta.data.contato)
+    setReferencia(resposta.data.referencia)
   }
 
   async function buscar() {
@@ -81,6 +89,10 @@ export default function Enderecoo() {
     }
 
   }
+
+  useEffect(() => {
+   buscarEndereco();
+  }, []);
 
   return (
     <div className="pagina-endereco">
