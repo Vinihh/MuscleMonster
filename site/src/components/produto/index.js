@@ -53,9 +53,10 @@ export default function PaginaProduto(props) {
         </div>
       </nav>
 
-      <hr></hr>
+      
 
       <section>
+      <hr></hr>
         <h1>Descrição</h1>
 
         <div className="descricao">

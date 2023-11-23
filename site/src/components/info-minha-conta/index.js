@@ -89,6 +89,19 @@ export default function InfoMinhaConta() {
     return URL.createObjectURL(imagem)
   }
 
+  async function whatsapp(){
+    var numeroLoja = 11997358120; 
+
+    const usuariologado = storage('usuario-logado');
+    var mensagem = "Olá Muscle Monster!\nEstou com algumas dúvidas em relação à loja online, suplementos ou sobre os produtos vendidos. Pode me ajudar?\n Agradeço desde já pela atenção.\nObrigado!\n" + usuariologado.nome;
+
+    var linkWhatsApp = "https://web.whatsapp.com/send?phone=" + numeroLoja + "&text=" + encodeURIComponent(mensagem);
+
+    window.location.href = linkWhatsApp;
+    
+
+  }
+
 
   useEffect(() => {
     if (storage('usuario-logado')) {
@@ -141,17 +154,17 @@ export default function InfoMinhaConta() {
               Minhas Compras
             </Link>
 
-            <Link to={'/enderecoo'}>
+            <Link to='/enderecoo'>
               <img src='/assets/images/icon3.png' alt='' />
               Endereço
             </Link>
 
-            <Link>
+            <Link onClick={whatsapp}>
               <img src='/assets/images/whatsapp.png' alt='' />
               Contate-nos via WhatsApp
             </Link>
 
-            <Link>
+            <Link to='/esqueceu-a-senha'>
               <img src='/assets/images/icon4.png' alt='' />
               Trocar senha
             </Link>

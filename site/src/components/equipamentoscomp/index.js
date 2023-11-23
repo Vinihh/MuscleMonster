@@ -18,7 +18,7 @@ export default function PaginaEquipamentos(props) {
             <div className='info-props'>   
             <h3>{props.nome}</h3>
             <h2>{'R$ ' + FormatarPreco(props.preco)}</h2>
-            <button>Comprar Agora</button>
+
             </div>
         </div>
       );

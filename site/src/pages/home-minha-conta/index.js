@@ -57,7 +57,7 @@ export default function MinhaContaUser() {
           
 
           <div>
-            <Link to={'/endereco'}>
+            <Link to={'/enderecoo'}>
             <div>
                 <img src='/assets/images/local.gif'></img>
                 <h1>Endereço</h1>

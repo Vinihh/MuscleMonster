@@ -85,7 +85,7 @@ export default function InfoAdm() {
               <h1> Área Produtos</h1>
             </div>
 
-              <Link id='estoque'> Estoque</Link>
+              
               <Link to='/adm/vendas' > Vendas </Link>
               <Link to={'/add-produto'}> Adicionar novo produto </Link>
 

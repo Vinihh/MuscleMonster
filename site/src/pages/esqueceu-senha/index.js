@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './index.scss';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import axios from 'axios';
 import storage from 'local-storage'
 import {toast} from 'react-toastify'
@@ -39,7 +39,13 @@ export default function EsqueceuSenha() {
 
       const response = await axios.put(API_URL + '/alterar/senha', user);
       toast.success('Senha alterada com sucesso.');
-      navigate('/login')
+      if(localStorage('usuario-logado')){
+        navigate('/home-minha-conta')
+        toast.success('Senha alterada com Sucesso!')
+      }
+      else{
+        navigate('/login')
+      }
    
     } catch (err) {
       ref.current.complete();
@@ -54,11 +60,20 @@ export default function EsqueceuSenha() {
     }
   }
 
+  
+
   function teclaEnter(e) {
     if (e.key === 'Enter') {
         entrar();
   }
 }
+
+useEffect(() => {
+  if(storage('usuario-logado')){
+    const usuariologado = storage('usuario-logado');
+    setEmail(usuariologado.email)
+  }
+}, [])
 
   return (
     <div className='body'>
