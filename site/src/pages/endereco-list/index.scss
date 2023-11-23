@@ -27,6 +27,29 @@
         text-decoration-color: #ffb800;
       }
       
+      div{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+      
+      .button{
+        display: flex;
+        justify-content: center;
+        margin-top: 45%;
+        
+      a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        text-decoration: none;
+        color: black;
+        border: 1px solid black;
+        width: 350px;
+        height: 50px;
+      }
+    }
       
     }
   }

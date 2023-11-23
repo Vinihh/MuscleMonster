@@ -30,6 +30,8 @@ import Erro from './pages/erro';
 import EnderecoList from './pages/endereco-list';
 import EsqueceuSenha from './pages/esqueceu-senha';
 import CardEndereco from './components/cardEndereco';
+import EnderecoAdd from './pages/endereco-add';
+import Pedido from './pages/pedido';
 
 
 
@@ -63,7 +65,8 @@ root.render(
         <Route path='/erro' element={<Erro />} />
         <Route path='/enderecoo' element={<EnderecoList />} />
         <Route path='/esqueceu-a-senha' element={<EsqueceuSenha />} />
-        <Route path='/card' element={<CardEndereco />} />
+        <Route path='/endereco-add' element={<EnderecoAdd />} />
+        <Route path='/pedido' element={<Pedido />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

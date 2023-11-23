@@ -120,7 +120,7 @@ export default function Carrinho() {
         <div>
         
           <p>{`Valor total ${ValorTotal(itens)}`}</p>
-          <Link to='/endereco' ><button>Prosseguir compra</button></Link>
+          <Link to='/pedido' ><button>Prosseguir compra</button></Link>
         </div>
         <hr/>
       </div>

@@ -17,7 +17,8 @@ export default function EnderecoList() {
   const [enderecos, setEnderecos] = useState([]);
 
   async function buscarEndereco(){
-    const r = await listEndereco();
+    const id = storage('usuario-logado').id;
+    const r = await listEndereco(id);
     setEnderecos(r)
   }
 
@@ -43,7 +44,9 @@ export default function EnderecoList() {
               )}
           </div>
 
-
+            <div className='button'>
+              <Link to='/endereco-add' > Adicionar Novo Endereço</Link>
+            </div>
         </section>
       </aside>
 

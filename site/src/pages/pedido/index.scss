@@ -1,0 +1,82 @@
+.pagina-pedidos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(245, 245, 245);
+
+    aside{
+        width: 100%;
+        height: 8vh;
+        display:flex ;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 50px;
+        margin-bottom: 40px;
+        
+        h1{
+            font-size: 32px;
+        }
+        
+        div{
+            display:flex ;
+            flex-direction: row;
+            align-items: center;
+            gap:0px 10px;
+
+            h3{
+                font-weight:500;
+                font-size: 18px;
+            }
+
+            h1{
+                font-weight: 600;
+                font-size: 20px;
+            }
+
+            button{
+                width: 160px;
+                height: 35px;
+                border-radius: 40px;
+                border: 1px solid black;
+                background-color: #ffb800;
+            }
+        }
+    }
+
+    article{
+        display: flex;
+        flex-direction: row;
+        padding: 25px;
+        width: 1280px;
+        height: 300px;
+        background-color: white;
+
+        .pt-cima{
+            width:640px ;
+
+            h1{
+                color: rgb(45, 45, 45);
+                font-size: 25px;
+                font-weight: 600;
+                font-family:'arial';
+                margin-bottom: 20px;
+            }
+        }
+
+        .pt-baixo{
+            width:640px ;
+
+            > h1{
+                color: rgb(45, 45, 45);
+                font-size: 25px;
+                font-weight: 600;
+                font-family:'arial';
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
