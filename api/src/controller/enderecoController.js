@@ -43,7 +43,7 @@ endpoints.get('/listar/endereco/:id', async(req, resp) => {
     try {
         let {id} = req.query;
         let resposta = await listarEndereco(id)
-        resp.send(resposta)
+        resp.send(resposta.data)
 
     } catch (err) {
         resp.status(400).send({erro:err.message})
