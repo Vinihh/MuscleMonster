@@ -41,8 +41,8 @@ endpoints.post('/endereco', async (req, resp) => {
 
 endpoints.get('/listar/endereco/:id', async(req, resp) => {
     try {
-        const {id} = req.query;
-        const resposta = await listarEndereco(id)
+        let {id} = req.query;
+        let resposta = await listarEndereco(id)
         resp.send(resposta)
 
     } catch (err) {
