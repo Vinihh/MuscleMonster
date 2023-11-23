@@ -38,14 +38,8 @@ export default function EsqueceuSenha() {
     try {
 
       const response = await axios.put(API_URL + '/alterar/senha', user);
-
-      if(localStorage('usuario-logado')){
-        navigate('/home-minha-conta')
-        toast.success('Senha alterada com Sucesso!')
-      }
-      else{
-        navigate('/login')
-      }
+      toast.success('Senha alterada com sucesso.');
+      navigate('/login')
    
     } catch (err) {
       ref.current.complete();
