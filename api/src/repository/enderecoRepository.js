@@ -40,5 +40,6 @@ export async function listarEndereco(id){
         `;
 
     const [resposta] = await conexao.query(comando,[id]);
-    return resposta
+    return resposta.data
+    
 }
