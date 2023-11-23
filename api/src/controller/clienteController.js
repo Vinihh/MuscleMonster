@@ -25,9 +25,7 @@ let endpoints = Router();
       resp.send(dados)
     
     } catch (err) {
-      resp.status(500).send({
-        erro: err.message
-      })
+      resp.status(500).send({ erro: err.message });
     }
   })
 
