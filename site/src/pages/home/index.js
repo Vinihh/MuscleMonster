@@ -62,13 +62,20 @@ export default function Home() {
       </aside>
 
       <section className='sec1'>
-        <img src='/assets/images/img4.png' alt='' />
-        <div>
-          <h1>Gostaria de aprender a treinar da maneira correta?</h1>
 
-          <h4>Na Muscle Monster você poderá encontrar diversos personal trainers para ajudá-los a treinar da maneira certa!!</h4>
+        <img src='/assets/images/logo2.png' />
+        
+        <div className='pt1-sec1'>
+          <h1>BLACK FRIDAY MUSCLEMONSTER</h1>
 
-          <button> Fale Conosco </button>
+          <h4>Tudo o que você sempre quis com até 70% OFF à partir do dia 01/12 !!!Para quem está pensando em entrar na academia e mudar de vida!</h4>
+
+        </div>
+
+        <div className='pt2-sec1'>
+          <h1 id='h1'>BLACK FRIDAY</h1>
+          <h1 id='h2'>até</h1>
+          <h1 id='h3'>70% off</h1>
         </div>
       </section>
 
