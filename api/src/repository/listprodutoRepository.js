@@ -14,6 +14,21 @@ FROM  tb_produto`;
   return resposta;
 }
 
+export async function consultarProdutosPorCate(categoria) {
+
+  const comando = `SELECT id_produto      as id,
+  url_img         as img,
+  nm_produto      as produto,
+  ds_categoria    as categoria,
+  vl_valor        as preco,
+  qtd_estoque     as estoque
+FROM  tb_produto
+where ds_categoria = ?`;
+
+  const [resposta] = await conexao.query(comando,[`${categoria}`]);
+  return resposta;
+}
+
 export async function BuscarPorNome(nome) {
   const comando = `SELECT id_produto      as id,
                           url_img         as img,

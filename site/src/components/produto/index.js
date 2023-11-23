@@ -44,7 +44,7 @@ export default function PaginaProduto(props) {
   }
 
   useEffect(() => {
-    MaisProdutos
+    MaisProdutos()
   }, [])
 
   return (
@@ -77,7 +77,7 @@ export default function PaginaProduto(props) {
       <section>
         <h1> Sugestões de Produtos que você também pode gostar</h1>
 
-        <div className='produto-equipamento'>
+        <div className='mais-produtos'>
         {maisProdutos.map((item) => (
           <section onClick={() => navigate('/produtos/' + item.id)}>
             <PaginaEquipamentos
