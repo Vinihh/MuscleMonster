@@ -55,3 +55,8 @@ export async function BuscarProdutoPorId(id){
     const r = await api.get('/api/produto/' + id)
     return r.data
 }
+
+export async function listEndereco(idUsuario){
+    const r = await api.get('/listar/endereco/' + idUsuario);
+    return r.data
+}

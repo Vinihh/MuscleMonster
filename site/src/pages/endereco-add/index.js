@@ -8,8 +8,9 @@ import { useEffect, useLayoutEffect, useState } from 'react';
 import Header from '../../components/header';
 import storage from 'local-storage'
 import { toast, ToastContainer } from 'react-toastify';
+import { listEndereco } from '../../api/addPrdtapi';
 
-export default function Enderecoo() {
+export default function EnderecoAdd() {
 
   const [contato, setContato] = useState('')
   const [telefone, setTelefone] = useState('')
@@ -21,28 +22,29 @@ export default function Enderecoo() {
   const [complemento, setComplemento] = useState('')
   const [referencia, setReferencia] = useState('')
   const usuariologado = storage('usuario-logado');
+  const [endereco,setEndereco]= useState([]);
 
   const id = Storage('usuario-logado').id;
   const [user, setUser] = useState([]);
 
   async function buscarEndereco(){
-    let resposta = await axios.get(API_URL + `/listar/endereco/${usuariologado.id}`)
-    setRua(resposta.data.rua)
-    setBairro(resposta.data.bairro)
-    setCidade(resposta.data.cidade)
-    setCep(resposta.data.cep)
-    setComplemento(resposta.data.complemento)
-    setContato(resposta.data.contato)
-    setTelefone(resposta.data.contato)
-    setReferencia(resposta.data.referencia)
+    const r = await listEndereco();
+    setRua(r.rua)
+    setBairro(r.bairro)
+    setCidade(r.cidade)
+    setCep(r.cep)
+    setComplemento(r.complemento)
+    setContato(r.contato)
+    setTelefone(r.contato)
+    setReferencia(r.referencia)
   }
 
   async function buscar() {
     let url = 'https://viacep.com.br/ws/' + cep + '/json/';
-    let resposta = await axios.get(url);
-    setBairro(resposta.data.bairro)
-    setRua(resposta.data.logradouro)
-    setCidade(resposta.data.localidade)
+    let r = await axios.get(url);
+    setBairro(r.data.bairro)
+    setRua(r.data.logradouro)
+    setCidade(r.data.localidade)
   }
 
   async function cadastroEndereco() {
@@ -62,7 +64,7 @@ export default function Enderecoo() {
 
     try {
 
-      let resposta = await axios.post(API_URL + '/endereco', endereco)
+      let r = await axios.post(API_URL + '/endereco', endereco)
       toast.success('Endereço cadastrado com Sucesso')
       limpar()
 

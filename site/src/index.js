@@ -27,8 +27,9 @@ import Carrinho from './pages/carrinho';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Erro from './pages/erro';
-import Enderecoo from './pages/endereco-user';
+import EnderecoList from './pages/endereco-list';
 import EsqueceuSenha from './pages/esqueceu-senha';
+import CardEndereco from './components/cardEndereco';
 
 
 
@@ -60,8 +61,9 @@ root.render(
         <Route path='/meuperfil' element={<MeuPerfil />} />
         <Route path='/adm/login' element={<LoginAdm />} />
         <Route path='/erro' element={<Erro />} />
-        <Route path='/enderecoo' element={<Enderecoo />} />
+        <Route path='/enderecoo' element={<EnderecoList />} />
         <Route path='/esqueceu-a-senha' element={<EsqueceuSenha />} />
+        <Route path='/card' element={<CardEndereco />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

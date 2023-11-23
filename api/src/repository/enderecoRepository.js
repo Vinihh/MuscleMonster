@@ -27,6 +27,7 @@ export async function CadastroEndereco(cadastro) {
 export async function listarEndereco(id){
     let comando = `
         select 
+        id_endereco     as id,
         ds_rua          as rua,
         ds_bairro       as bairro,
         ds_cidade       as cidade,
