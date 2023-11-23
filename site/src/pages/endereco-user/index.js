@@ -25,6 +25,10 @@ export default function Enderecoo() {
   const id = Storage('usuario-logado').id;
   const [user, setUser] = useState([]);
 
+  async function buscarEndereco(){
+    
+  }
+
   async function buscar() {
     let url = 'https://viacep.com.br/ws/' + cep + '/json/';
     let resposta = await axios.get(url);
@@ -44,7 +48,7 @@ export default function Enderecoo() {
       numero: numero,
       complemento: complemento,
       referencia: referencia,
-      id_cliente: usuariologado
+      id_cliente: usuariologado.id
     };
 
 
