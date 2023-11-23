@@ -62,7 +62,7 @@ export default function Carrinho() {
 
   function RemoverItem(id) {
     let carrinho = storage('carrinho')
-    carrinho = carrinho.filter(item => id != id)
+    carrinho = carrinho.filter(item => id !== id)
 
     storage('carrinho', carrinho)
     carregarCarrinho()
