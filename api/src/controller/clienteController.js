@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome, AlterarSenha, Pagamento } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome, AlterarSenha, Pagamento, MostrarPedidosPorIdUsuario } from "../repository/clienteRepository.js";
 import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
@@ -154,6 +154,21 @@ let endpoints = Router();
     }
 
 })
+
+endpoints.get('/pedidos/usuario/:id', async (req, resp) => {
+  try {
+
+      const { id } = req.params
+      const resposta = await MostrarPedidosPorIdUsuario(id)
+      resp.send(resposta)
+
+  } catch (err) {
+      resp.status(400).send({
+          erro: err.message
+      });
+  }
+})
+
 
 
 
