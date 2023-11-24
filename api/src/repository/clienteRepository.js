@@ -105,10 +105,11 @@ export async function BuscarCliente(nome) {
   
   export async function Pagamento(pag) {
 
-    let comando = `INSERT INTO tb_pagamento (nm_titular, ds_numero, ds_validade, ds_cvv, id_pagamento)
-    VALUES (?, ?, ?, ?, ?);`;
+    let comando = `INSERT INTO tb_pagamento (id_cliente,nm_titular, ds_numero, ds_validade, ds_cvv, id_pagamento)
+    VALUES (?,?, ?, ?, ?, ?);`;
 
     const [resposta] = await conexao.query(comando, [
+        pag.id,
         pag.titular,
         pag.numero,
         pag.validade,

@@ -1,4 +1,3 @@
-
 create database musclemonsterdb;
 use musclemonsterdb;
 
@@ -61,6 +60,17 @@ create table tb_endereco (
 
 select * from tb_endereco;
 
+create table tb_pagamento (
+	id_pagamento int primary key auto_increment,
+    id_cliente 	int,
+	nm_titular varchar(200),
+	ds_numero int,
+	ds_validade varchar(200),
+	ds_cvv varchar(200),
+    foreign key (id_cliente) references tb_cliente (id_cliente)
+);
+
+select * from tb_pagamento;
 
 create table tb_pedido(
 id_pedido int primary key auto_increment,
@@ -92,3 +102,5 @@ create table tb_carrinho (
     foreign key (id_cliente) references tb_cliente (id_cliente),
     foreign key (id_produto) references tb_produto (id_produto)
 );
+message.txt
+3 KB

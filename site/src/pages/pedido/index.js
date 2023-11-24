@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 import { listEndereco } from '../../api/addPrdtapi';
 import CardEnderecopg from '../../components/cardEndereco2';
 import { BuscarImagem } from '../../api/addPrdtapi';
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -122,7 +122,7 @@ export default function Pedido() {
   async function Pagamento() {
 
     const pagamento = {
-
+      id:id,
       titular: titular,
       numero: numero,
       validade: validade,
@@ -209,8 +209,8 @@ export default function Pedido() {
         <table>
           <thead>
             <tr>
+              <th>Imagem</th>
               <th>Produto</th>
-              <th>item</th>
               <th>Categoria</th>
               <th>Quantidade</th>
               <th>Preço Unitário</th>
@@ -221,7 +221,6 @@ export default function Pedido() {
             {itens.map(item =>
               <tr>
                 <td>
-
                   <div className='celula-item'>
 
                     <div>

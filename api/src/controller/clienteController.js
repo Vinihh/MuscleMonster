@@ -144,8 +144,6 @@ let endpoints = Router();
     try {
         const cartao = await req.body;
 
-       
-
         const dados = await Pagamento(cartao)
         resp.status(202).send(dados)
 
