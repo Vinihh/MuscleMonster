@@ -137,16 +137,16 @@ $primary-color: #FFB800; // Primary color, change as needed
             height: 15vh;
 
             button {
-                padding: 15px 35px;
+                padding: 15px 355px;
                 background-color: $primary-color;
                 border-radius: 5px;
                 font: 16px arial;
                 font-weight: 700;
-                color: #fff;
+                color: #e7d5d5;
                 border: none;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
-                margin-top: 20px;
+                margin-top: 10px;
 
                 &:hover {
                     background-color: darken($primary-color, 10%);

@@ -210,7 +210,7 @@ export default function EnderecoAdd() {
             <div>
 
               <div>
-                <h1>Referêrencia</h1>
+                <h1>Nome do Endereço</h1>
                 <input
                   type="text"
                   class="input_textn"
