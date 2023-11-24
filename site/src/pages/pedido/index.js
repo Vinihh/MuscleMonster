@@ -20,7 +20,7 @@ const api = axios.create({
 
 export default function Pedido() {
   const [itens, setItens] = useState([]);
-  const idCliente = storage('usuario-logado').id;
+  const usuario = storage('usuario-logado');
   const [enderecos, setEnderecos] = useState([]);
   const [titular, setTitular] = useState('');
   const [numero, setNumero] = useState(0);
@@ -122,7 +122,7 @@ export default function Pedido() {
   async function Pagamento() {
 
     const pagamento = {
-      id:idCliente,
+      id:usuario.id,
       titular: titular,
       numero: numero,
       validade: validade,
@@ -138,7 +138,7 @@ export default function Pedido() {
 
     } catch (err) {
       toast.error(err.response.data.erro);
-      //toast.success('Pagamento Aprovado com sucesso')
+
 
     };
   }

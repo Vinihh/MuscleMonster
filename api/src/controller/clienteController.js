@@ -142,9 +142,9 @@ let endpoints = Router();
 
   endpoints.post('/pagamento', async (req, resp) => {
     try {
-        const cartao = await req.body;
+        const pag = await req.body;
 
-        const dados = await Pagamento(cartao)
+        const dados = await Pagamento(pag)
         resp.send(dados)
 
     } catch (err) {
