@@ -70,7 +70,7 @@ export default function Pedido() {
 
     for (let item of itens) {
       if (item.produto) {
-        total += item.produto.preco * 1;
+        total += item.produto.preco * item.qtd;
       }
     }
     return total.toFixed(2);

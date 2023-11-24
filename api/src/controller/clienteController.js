@@ -13,13 +13,13 @@ let endpoints = Router();
 
       let r1 = await consultar(cliente.email);
       if (r1.length == 0)
-          throw new Error(' Email n찾o encontrado!');
+          throw new Error(' Email não encontrado!');
 
       if(!cliente.email)
-        throw new Error('Campo Obrigat처rio')
+        throw new Error('Campo Obrigatório')
 
       if(!cliente.senha)
-        throw new Error('Campo Obrigat처rio')
+        throw new Error('Campo Obrigatório')
 
        
 
@@ -144,6 +144,7 @@ let endpoints = Router();
     try {
         const pag = await req.body;
 
+      
         const dados = await Pagamento(pag)
         resp.send(dados)
 
@@ -159,6 +160,8 @@ endpoints.get('/pedidos/usuario/:id', async (req, resp) => {
   try {
 
       const { id } = req.params
+
+      
       const resposta = await MostrarPedidosPorIdUsuario(id)
       resp.send(resposta)
 
