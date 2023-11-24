@@ -10,7 +10,7 @@ export default function Headerr() {
      
 
       <div className='icons'>
-        <Link to='/meuperfil' ><img alt='' src='/assets/images/icon-login.png'/></Link>
+        <Link to='/login' ><img alt='' src='/assets/images/icon-login.png'/></Link>
       </div>
     </div>
 

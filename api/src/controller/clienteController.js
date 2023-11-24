@@ -144,7 +144,18 @@ let endpoints = Router();
     try {
         const pag = await req.body;
 
-      
+        if(!pag.titular)
+        throw new Error('Nome titular obrigatório')
+
+        if(!pag.numero)
+        throw new Error('Numero obrigatório')
+
+        if(!pag.validade)
+        throw new Error('Validade obrigatória')
+
+        if(!pag.cvv)
+        throw new Error('Codigo de segurança obrigatório')
+
         const dados = await Pagamento(pag)
         resp.send(dados)
 

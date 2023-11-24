@@ -175,7 +175,7 @@ export default function Pedido() {
         <div className='pt-cima'>
           <h1>Endereço</h1>
 
-          <button>Adicone novo endereço</button>
+          <Link to={'/enderecoo'}> <button>Adicone novo endereço</button> </Link>
 
           <div >
             {enderecos.map(item =>
