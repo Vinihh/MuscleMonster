@@ -16,7 +16,7 @@ export default function MeuPerfil() {
   const [nome,setNome] = useState(usuario.nome);
   const [email,setEmail] = useState(usuario.email);
   const [telefone,setTelefone] = useState(usuario.telefone);
-  const [data,setData] = useState(usuario.data.slice(0,10));
+  const [data,setData] = useState(usuario.data);
 
   async function editar(){
 
@@ -38,6 +38,8 @@ export default function MeuPerfil() {
       toast.error(err.response.data.erro)
     }
   }
+
+  
 
 
 
