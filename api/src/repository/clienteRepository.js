@@ -137,7 +137,7 @@ export async function BuscarCliente(nome) {
     VALUES (?,?, ?, ?, ?, ?);`;
 
     const [resposta] = await conexao.query(comando, [
-        pag.id,
+        pag.idCliente,
         pag.titular,
         pag.numero,
         pag.validade,
