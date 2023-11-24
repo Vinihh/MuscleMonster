@@ -122,7 +122,7 @@ export default function Pedido() {
   async function Pagamento() {
 
     const pagamento = {
-      id:usuario.id,
+      idCliente:usuario.id,
       titular: titular,
       numero: numero,
       validade: validade,
