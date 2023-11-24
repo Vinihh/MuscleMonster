@@ -145,7 +145,7 @@ let endpoints = Router();
         const cartao = await req.body;
 
         const dados = await Pagamento(cartao)
-        resp.status(202).send(dados)
+        resp.send(dados)
 
     } catch (err) {
         resp.status(400).send({
