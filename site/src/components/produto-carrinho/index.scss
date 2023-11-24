@@ -9,6 +9,10 @@
     align-items: center;
     margin-bottom: 4vh;
 
+    .button{
+        background-color: transparent;
+        border: none;
+    }
     .infos{
         display: flex;
         flex-direction: row;
@@ -68,6 +72,7 @@
             font-size: 30px;
         }
 
+        
        
     }
 }

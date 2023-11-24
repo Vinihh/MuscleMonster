@@ -29,15 +29,15 @@ export default function ProdutoCarrinho(props) {
       
 
       <div className='valores'>
-      <div>
-      <button onClick={diminuirQuantidade}>-</button>
+    <div>
+      <button className='b3' onClick={diminuirQuantidade}>-</button>
       <input type="text" value={quantidade} readOnly />
       <button onClick={aumentarQuantidade}>+</button>
     </div>
         <h2>{'R$' + decimal(props.produto.preco)}</h2>
       </div>
 
-      <button className='button' onClick={props.remover}>Remover</button>
+      <button className='button' onClick={props.remover}><img id='trash' src='/assets/images/lixo.png.svg'/> </button>
     </div>
   );
 }
