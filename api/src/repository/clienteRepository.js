@@ -145,7 +145,7 @@ export async function BuscarCliente(nome) {
         pag.id
     ]);
 
-    pag.id = resposta.insertId;
+    pag.id_pagamento = resposta.insertId;
 
     return pag;
 }
