@@ -2,7 +2,7 @@ import './index.scss';
 import Header from '../../components/header2';
 import Produtopedido from '../../components/produto-carrinho';
 import { useEffect, useState } from 'react';
-import storage from 'local-storage';
+import storage, { set } from 'local-storage';
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import { confirmAlert } from 'react-confirm-alert';
@@ -134,10 +134,12 @@ export default function Pedido() {
     try {
 
       let resposta = await axios.post(API_URL + '/pagamento', pagamento)
-      toast.success('Pagamento feito')
+      toast.success('Pagamento Aprovado com sucesso')
 
     } catch (err) {
       toast.error(err.response.data.erro);
+      //toast.success('Pagamento Aprovado com sucesso')
+
     };
   }
 
@@ -165,13 +167,15 @@ export default function Pedido() {
         <h1>Pedido</h1>
         <div>
           <h2>Total{` ${ValorTotal(itens)}`}</h2>
-          <button>Finalizar pedido</button>
+         <Link to={'/'}> <button  onClick={Pagamento}>Finalizar pedido</button> </Link>
         </div>
       </aside>
 
       <article>
         <div className='pt-cima'>
           <h1>Endereço</h1>
+
+          <button>Adicone novo endereço</button>
 
           <div >
             {enderecos.map(item =>
@@ -183,26 +187,29 @@ export default function Pedido() {
 
         <div className='pt-baixo' >
           <h1>Pagamento</h1>
+          
           <div>
             <h1>Nome:</h1>
-            <input type='text' />
+            <input type='text' value={titular} onChange={e => setTitular(e.target.value)} />
           </div>
 
           <div>
             <h1>Numero do cartao: </h1>
-            <input type='text' />
+            <input type='text' value={numero} onChange={e => setNumero(e.target.value)} />
           </div>
 
           <div>
             <h1>Validade:</h1>
-            <input type='text' />
+            <input type='text' value={validade} onChange={e => setValidade(e.target.value)} />
           </div>
 
           <div>
             <h1>CVV:</h1>
-            <input type='text' />
+            <input type='text' value={cvv} onChange={e => setCvv(e.target.value)} />
           </div>
         </div>
+
+        
       </article>
 
       <div className='itens'>
@@ -247,9 +254,6 @@ export default function Pedido() {
           </tbody>
         </table>
       </div>
-
-
-
     </section>
   );
 }
