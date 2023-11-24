@@ -9,6 +9,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import { Link } from 'react-router-dom';
 import { listEndereco } from '../../api/addPrdtapi';
 import CardEnderecopg from '../../components/cardEndereco2';
+import { BuscarImagem } from '../../api/addPrdtapi';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -19,6 +20,10 @@ export default function Pedido() {
   const id = storage('usuario-logado').id;
   const [enderecos, setEnderecos] = useState([]);
 
+
+  function FormataValor(preco) {
+    return Number(preco).toFixed(2);
+}
 
   async function buscarProduto(id) {
     try {
@@ -31,7 +36,7 @@ export default function Pedido() {
   }
 
   async function carregarpedido() {
-    let pedido = storage('pedido');
+    let pedido = storage('carrinho');
     if (pedido) {
       let array = [];
 
@@ -65,12 +70,28 @@ export default function Pedido() {
     return total.toFixed(2);
   }
 
+  
+  function Valor(itens) {
+    let total = 0;
+  
+    for (let item of itens) {
+      if (item.produto) {
+        total += item.qtd;
+      }
+    }
+    return total;
+  }
+
   function RemoverItem(id) {
     let pedido = storage('pedido')
     pedido = pedido.filter(item => id != id)
 
     storage('pedido', pedido)
     carregarpedido()
+  }
+
+  function qtdItens() {
+    return itens.length;
   }
 
   function ApagarItemDopedido() {
@@ -109,130 +130,99 @@ export default function Pedido() {
 
 
   return (
-
-
-
-    <div className='pagina-pedido'>
-
+    <section className='pagina-pedidos'>
       <Header />
 
-    
-
-
-      <div className='pedido-box'>
-        <h1> Pedido </h1>
-        <div className='finalizar'>
-          <div>Total: <span> R$ {ValorTotal()}</span></div>
-          <button> Finalizar Pedido </button>
-        </div>
-      </div>
-
-
-      <div className='info'>
+      <aside>
+        <h1>Pedido</h1>
         <div>
-          <h2>Endereços</h2>
+          <h2>Total{` ${ValorTotal(itens)}`}</h2>
+          <button>Finalizar pedido</button>
+        </div>
+      </aside>
 
-          <div className='enderecos'>
+      <article>
+        <div className='pt-cima'>
+          <h1>Endereço</h1>
 
+          <div >
             {enderecos.map(item =>
-              <CardEnderecopg />
+              <CardEnderecopg item={item} />
             )}
           </div>
 
-          <button > Novo </button>
-
         </div>
 
-        <div className='pagamento-box'>
-          <h2>Pagamento</h2>
-
-          <div className='form'>
-            <div>
-              <label>Nome:</label>
-              <input type='text' value onChange={e => (e.target.value)} />
-            </div>
-            <div>
-              <label>Número:</label>
-              <input type='text' value onChange={e => (e.target.value)} />
-            </div>
-            <div>
-              <label>Validade:</label>
-              <input type='text' value onChange={e => (e.target.value)} />
-            </div>
-            <div>
-              <label>CVV:</label>
-              <input type='text' value onChange={e => (e.target.value)} />
-            </div>
-            <div>
-              <label>Tipo de Pagamento:</label>
-              <select value onChange={e => (e.target.value)}   >
-                <option disabled hidden selected>Selecione</option>
-                <option>Crédito</option>
-                <option>Débito</option>
-              </select>
-            </div>
-            <div>
-              <label>Parcelas:</label>
-              <select value onChange={e => (e.target.value)}  >
-                <option disabled hidden selected>Selecione</option>
-                <option value={1}>01x à Vista</option>
-                <option value={1}>01x sem Juros</option>
-                <option value={2}>02x sem Juros</option>
-                <option value={3}>03x sem Juros</option>
-              </select>
-            </div>
-            <div />
+        <div className='pt-baixo' >
+          <h1>Pagamento</h1>
+          <div>
+            <h1>Nome:</h1>
+            <input type='text' />
           </div>
 
-          <div className='info-extra'>
-            <div>
-              <h2> Cupom </h2>
-              <div className='form'>
-                <div>
-                  <label>Código:</label>
-                  <input type='text' value onChange={e => (e.target.value)} />
-                </div>
-                <div />
-              </div>
-            </div>
-            <div>
-              <h2> Frete </h2>
-              <div className='form'>
-                <div>
-                  <label>Tipo:</label>
-                  <select value onChange={e => (e.target.value)}  >
-                    <option disabled hidden selected>Selecione</option>
-                    <option value={'Normal'}>Normal - R$ 10,00</option>
-                    <option value={'Sedex'}>Sedex - R$ 25,00</option>
-                  </select>
-                </div>
-                <div />
-              </div>
-            </div>
+          <div>
+            <h1>Numero do cartao: </h1>
+            <input type='text' />
+          </div>
+
+          <div>
+            <h1>Validade:</h1>
+            <input type='text' />
+          </div>
+
+          <div>
+            <h1>CVV:</h1>
+            <input type='text' />
           </div>
         </div>
-      </div>
-
+      </article>
 
       <div className='itens'>
         <table>
           <thead>
             <tr>
-              <th>Item</th>
+              <th>Produto</th>
+              <th>item</th>
+              <th>Categoria</th>
               <th>Quantidade</th>
               <th>Preço Unitário</th>
-              <th>Total</th>
             </tr>
           </thead>
           <tbody>
 
+            {itens.map(item =>
+              <tr>
+                <td>
 
+                  <div className='celula-item'>
 
+                    <div>
+                      <img src={API_URL + '/' + item.produto.imagem} />
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <p> {item.produto.produto} </p>
+                </td>
+                <td>
+                  <p> {item.produto.categoria} </p>
+                </td>
+                <td>
+                  <p> {qtdItens()} </p>
+                </td>
+                
+                <td>
+                  <p> {FormataValor(item.produto.preco)} </p>
+                </td>
+              </tr>
+            )}
 
           </tbody>
         </table>
       </div>
 
-    </div>
-  )
+
+
+    </section>
+  );
 }
