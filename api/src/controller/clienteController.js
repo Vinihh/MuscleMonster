@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome, AlterarSenha } from "../repository/clienteRepository.js";
+import { Usuario, BuscarCliente, ConsultarCliente, TrocarImagem , EditarTelefone, EditarNascimento, EditarNome, AlterarSenha, Pagamento } from "../repository/clienteRepository.js";
 import { consultar } from "../repository/cadastroRepository.js";
 
 import multer from 'multer'
@@ -13,13 +13,13 @@ let endpoints = Router();
 
       let r1 = await consultar(cliente.email);
       if (r1.length == 0)
-          throw new Error(' Email não encontrado!');
+          throw new Error(' Email n찾o encontrado!');
 
       if(!cliente.email)
-        throw new Error('Campo Obrigatório')
+        throw new Error('Campo Obrigat처rio')
 
       if(!cliente.senha)
-        throw new Error('Campo Obrigatório')
+        throw new Error('Campo Obrigat처rio')
 
        
 
@@ -87,7 +87,7 @@ let endpoints = Router();
   
       const resposta = await TrocarImagem(imagem, id);
       if(resposta != 1)
-            throw new Error('A imagem não pode ser salva')
+            throw new Error('A imagem n찾o pode ser salva')
       resp.send({imagem});
       
     } catch (err) {
@@ -139,6 +139,23 @@ let endpoints = Router();
       })
     }
   })
+
+  endpoints.post('/pagamento', async (req, resp) => {
+    try {
+        const cartao = await req.body;
+
+       
+
+        const dados = await Pagamento(cartao)
+        resp.status(202).send(dados)
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+
+})
 
 
 

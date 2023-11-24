@@ -10,6 +10,9 @@ import { Link } from 'react-router-dom';
 import { listEndereco } from '../../api/addPrdtapi';
 import CardEnderecopg from '../../components/cardEndereco2';
 import { BuscarImagem } from '../../api/addPrdtapi';
+import {toast} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const api = axios.create({
   baseURL: API_URL,
@@ -19,11 +22,14 @@ export default function Pedido() {
   const [itens, setItens] = useState([]);
   const id = storage('usuario-logado').id;
   const [enderecos, setEnderecos] = useState([]);
-
+  const [titular, setTitular] = useState('');
+  const [numero, setNumero] = useState(0);
+  const [cvv, setCvv] = useState(0);
+  const [validade, setValidade] = useState(0);
 
   function FormataValor(preco) {
     return Number(preco).toFixed(2);
-}
+  }
 
   async function buscarProduto(id) {
     try {
@@ -70,10 +76,10 @@ export default function Pedido() {
     return total.toFixed(2);
   }
 
-  
+
   function Valor(itens) {
     let total = 0;
-  
+
     for (let item of itens) {
       if (item.produto) {
         total += item.qtd;
@@ -111,6 +117,28 @@ export default function Pedido() {
         },
       ],
     });
+  }
+
+  async function Pagamento() {
+
+    const pagamento = {
+
+      titular: titular,
+      numero: numero,
+      validade: validade,
+      cvv: cvv
+    };
+
+
+
+    try {
+
+      let resposta = await axios.post(API_URL + '/pagamento', pagamento)
+      toast.success('Pagamento feito')
+
+    } catch (err) {
+      toast.error(err.response.data.erro);
+    };
   }
 
 
@@ -210,7 +238,7 @@ export default function Pedido() {
                 <td>
                   <p> {qtdItens()} </p>
                 </td>
-                
+
                 <td>
                   <p> {FormataValor(item.produto.preco)} </p>
                 </td>

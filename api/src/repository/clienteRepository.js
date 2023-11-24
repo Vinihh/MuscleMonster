@@ -105,24 +105,18 @@ export async function BuscarCliente(nome) {
   
   export async function Pagamento(pag) {
 
-    let comando = `INSERT INTO tb_endereco(ds_rua, ds_bairro, ds_cidade, nr_cep, nr_numero, ds_complemento, nm_contato, tel_contato, ds_referencia, id_cliente)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);`;
+    let comando = `INSERT INTO tb_pagamento (nm_titular, ds_numero, ds_validade, ds_cvv, id_pagamento)
+    VALUES (?, ?, ?, ?, ?);`;
 
     const [resposta] = await conexao.query(comando, [
         pag.titular,
-        pag.bairro,
-        cadastro.cidade,
-        cadastro.cep,
-        cadastro.numero,
-        cadastro.complemento,
-        cadastro.contato,
-        cadastro.telefone,
-        cadastro.referencia,
-        cadastro.id_cliente
+        pag.numero,
+        pag.validade,
+        pag.cvv,
+        pag.id
     ]);
 
-    cadastro.id = resposta.insertId;
-    cadastro.id_cliente = resposta.insertId;
+    pag.id = resposta.insertId;
 
-    return cadastro;
+    return pag;
 }

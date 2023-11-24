@@ -38,7 +38,10 @@ export default function PaginaProduto(props) {
 
     if (!carrinho.find(item => item.id === id)) {
 
-      carrinho.push({ id: id, quantidade: 1 });
+      carrinho.push({ 
+        id: id, 
+        qtd: 1 
+      });
       storage('carrinho', carrinho);
     }
 
